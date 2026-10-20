@@ -1,0 +1,882 @@
+<!DOCTYPE html>  
+<html lang="hi" id="html-root" class="overflow-x-hidden">  
+<head> 
+    <meta name="google-site-verification" content="Lj9kgR-auiWe5v1ar6GuPbBhtG3d4G6y49OiOTdS41o" />
+    <meta charset="UTF-8">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">  
+    <title>Smart Home Tuition - Best Home Tutors in Jaipur, Ajmer & Udaipur</title>  
+    <meta name="description" content="Best Home Tutors for Nursery to Class 12, Model Papers, Time Table, and Basic Home Computer Training.">  
+    <!-- Tailwind CSS CDN -->  
+    <script src="https://cdn.tailwindcss.com"></script>  
+    <script>  
+        tailwind.config = {  
+            darkMode: 'class',  
+        }  
+    </script>  
+    <!-- FontAwesome Icons -->  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">  
+    <style>  
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');  
+        body {   
+            font-family: 'Poppins', sans-serif;   
+            overflow-x: hidden;  
+            width: 100%;  
+        }  
+        * {  
+            box-sizing: border-box;  
+        }  
+    </style>  
+</head>  
+<body class="bg-slate-50 text-slate-800 dark:bg-slate-900 dark:text-slate-100 transition-colors duration-200 overflow-x-hidden w-full max-w-full">  
+  
+    <!-- Top Announcement Bar -->  
+    <div class="bg-red-600 text-white text-center py-2 px-2 text-xs md:text-sm font-bold tracking-wide lang-text w-full overflow-hidden"   
+         data-en="🚨 Admission Open 2026-27 For Home Tuition (Nursery to 12th) in Jaipur, Ajmer & Udaipur!"   
+         data-hi="🚨 Admission Open 2026-27 For Home Tuition (Nursery to 12th) in Jaipur, Ajmer & Udaipur!">  
+        🚨 Admission Open 2026-27 For Home Tuition (Nursery to 12th) in Jaipur, Ajmer & Udaipur!  
+    </div>  
+  
+    <!-- Header / Navigation -->  
+    <header class="bg-white dark:bg-slate-800 text-slate-800 dark:text-slate-100 shadow-md sticky top-0 z-50 transition-colors duration-200 w-full">  
+        <div class="max-w-7xl mx-auto px-3 sm:px-4 py-2.5 flex justify-between items-center w-full">  
+            <!-- Header Logo -->  
+            <div class="flex items-center space-x-2 shrink-0">  
+                <div class="bg-indigo-700 text-white p-1.5 rounded-xl shadow">  
+                    <i class="fa-solid fa-graduation-cap text-lg text-yellow-400"></i>  
+                </div>  
+                <div>  
+                    <span class="text-sm sm:text-lg md:text-xl font-extrabold tracking-tight text-indigo-900 dark:text-indigo-400 whitespace-nowrap">Smart Home Tuition</span>  
+                </div>  
+            </div>  
+              
+            <!-- Navigation Links & Header Options -->  
+            <div class="flex items-center space-x-1.5 sm:space-x-3">  
+                <a href="#forms-section" class="hidden lg:inline text-xs sm:text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-indigo-600 lang-text" data-en="Registration" data-hi="रजिस्ट्रेशन">रजिस्ट्रेशन</a>  
+                <a href="#computer-training" class="hidden lg:inline text-xs sm:text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-indigo-600 lang-text" data-en="Computer Training" data-hi="कंप्यूटर ट्रेनिंग">कंप्यूटर ट्रेनिंग</a>  
+                <a href="#free-study-material" class="hidden lg:inline text-xs sm:text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-indigo-600 lang-text" data-en="Free Study Material" data-hi="फ्री स्टडी मटीरियल">फ्री स्टडी मटीरियल</a>  
+                <a href="https://studentsdairy1997.blogspot.com" target="_blank" class="hidden lg:inline text-xs sm:text-sm font-medium text-pink-600 dark:text-pink-400 hover:underline lang-text font-bold" data-en="Student Dairy" data-hi="छात्र डायरी">छात्र डायरी</a>  
+                <a href="#fee-calculator" class="hidden lg:inline text-xs sm:text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-indigo-600 lang-text" data-en="Fee Structure" data-hi="फीस दरें">फीस दरें</a>  
+                  
+                <!-- Dark Mode Toggle -->  
+                <button onclick="toggleDarkMode()" class="p-1.5 sm:p-2 rounded-lg bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-yellow-400 focus:outline-none shadow-sm hover:scale-105 transition transform shrink-0" title="Toggle Theme">  
+                    <i id="theme-toggle-icon" class="fa-solid fa-moon text-xs sm:text-base"></i>  
+                </button>  
+  
+                <!-- Compact Language Selector -->  
+                <div class="relative inline-block shrink-0">  
+                    <select id="lang-selector" onchange="changeLanguage(this.value)" class="bg-indigo-50 dark:bg-slate-700 border border-indigo-200 dark:border-slate-600 text-indigo-700 dark:text-indigo-300 px-1.5 py-1 sm:px-2 sm:py-1.5 rounded-md text-[11px] sm:text-xs font-bold focus:outline-none cursor-pointer shadow-sm">  
+                        <option value="hi">🇮🇳 HI</option>  
+                        <option value="en">🇬🇧 EN</option>  
+                    </select>  
+                </div>  
+            </div>  
+        </div>  
+    </header>  
+  
+    <!-- Hero Section -->  
+    <section class="relative bg-slate-900 text-white py-12 px-4 text-center overflow-hidden w-full">  
+        <div class="absolute inset-0 bg-gradient-to-b from-indigo-950/80 to-indigo-900/90 z-10"></div>  
+        <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-indigo-900 via-slate-900 to-black opacity-90 z-0"></div>  
+          
+        <div class="relative z-20 max-w-4xl mx-auto w-full">  
+            <span class="bg-indigo-600/80 border border-indigo-400 text-yellow-300 text-[10px] sm:text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wider mb-4 inline-block shadow lang-text"   
+                  data-en="Rajasthan's No.1 Tuition Platform"   
+                  data-hi="राजस्थान का नं. 1 ट्यूशन प्लेटफॉर्म">राजस्थान का नं. 1 ट्यूशन प्लेटफॉर्म</span>  
+              
+            <h1 class="text-2xl sm:text-4xl md:text-5xl font-extrabold mb-4 leading-tight break-words">  
+                <span class="lang-text" data-en="Best" data-hi="सर्वश्रेष्ठ">Best</span> <span class="text-orange-500 lang-text" data-en="Home Tuition" data-hi="होम ट्यूशन">Home Tuition</span> <span class="lang-text" data-en="in" data-hi="में">in</span> <span class="text-sky-400 block sm:inline mt-1 sm:mt-0">Jaipur, Ajmer & Udaipur</span>  
+            </h1>  
+              
+            <p class="text-xs sm:text-base text-slate-200 mb-6 max-w-2xl mx-auto leading-relaxed lang-text"   
+               data-en="JOIN SMART HOME TUITION FOR TAILORED LEARNING EXPERIENCES. Book expert home tutors for Nursery to Class 12 (All Subjects) with flexible timings."   
+               data-hi="JOIN SMART HOME TUITION FOR TAILORED LEARNING EXPERIENCES. Nursery से Class 12 तक (सभी विषय) के बच्चों के लिए जयपुर, अजमेर और उदयपुर में Flexible Timing पर Home Tutors बुक करें।">  
+                JOIN SMART HOME TUITION FOR TAILORED LEARNING EXPERIENCES. Nursery से Class 12 तक (सभी विषय) के बच्चों के लिए जयपुर, अजमेर और उदयपुर में Flexible Timing पर Home Tutors बुक करें।  
+            </p>  
+              
+            <div class="flex flex-col sm:flex-row justify-center gap-3 max-w-md mx-auto">  
+                <a href="#forms-section" onclick="switchTab('parent')" class="bg-yellow-400 hover:bg-yellow-500 text-indigo-950 font-bold px-6 py-3 rounded-xl shadow-xl transition transform hover:-translate-y-0.5 text-sm lang-text" data-en="Enroll Now" data-hi="अभी जुड़ें">Enroll Now</a>  
+                <a href="#free-study-material" class="bg-sky-500 hover:bg-sky-600 text-white font-bold px-6 py-3 rounded-xl shadow-xl transition text-sm lang-text" data-en="Free Study Material" data-hi="फ्री स्टडी मटीरियल">Free Study Material</a>  
+            </div>  
+        </div>  
+    </section>  
+  
+    <!-- Main Content & Forms Section -->  
+    <main id="forms-section" class="max-w-4xl mx-auto px-3 sm:px-4 py-8 sm:py-10 w-full">  
+        <div class="bg-white dark:bg-slate-800 rounded-2xl sm:rounded-3xl shadow-xl overflow-hidden border border-slate-100 dark:border-slate-700 p-4 sm:p-8 transition-colors duration-200 w-full">  
+            <h2 class="text-xl sm:text-3xl font-bold text-center text-indigo-900 dark:text-indigo-400 mb-1.5 lang-text" data-en="Submit Your Requirement" data-hi="अपनी आवश्यकता दर्ज करें">अपनी आवश्यकता दर्ज करें</h2>  
+            <p class="text-center text-slate-500 dark:text-slate-400 text-xs sm:text-sm mb-6 lang-text" data-en="Fill out the form below to book a home tutor, register as a teacher, or partner as an institute." data-hi="Home Tutor बुक करने, Teacher के रूप में जुड़ने या Institute पार्टनरशिप के लिए फॉर्म भरें।">Fill out the form below to book a home tutor, register as a teacher, or partner as an institute.</p>  
+  
+            <!-- Tabs Navigation -->  
+            <div class="flex border-b border-slate-200 dark:border-slate-700 mb-6 text-center w-full">  
+                <button type="button" onclick="switchTab('parent')" id="tab-parent" class="tab-btn flex-1 py-2.5 px-1 font-bold text-indigo-600 dark:text-indigo-400 border-b-2 sm:border-b-4 border-indigo-600 dark:border-indigo-400 focus:outline-none transition cursor-pointer text-xs sm:text-sm lang-text" data-en="Parent / Student" data-hi="अभिभावक / छात्र">Parent / Student</button>  
+                <button type="button" onclick="switchTab('teacher')" id="tab-teacher" class="tab-btn flex-1 py-2.5 px-1 font-bold text-slate-400 border-b-2 sm:border-b-4 border-transparent focus:outline-none transition cursor-pointer text-xs sm:text-sm lang-text" data-en="Tutor Reg." data-hi="शिक्षक पंजीकरण">Tutor Reg.</button>  
+                <button type="button" onclick="switchTab('institute')" id="tab-institute" class="tab-btn flex-1 py-2.5 px-1 font-bold text-slate-400 border-b-2 sm:border-b-4 border-transparent focus:outline-none transition cursor-pointer text-xs sm:text-sm lang-text" data-en="Institutes" data-hi="संस्थान / स्कूल">Institutes</button>  
+            </div>  
+  
+            <!-- Parent Form Content -->  
+            <div id="form-parent" class="space-y-4 form-container w-full">  
+                <div>  
+                    <label class="block text-xs sm:text-sm font-medium text-slate-700 dark:text-slate-300 mb-1 lang-text" data-en="Parent Name *" data-hi="अभिभावक का नाम *">Parent Name *</label>  
+                    <input type="text" id="p-name" placeholder="Enter full name" class="w-full px-3.5 py-2.5 text-xs sm:text-sm border dark:border-slate-600 rounded-xl focus:ring-2 focus:ring-indigo-500 outline-none bg-white dark:bg-slate-700 text-slate-800 dark:text-slate-100">  
+                </div>  
+                <div>  
+                    <label class="block text-xs sm:text-sm font-medium text-slate-700 dark:text-slate-300 mb-1 lang-text" data-en="Mobile / WhatsApp Number *" data-hi="मोबाइल / व्हाट्सएप नंबर *">Mobile / WhatsApp Number *</label>  
+                    <input type="tel" id="p-mobile" placeholder="Enter 10 digit number" class="w-full px-3.5 py-2.5 text-xs sm:text-sm border dark:border-slate-600 rounded-xl focus:ring-2 focus:ring-indigo-500 outline-none bg-white dark:bg-slate-700 text-slate-800 dark:text-slate-100">  
+                </div>  
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">  
+                    <div>  
+                        <label class="block text-xs sm:text-sm font-medium text-slate-700 dark:text-slate-300 mb-1 lang-text" data-en="Select Class (Nursery to 12th) *" data-hi="कक्षा चुनें (Nursery से 12वीं तक) *">Select Class (Nursery to 12th) *</label>  
+                        <select id="p-class" onchange="updateDynamicSubjects(this.value)" class="w-full px-3.5 py-2.5 text-xs sm:text-sm border dark:border-slate-600 rounded-xl focus:ring-2 focus:ring-indigo-500 outline-none bg-white dark:bg-slate-700 text-slate-800 dark:text-slate-100">  
+                            <option value="Nursery / KG / Prep">Nursery / KG / Prep</option>  
+                            <option value="Class 1 to 5">Class 1 to 5 (Primary)</option>  
+                            <option value="Class 6 to 8">Class 6 to 8 (Middle School)</option>  
+                            <option value="Class 9 & 10">Class 9 & 10 (Secondary Board)</option>  
+                            <option value="Class 11 & 12 Science">Class 11 & 12 (Science Stream)</option>  
+                            <option value="Class 11 & 12 Commerce">Class 11 & 12 (Commerce Stream)</option>  
+                            <option value="Class 11 & 12 Arts">Class 11 & 12 (Arts Stream)</option>  
+                            <option value="Basic Computer Training">Basic Home Computer Training</option>  
+                        </select>  
+                    </div>  
+                    <div>  
+                        <label class="block text-xs sm:text-sm font-medium text-slate-700 dark:text-slate-300 mb-1 lang-text" data-en="Preferred Flexible Timing *" data-hi="पसंदीदा समय (Flexible Timing) *">Preferred Flexible Timing *</label>  
+                        <input type="text" id="p-time" placeholder="e.g. 4 PM to 6 PM" class="w-full px-3.5 py-2.5 text-xs sm:text-sm border dark:border-slate-600 rounded-xl focus:ring-2 focus:ring-indigo-500 outline-none bg-white dark:bg-slate-700 text-slate-800 dark:text-slate-100">  
+                    </div>  
+                </div>  
+  
+                <!-- Dynamic Subject Selection Dropdown -->  
+                <div>  
+                    <label class="block text-xs sm:text-sm font-medium text-slate-700 dark:text-slate-300 mb-1 lang-text" data-en="Select Subject *" data-hi="विषय चुनें (Subject) *">Select Subject *</label>  
+                    <select id="p-subject" class="w-full px-3.5 py-2.5 text-xs sm:text-sm border dark:border-slate-600 rounded-xl focus:ring-2 focus:ring-indigo-500 outline-none bg-white dark:bg-slate-700 text-slate-800 dark:text-slate-100">  
+                        <!-- Populated Dynamically via JavaScript -->  
+                    </select>  
+                </div>  
+  
+                <!-- City Selection Dropdown -->  
+                <div>  
+                    <label class="block text-xs sm:text-sm font-medium text-slate-700 dark:text-slate-300 mb-1 lang-text" data-en="Select City *" data-hi="शहर चुनें *">Select City *</label>  
+                    <select id="p-city" class="w-full px-3.5 py-2.5 text-xs sm:text-sm border dark:border-slate-600 rounded-xl focus:ring-2 focus:ring-indigo-500 outline-none bg-white dark:bg-slate-700 text-slate-800 dark:text-slate-100">  
+                        <option value="Jaipur">Jaipur (जयपुर)</option>  
+                        <option value="Ajmer">Ajmer (अजमेर)</option>  
+                        <option value="Udaipur">Udaipur (उदयपुर)</option>  
+                        <option value="Other">Other City / Manual</option>  
+                    </select>  
+                </div>  
+  
+                <!-- Manual Address Field -->  
+                <div>  
+                    <label class="block text-xs sm:text-sm font-medium text-slate-700 dark:text-slate-300 mb-1 lang-text" data-en="Full Address (Colony / House No. / Landmark) *" data-hi="पूरा पता (कॉलोनी / मकान नंबर / लैंडमार्क) *">Full Address (Colony / House No. / Landmark) *</label>  
+                    <input type="text" id="p-manual-address" placeholder="e.g. Plot No. 12, Near Bus Stand, Colony Name" class="w-full px-3.5 py-2.5 text-xs sm:text-sm border dark:border-slate-600 rounded-xl focus:ring-2 focus:ring-indigo-500 outline-none bg-white dark:bg-slate-700 text-slate-800 dark:text-slate-100">  
+                </div>  
+                  
+                <div class="flex items-center space-x-2 pt-1">  
+                    <input type="checkbox" id="p-demo" class="w-4 h-4 text-indigo-600 rounded focus:ring-indigo-500 cursor-pointer">  
+                    <label for="p-demo" class="text-xs sm:text-sm font-medium text-slate-700 dark:text-slate-300 cursor-pointer lang-text" data-en="Do you want a Free Demo Class first?" data-hi="क्या आपको पहले Free Demo Class चाहिए?">क्या आपको पहले Free Demo Class चाहिए?</label>  
+                </div>  
+  
+                <button type="button" onclick="sendParentWhatsApp()" class="w-full bg-green-600 hover:bg-green-700 text-white font-bold py-3 rounded-xl transition flex items-center justify-center space-x-2 shadow-lg cursor-pointer text-sm">  
+                    <i class="fa-brands fa-whatsapp text-lg"></i>  
+                    <span class="lang-text" data-en="Send Details on WhatsApp" data-hi="WhatsApp पर जानकारी भेजें">Send Details on WhatsApp</span>  
+                </button>  
+            </div>  
+  
+            <!-- Teacher Form Content -->  
+            <div id="form-teacher" class="space-y-4 form-container hidden w-full">  
+                <div>  
+                    <label class="block text-xs sm:text-sm font-medium text-slate-700 dark:text-slate-300 mb-1 lang-text" data-en="Teacher Name *" data-hi="शिक्षक का नाम *">Teacher Name *</label>  
+                    <input type="text" id="t-name" placeholder="Enter full name" class="w-full px-3.5 py-2.5 text-xs sm:text-sm border dark:border-slate-600 rounded-xl focus:ring-2 focus:ring-indigo-500 outline-none bg-white dark:bg-slate-700 text-slate-800 dark:text-slate-100">  
+                </div>  
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">  
+                    <div>  
+                        <label class="block text-xs sm:text-sm font-medium text-slate-700 dark:text-slate-300 mb-1 lang-text" data-en="Qualification *" data-hi="योग्यता (Qualification) *">Qualification *</label>  
+                        <input type="text" id="t-qualification" placeholder="e.g. B.Sc, B.Ed, M.A, M.Sc" class="w-full px-3.5 py-2.5 text-xs sm:text-sm border dark:border-slate-600 rounded-xl focus:ring-2 focus:ring-indigo-500 outline-none bg-white dark:bg-slate-700 text-slate-800 dark:text-slate-100">  
+                    </div>  
+                    <div>  
+                        <label class="block text-xs sm:text-sm font-medium text-slate-700 dark:text-slate-300 mb-1 lang-text" data-en="Experience *" data-hi="अनुभव *">Experience *</label>  
+                        <input type="text" id="t-experience" placeholder="e.g. 2 Years" class="w-full px-3.5 py-2.5 text-xs sm:text-sm border dark:border-slate-600 rounded-xl focus:ring-2 focus:ring-indigo-500 outline-none bg-white dark:bg-slate-700 text-slate-800 dark:text-slate-100">  
+                    </div>  
+                </div>  
+                <div>  
+                    <label class="block text-xs sm:text-sm font-medium text-slate-700 dark:text-slate-300 mb-1 lang-text" data-en="Classes & Subjects you can teach *" data-hi="कक्षाएं और विषय जो आप पढ़ा सकते हैं *">Classes & Subjects you can teach *</label>  
+                    <input type="text" id="t-classes" placeholder="e.g. Nursery to 12th Math, Science & Computer" class="w-full px-3.5 py-2.5 text-xs sm:text-sm border dark:border-slate-600 rounded-xl focus:ring-2 focus:ring-indigo-500 outline-none bg-white dark:bg-slate-700 text-slate-800 dark:text-slate-100">  
+                </div>  
+                <div>  
+                    <label class="block text-xs sm:text-sm font-medium text-slate-700 dark:text-slate-300 mb-1 lang-text" data-en="Full Address / Preferred Area *" data-hi="पूरा पता / पसंदीदा क्षेत्र *">Full Address / Preferred Area *</label>  
+                    <input type="text" id="t-location" placeholder="e.g. Vaishali Nagar, Jaipur" class="w-full px-3.5 py-2.5 text-xs sm:text-sm border dark:border-slate-600 rounded-xl focus:ring-2 focus:ring-indigo-500 outline-none bg-white dark:bg-slate-700 text-slate-800 dark:text-slate-100">  
+                </div>  
+                <button type="button" onclick="sendTeacherWhatsApp()" class="w-full bg-green-600 hover:bg-green-700 text-white font-bold py-3 rounded-xl transition flex items-center justify-center space-x-2 shadow-lg cursor-pointer text-sm">  
+                    <i class="fa-brands fa-whatsapp text-lg"></i>  
+                    <span class="lang-text" data-en="Send Registration on WhatsApp" data-hi="WhatsApp पर रजिस्ट्रेशन भेजें">Send Registration on WhatsApp</span>  
+                </button>  
+            </div>  
+  
+            <!-- Institute Form Content -->  
+            <div id="form-institute" class="space-y-4 form-container hidden w-full">  
+                <div>  
+                    <label class="block text-xs sm:text-sm font-medium text-slate-700 dark:text-slate-300 mb-1 lang-text" data-en="Institute / School Name *" data-hi="संस्थान / स्कूल का नाम *">Institute / School Name *</label>  
+                    <input type="text" id="i-name" placeholder="Enter school or coaching name" class="w-full px-3.5 py-2.5 text-xs sm:text-sm border dark:border-slate-600 rounded-xl focus:ring-2 focus:ring-indigo-500 outline-none bg-white dark:bg-slate-700 text-slate-800 dark:text-slate-100">  
+                </div>  
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">  
+                    <div>  
+                        <label class="block text-xs sm:text-sm font-medium text-slate-700 dark:text-slate-300 mb-1 lang-text" data-en="Contact Person Name *" data-hi="संयोजक / संपर्क व्यक्ति का नाम *">Contact Person Name *</label>  
+                        <input type="text" id="i-person" placeholder="Enter coordinator name" class="w-full px-3.5 py-2.5 text-xs sm:text-sm border dark:border-slate-600 rounded-xl focus:ring-2 focus:ring-indigo-500 outline-none bg-white dark:bg-slate-700 text-slate-800 dark:text-slate-100">  
+                    </div>  
+                    <div>  
+                        <label class="block text-xs sm:text-sm font-medium text-slate-700 dark:text-slate-300 mb-1 lang-text" data-en="Requirement Type *" data-hi="आवश्यकता का प्रकार *">Requirement Type *</label>  
+                        <select id="i-type" class="w-full px-3.5 py-2.5 text-xs sm:text-sm border dark:border-slate-600 rounded-xl focus:ring-2 focus:ring-indigo-500 outline-none bg-white dark:bg-slate-700 text-slate-800 dark:text-slate-100">  
+                            <option value="Bulk Teacher Hiring (बल्क टीचर हायरिंग)">Bulk Teacher Hiring (बल्क टीचर हायरिंग)</option>  
+                            <option value="School / Coaching Partnership (पार्टनरशिप)">School / Coaching Partnership (पार्टनरशिप)</option>  
+                            <option value="Guest Faculty (गेस्ट फैकल्टी)">Guest Faculty (गेस्ट फैकल्टी)</option>  
+                        </select>  
+                    </div>  
+                </div>  
+                <div>  
+                    <label class="block text-xs sm:text-sm font-medium text-slate-700 dark:text-slate-300 mb-1 lang-text" data-en="Full Address / Location *" data-hi="संस्थान का पूरा पता *">Full Address / Location *</label>  
+                    <input type="text" id="i-location" placeholder="e.g. Gopalpura Bypass, Jaipur" class="w-full px-3.5 py-2.5 text-xs sm:text-sm border dark:border-slate-600 rounded-xl focus:ring-2 focus:ring-indigo-500 outline-none bg-white dark:bg-slate-700 text-slate-800 dark:text-slate-100">  
+                </div>  
+                <div>  
+                    <label class="block text-xs sm:text-sm font-medium text-slate-700 dark:text-slate-300 mb-1 lang-text" data-en="Requirement Details / Message *" data-hi="आवश्यकता का विवरण / संदेश *">Requirement Details / Message *</label>  
+                    <textarea id="i-msg" rows="3" placeholder="Write requirements (e.g. Need 2 Math teachers for Class 10)" class="w-full px-3.5 py-2.5 text-xs sm:text-sm border dark:border-slate-600 rounded-xl focus:ring-2 focus:ring-indigo-500 outline-none bg-white dark:bg-slate-700 text-slate-800 dark:text-slate-100"></textarea>  
+                </div>  
+                <button type="button" onclick="sendInstituteWhatsApp()" class="w-full bg-green-600 hover:bg-green-700 text-white font-bold py-3 rounded-xl transition flex items-center justify-center space-x-2 shadow-lg cursor-pointer text-sm">  
+                    <i class="fa-brands fa-whatsapp text-lg"></i>  
+                    <span class="lang-text" data-en="Send Institute Inquiry on WhatsApp" data-hi="WhatsApp पर संस्थान पूछताछ भेजें">Send Institute Inquiry on WhatsApp</span>  
+                </button>  
+            </div>  
+        </div>  
+    </main>  
+  
+    <!-- Basic Home Computer Training Section -->  
+    <section id="computer-training" class="py-6 px-3 sm:px-4 max-w-4xl mx-auto w-full">  
+        <div class="bg-gradient-to-r from-indigo-900 via-slate-900 to-indigo-950 rounded-2xl sm:rounded-3xl p-5 sm:p-8 text-white shadow-xl relative overflow-hidden border border-indigo-500/30 w-full">  
+            <div class="text-center max-w-2xl mx-auto">  
+                <span class="bg-sky-500/20 border border-sky-400/50 text-sky-300 text-[10px] sm:text-[11px] font-bold px-3 py-1 rounded-full uppercase tracking-wider mb-2 inline-block lang-text" data-en="SPECIAL HOME TRAINING MODULE" data-hi="स्पेशल होम ट्रेनिंग मॉड्यूल">SPECIAL HOME TRAINING MODULE</span>  
+                <h2 class="text-xl sm:text-3xl font-extrabold text-yellow-400 mb-2 flex items-center justify-center gap-2 lang-text" data-en="Basic Home Computer Training Classes" data-hi="बेसिक होम कंप्यूटर ट्रेनिंग क्लासेज">  
+                    <i class="fa-solid fa-desktop text-base sm:text-xl"></i> Basic Home Computer Training Classes  
+                </h2>  
+                <p class="text-slate-200 text-xs sm:text-sm mb-5 leading-relaxed lang-text" data-en="Learn basic computer knowledge, MS Office, internet and typing right at your home. Personal computer trainer available for kids to all age students." data-hi="अब अपने घर पर ही सीखें बेसिक कंप्यूटर ज्ञान, MS Office, इंटरनेट और टाइपिंग। छोटे बच्चों से लेकर सभी उम्र के विद्यार्थियों के लिए व्यक्तिगत कंप्यूटर ट्रेनर उपलब्ध।">  
+                    अब अपने घर पर ही सीखें बेसिक कंप्यूटर ज्ञान, MS Office, इंटरनेट और टाइपिंग। छोटे बच्चों से लेकर सभी उम्र के विद्यार्थियों के लिए व्यक्तिगत कंप्यूटर ट्रेनर उपलब्ध।  
+                </p>  
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 text-center max-w-lg mx-auto mb-5">  
+                    <div class="bg-white/10 backdrop-blur-md px-3 py-3 rounded-xl border border-white/15 flex flex-col items-center justify-center space-y-1 shadow">  
+                        <i class="fa-solid fa-circle-check text-green-400 text-sm"></i>  
+                        <span class="text-[11px] sm:text-xs font-semibold text-slate-100 lang-text" data-en="Basic Computer Training" data-hi="बेसिक कंप्यूटर ट्रेनिंग">Basic Computer Training</span>  
+                    </div>  
+                    <div class="bg-white/10 backdrop-blur-md px-3 py-3 rounded-xl border border-white/15 flex flex-col items-center justify-center space-y-1 shadow">  
+                        <i class="fa-solid fa-circle-check text-green-400 text-sm"></i>  
+                        <span class="text-[11px] sm:text-xs font-semibold text-slate-100 lang-text" data-en="MS Office (Word, Excel, Tally)" data-hi="MS Office (वर्ड, एक्सेल, टैली)">MS Office (Word, Excel, Tally)</span>  
+                    </div>  
+                    <div class="bg-white/10 backdrop-blur-md px-3 py-3 rounded-xl border border-white/15 flex flex-col items-center justify-center space-y-1 shadow">  
+                        <i class="fa-solid fa-circle-check text-green-400 text-sm"></i>  
+                        <span class="text-[11px] sm:text-xs font-semibold text-slate-100 lang-text" data-en="Internet & Hindi/English Typing" data-hi="इंटरनेट और हिंदी/अंग्रेजी टाइपिंग">Internet & Hindi/English Typing</span>  
+                    </div>  
+                    <div class="bg-white/10 backdrop-blur-md px-3 py-3 rounded-xl border border-white/15 flex flex-col items-center justify-center space-y-1 shadow">  
+                        <i class="fa-solid fa-circle-check text-green-400 text-sm"></i>  
+                        <span class="text-[11px] sm:text-xs font-semibold text-slate-100 lang-text" data-en="Basic Coding for Kids" data-hi="बच्चों के लिए बेसिक कोडिंग">Basic Coding for Kids</span>  
+                    </div>  
+                </div>  
+                <a href="#forms-section" onclick="selectComputerTraining()" class="inline-block bg-yellow-400 hover:bg-yellow-500 text-indigo-950 font-bold px-5 py-2.5 rounded-xl text-xs sm:text-sm shadow-lg transition transform hover:scale-105 lang-text" data-en="Book Computer Trainer At Home" data-hi="घर पर कंप्यूटर ट्रेनर बुक करें">Book Computer Trainer At Home</a>  
+            </div>  
+        </div>  
+    </section>  
+  
+    <!-- Free Study Material & Weekly Test Section -->  
+    <section id="free-study-material" class="py-8 px-3 sm:px-4 max-w-6xl mx-auto w-full">  
+        <div class="text-center mb-6">  
+            <span class="bg-indigo-100 dark:bg-indigo-900/50 text-indigo-600 dark:text-indigo-400 text-[11px] font-bold px-3 py-1 rounded-full uppercase tracking-wider lang-text" data-en="Free Student Corner" data-hi="फ्री स्टूडेंट कॉर्नर">Free Student Corner</span>  
+            <h2 class="text-xl sm:text-3xl font-extrabold text-indigo-900 dark:text-indigo-300 mt-2 lang-text" data-en="Free Study Material & Online Test" data-hi="फ्री स्टडी मटीरियल और ऑनलाइन टेस्ट">फ्री स्टडी मटीरियल और ऑनलाइन टेस्ट</h2>  
+            <p class="text-slate-500 dark:text-slate-400 text-xs sm:text-sm mt-1 lang-text" data-en="Get model papers, notes, worksheets and live weekly tests for Class 1 to 12" data-hi="कक्षा 1 से 12 के लिए मॉडल पेपर, नोट्स, वर्कशीट और लाइव वीकली टेस्ट प्राप्त करें">कक्षा 1 से 12 के लिए मॉडल पेपर, नोट्स, वर्कशीट और लाइव वीकली टेस्ट प्राप्त करें</p>  
+        </div>  
+  
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 w-full">  
+            <!-- Weekly Test Card -->  
+            <div class="bg-white dark:bg-slate-800 rounded-2xl p-5 shadow-lg border border-indigo-100 dark:border-slate-700 text-center flex flex-col justify-between hover:scale-102 transition transform">  
+                <div>  
+                    <div class="w-12 h-12 bg-red-100 text-red-600 rounded-2xl flex items-center justify-center mx-auto mb-3 text-xl shadow-inner">  
+                        <i class="fa-solid fa-square-poll-vertical"></i>  
+                    </div>  
+                    <h3 class="text-base font-bold text-slate-900 dark:text-slate-100 mb-1.5 lang-text" data-en="Weekly Live Test & Rank" data-hi="वीकली लाइव टेस्ट और रैंक">Weekly Live Test & Rank</h3>  
+                    <p class="text-slate-600 dark:text-slate-400 text-xs mb-4 lang-text" data-en="Topic-wise & Full Tests with instant score and local Leaderboard rank." data-hi="तुरंत स्कोर और लोकल लीडरबोर्ड रैंक के साथ टॉपिक-वाइज और फुल टेस्ट।">Topic-wise & Full Tests with instant score and local Leaderboard rank.</p>  
+                </div>  
+                <button onclick="openResourceAccess('Weekly Test & Rank')" class="w-full bg-red-600 hover:bg-red-700 text-white font-bold py-2 rounded-xl text-xs shadow cursor-pointer lang-text" data-en="Start Test & Rank" data-hi="टेस्ट शुरू करें और रैंक देखें">Start Test & Rank</button>  
+            </div>  
+  
+            <!-- Model Papers Card -->  
+            <div class="bg-white dark:bg-slate-800 rounded-2xl p-5 shadow-lg border border-indigo-100 dark:border-slate-700 text-center flex flex-col justify-between hover:scale-102 transition transform">  
+                <div>  
+                    <div class="w-12 h-12 bg-blue-100 text-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-3 text-xl shadow-inner">  
+                        <i class="fa-solid fa-file-pdf"></i>  
+                    </div>  
+                    <h3 class="text-base font-bold text-slate-900 dark:text-slate-100 mb-1.5 lang-text" data-en="Model & Sample Papers" data-hi="मॉडल और सैंपल पेपर">Model & Sample Papers</h3>  
+                    <p class="text-slate-600 dark:text-slate-400 text-xs mb-4 lang-text" data-en="CBSE & RBSE Class 8, 10 & 12 solved model papers and PYQs." data-hi="CBSE और RBSE कक्षा 8, 10 और 12 के हल किए गए मॉडल पेपर और पिछले साल के प्रश्न।">CBSE & RBSE Class 8, 10 & 12 solved model papers and PYQs.</p>  
+                </div>  
+                <button onclick="openResourceAccess('Model & Sample Papers')" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 rounded-xl text-xs shadow cursor-pointer lang-text" data-en="Download Model Papers" data-hi="मॉडल पेपर डाउनलोड करें">Download Model Papers</button>  
+            </div>  
+  
+            <!-- Chapter Revision Notes Card -->  
+            <div class="bg-white dark:bg-slate-800 rounded-2xl p-5 shadow-lg border border-indigo-100 dark:border-slate-700 text-center flex flex-col justify-between hover:scale-102 transition transform">  
+                <div>  
+                    <div class="w-12 h-12 bg-green-100 text-green-600 rounded-2xl flex items-center justify-center mx-auto mb-3 text-xl shadow-inner">  
+                        <i class="fa-solid fa-book-bookmark"></i>  
+                    </div>  
+                    <h3 class="text-base font-bold text-slate-900 dark:text-slate-100 mb-1.5 lang-text" data-en="Chapter Revision Notes" data-hi="चैप्टर रिवीज़न नोट्स">Chapter Revision Notes</h3>  
+                    <p class="text-slate-600 dark:text-slate-400 text-xs mb-4 lang-text" data-en="Core concepts, definitions, and quick revision formula sheets for all books." data-hi="सभी किताबों के लिए मुख्य अवधारणाएं, परिभाषाएं और त्वरित रिवीज़न फॉर्मूला शीट।">Core concepts, definitions, and quick revision formula sheets for all books.</p>  
+                </div>  
+                <button onclick="openResourceAccess('Chapter Revision Notes')" class="w-full bg-green-600 hover:bg-green-700 text-white font-bold py-2 rounded-xl text-xs shadow cursor-pointer lang-text" data-en="Access Notes" data-hi="नोट्स प्राप्त करें">Access Notes</button>  
+            </div>  
+  
+            <!-- Practice Worksheets Card -->  
+            <div class="bg-white dark:bg-slate-800 rounded-2xl p-5 shadow-lg border border-indigo-100 dark:border-slate-700 text-center flex flex-col justify-between hover:scale-102 transition transform">  
+                <div>  
+                    <div class="w-12 h-12 bg-amber-100 text-amber-600 rounded-2xl flex items-center justify-center mx-auto mb-3 text-xl shadow-inner">  
+                        <i class="fa-solid fa-pen-ruler"></i>  
+                    </div>  
+                    <h3 class="text-base font-bold text-slate-900 dark:text-slate-100 mb-1.5 lang-text" data-en="Practice Worksheets" data-hi="प्रैक्टिस वर्कशीट">Practice Worksheets</h3>  
+                    <p class="text-slate-600 dark:text-slate-400 text-xs mb-4 lang-text" data-en="Class-wise practice papers, MCQs, and assignments for extra preparation." data-hi="अतिरिक्त तैयारी के लिए कक्षा-वार प्रैक्टिस पेपर, MCQ और असाइनमेंट।">Class-wise practice papers, MCQs, and assignments for extra preparation.</p>  
+                </div>  
+                <button onclick="openResourceAccess('Practice Worksheets')" class="w-full bg-amber-600 hover:bg-amber-700 text-white font-bold py-2 rounded-xl text-xs shadow cursor-pointer lang-text" data-en="Get Worksheets" data-hi="वर्कशीट प्राप्त करें">Get Worksheets</button>  
+            </div>  
+        </div>  
+    </section>  
+  
+    <!-- Study Tips & Time Table & Student Dairy Section -->  
+    <section id="student-diary-section" class="py-6 px-3 sm:px-4 max-w-4xl mx-auto w-full">  
+        <div class="bg-gradient-to-r from-teal-800 via-emerald-900 to-teal-950 rounded-2xl sm:rounded-3xl p-5 sm:p-8 text-white shadow-xl relative overflow-hidden border border-teal-500/30 text-center">  
+            <span class="bg-teal-500/20 border border-teal-400/50 text-teal-300 text-[10px] sm:text-[11px] font-bold px-3 py-1 rounded-full uppercase tracking-wider mb-2 inline-block lang-text" data-en="STUDENT DAIRY & MASTER PLANNER" data-hi="स्टूडेंट डायरी एंड मास्टर प्लानर">STUDENT DAIRY & MASTER PLANNER</span>  
+            <h2 class="text-xl sm:text-3xl font-extrabold text-yellow-400 mb-2 flex items-center justify-center gap-2 lang-text" data-en="Student Dairy, Study Tips & Time Table" data-hi="छात्र डायरी, स्टडी टिप्स और टाइम टेबल">  
+                <i class="fa-solid fa-book-open"></i> Student Dairy, Study Tips & Time Table  
+            </h2>  
+            <p class="text-slate-200 text-xs sm:text-sm mb-5 max-w-2xl mx-auto leading-relaxed lang-text" data-en="Click below for daily motivational stories, culture, history, current topics, 10 master tips to get 90%+ marks and time table creation!" data-hi="दैनिक प्रेरक कहानियां, कल्चर, इतिहास, करेंट टॉपिक्स, 90%+ अंक लाने के 10 मास्टर टिप्स और टाइम टेबल बनाने के लिए नीचे क्लिक करें!">  
+                दैनिक प्रेरक कहानियां, कल्चर, इतिहास, करेंट टॉपिक्स, 90%+ अंक लाने के 10 मास्टर टिप्स और टाइम टेबल बनाने के लिए नीचे क्लिक करें!  
+            </p>  
+            <div class="flex flex-wrap justify-center gap-3">  
+                <button onclick="openStudyTipsModal()" class="bg-yellow-400 hover:bg-yellow-500 text-slate-950 font-bold px-4 py-2.5 rounded-xl text-xs sm:text-sm shadow-lg transition transform hover:scale-105 cursor-pointer lang-text" data-en="10 Master Study Tips" data-hi="10 मास्टर स्टडी टिप्स">  
+                    <i class="fa-solid fa-graduation-cap mr-1"></i> 10 Master Study Tips  
+                </button>  
+                <button onclick="openTimeTableModal()" class="bg-sky-500 hover:bg-sky-600 text-white font-bold px-4 py-2.5 rounded-xl text-xs sm:text-sm shadow-lg transition transform hover:scale-105 cursor-pointer lang-text" data-en="Custom Time Table Creator" data-hi="कस्टम टाइम टेबल क्रिएटर">  
+                    <i class="fa-solid fa-calendar-days mr-1"></i> Custom Time Table Creator  
+                </button>  
+                <!-- Blog Link Button -->  
+                <a href="https://studentsdairy1997.blogspot.com" target="_blank" class="bg-gradient-to-r from-pink-500 via-purple-600 to-yellow-500 hover:opacity-95 text-white font-bold px-4 py-2.5 rounded-xl text-xs sm:text-sm shadow-lg transition transform hover:scale-105 inline-flex items-center gap-1.5 animate-pulse lang-text" data-en="🔥 Visit Student Dairy Blog (Stories & Topics)" data-hi="🔥 छात्र डायरी ब्लॉग विजिट करें (कहानियां और टॉपिक्स)">  
+                    <i class="fa-solid fa-blog text-base"></i> 🔥 Visit Student Dairy Blog (Stories & Topics)  
+                </a>  
+            </div>  
+        </div>  
+    </section>  
+  
+    <!-- Fee Calculator Section -->  
+    <section id="fee-calculator" class="py-8 px-3 sm:px-4 max-w-3xl mx-auto w-full">  
+        <div class="bg-white dark:bg-slate-800 rounded-2xl sm:rounded-3xl shadow-xl border border-slate-100 dark:border-slate-700 p-5 sm:p-8 transition-colors duration-200 w-full">  
+            <div class="text-center mb-5">  
+                <h2 class="text-xl sm:text-2xl font-bold text-indigo-900 dark:text-indigo-400 lang-text" data-en="Hourly Fee Structure" data-hi="प्रति घंटा फीस संरचना">Hourly Fee Structure</h2>  
+                <p class="text-slate-500 dark:text-slate-400 text-xs sm:text-sm mt-1 lang-text" data-en="Clear and affordable hourly rates according to class level" data-hi="कक्षा स्तर के अनुसार स्पष्ट और किफायती प्रति घंटा दरें">कक्षा स्तर के अनुसार स्पष्ट और किफायती प्रति घंटा दरें</p>  
+            </div>  
+            <div class="space-y-4">  
+                <div>  
+                    <label class="block text-xs sm:text-sm font-medium text-slate-700 dark:text-slate-300 mb-1 lang-text" data-en="Select Class Level" data-hi="कक्षा स्तर चुनें">Select Class Level</label>  
+                    <select id="calc-class" onchange="updateHourlyFee()" class="w-full px-3.5 py-2.5 text-xs sm:text-sm border dark:border-slate-600 rounded-xl focus:ring-2 focus:ring-indigo-500 outline-none bg-white dark:bg-slate-700 text-slate-800 dark:text-slate-100">  
+                        <option value="₹ 150 - ₹ 200 / hr">Nursery to Class 5 (₹150 - ₹200 / hr)</option>  
+                        <option value="₹ 200 - ₹ 300 / hr">Class 6 to 8 (₹200 - ₹300 / hr)</option>  
+                        <option value="₹ 250 - ₹ 400 / hr">Class 9 & 10 (₹250 - ₹400 / hr)</option>  
+                        <option value="₹ 350 - ₹ 500 / hr" selected>Class 11 & 12 (₹350 - ₹500 / hr)</option>  
+                        <option value="₹ 250 - ₹ 350 / hr">Basic Computer Training (₹250 - ₹350 / hr)</option>  
+                    </select>  
+                </div>  
+                <div class="bg-indigo-50 dark:bg-slate-700 border border-indigo-100 dark:border-slate-600 rounded-2xl p-5 text-center mt-3">  
+                    <span class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 block mb-1 lang-text" data-en="Determined Hourly Fee Rate:" data-hi="निर्धारित प्रति घंटा फीस दर:">निर्धारित प्रति घंटा फीस दर:</span>  
+                    <span id="display-hourly-fee" class="text-xl sm:text-3xl font-extrabold text-indigo-700 dark:text-indigo-300">₹ 350 - ₹ 500 / hr</span>  
+                </div>  
+            </div>  
+        </div>  
+    </section>  
+  
+    <!-- Footer with Clean Social Media & Blog Links -->  
+    <footer class="bg-indigo-950 text-white py-8 px-4 mt-10 w-full">  
+        <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">  
+            <div>  
+                <span class="text-xl font-extrabold tracking-wide text-yellow-400 block mb-2">Smart Home Tuition</span>  
+                <p class="text-slate-300 text-xs sm:text-sm mb-4 leading-relaxed lang-text" data-en="Highest quality home tuition services in Jaipur, Ajmer and Udaipur. Dedicated to academic excellence from nursery to class 12." data-hi="जयपुर, अजमेर और उदयपुर में उच्चतम गुणवत्ता की होम ट्यूशन सेवाएं। नर्सरी से 12वीं कक्षा तक अकादमिक उत्कृष्टता के लिए समर्पित।">  
+                    जयपुर, अजमेर और उदयपुर में उच्चतम गुणवत्ता की होम ट्यूशन सेवाएं। नर्सरी से 12वीं कक्षा तक अकादमिक उत्कृष्टता के लिए समर्पित।  
+                </p>  
+                <div class="flex items-center space-x-3">  
+                    <a href="https://studentsdairy1997.blogspot.com" target="_blank" class="w-9 h-9 bg-orange-600 hover:bg-orange-700 text-white rounded-full flex items-center justify-center transition shadow transform hover:scale-105" title="Student Dairy Blog">  
+                        <i class="fa-solid fa-blog text-sm"></i>  
+                    </a>  
+                    <a href="https://facebook.com" target="_blank" class="w-9 h-9 bg-blue-600 hover:bg-blue-700 text-white rounded-full flex items-center justify-center transition shadow transform hover:scale-105" title="Facebook">  
+                        <i class="fa-brands fa-facebook-f text-sm"></i>  
+                    </a>  
+                    <a href="https://instagram.com" target="_blank" class="w-9 h-9 bg-gradient-to-tr from-yellow-500 via-pink-600 to-purple-600 hover:opacity-90 text-white rounded-full flex items-center justify-center transition shadow transform hover:scale-105" title="Instagram">  
+                        <i class="fa-brands fa-instagram text-sm"></i>  
+                    </a>  
+                    <a href="https://youtube.com" target="_blank" class="w-9 h-9 bg-red-600 hover:bg-red-700 text-white rounded-full flex items-center justify-center transition shadow transform hover:scale-105" title="YouTube">  
+                        <i class="fa-brands fa-youtube text-sm"></i>  
+                    </a>  
+                    <a href="https://linkedin.com" target="_blank" class="w-9 h-9 bg-blue-700 hover:bg-blue-800 text-white rounded-full flex items-center justify-center transition shadow transform hover:scale-105" title="LinkedIn">  
+                        <i class="fa-brands fa-linkedin-in text-sm"></i>  
+                    </a>  
+                </div>  
+            </div>  
+            <div>  
+                <h4 class="text-base font-bold text-yellow-400 mb-2 lang-text" data-en="Quick Links" data-hi="त्वरित लिंक्स">त्वरित लिंक्स</h4>  
+                <ul class="space-y-1.5 text-xs sm:text-sm text-slate-300">  
+                    <li><a href="#forms-section" class="hover:text-yellow-400 transition lang-text" data-en="Book Home Tutor" data-hi="होम ट्यूटर बुक करें">होम ट्यूटर बुक करें</a></li>  
+                    <li><a href="#computer-training" class="hover:text-yellow-400 transition lang-text" data-en="Basic Computer Training" data-hi="बेसिक कंप्यूटर ट्रेनिंग">बेसिक कंप्यूटर ट्रेनिंग</a></li>  
+                    <li><a href="#free-study-material" class="hover:text-yellow-400 transition lang-text" data-en="Free Study Material & Test" data-hi="फ्री स्टडी मटीरियल और टेस्ट">फ्री स्टडी मटीरियल और टेस्ट</a></li>  
+                    <li><a href="https://studentsdairy1997.blogspot.com" target="_blank" class="hover:text-yellow-400 transition lang-text" data-en="Student Dairy Blog" data-hi="छात्र डायरी ब्लॉग (Student Dairy)">छात्र डायरी ब्लॉग (Student Dairy)</a></li>  
+                </ul>  
+            </div>  
+            <div>  
+                <h4 class="text-base font-bold text-yellow-400 mb-2 lang-text" data-en="Contact Owner" data-hi="संपर्क स्वामी">संपर्क स्वामी</h4>  
+                <p class="text-xs sm:text-sm text-slate-300"><strong class="lang-text" data-en="Founder & CEO:" data-hi="संस्थापक और सीईओ:">संस्थापक और सीईओ:</strong> PRAKASH CHAND SAINI</p>  
+                <p class="text-xs sm:text-sm text-slate-300 mt-1"><strong class="lang-text" data-en="Email:" data-hi="ईमेल:">ईमेल:</strong> <a href="mailto:sainiprakashchand813@gmail.com" class="underline text-sky-400">sainiprakashchand813@gmail.com</a></p>  
+                <p class="text-xs sm:text-sm text-slate-300 mt-1"><strong class="lang-text" data-en="Phone:" data-hi="फोन:">फोन:</strong> +91 7665533892</p>  
+            </div>  
+        </div>  
+        <div class="text-center pt-4 border-t border-indigo-900 text-[11px] text-slate-400 lang-text" data-en="© 2026 Smart Home Tuition. All Rights Reserved. Created by PRAKASH CHAND SAINI." data-hi="© 2026 Smart Home Tuition. All Rights Reserved. Created by PRAKASH CHAND SAINI.">  
+            © 2026 Smart Home Tuition. All Rights Reserved. Created by PRAKASH CHAND SAINI.  
+        </div>  
+    </footer>  
+  
+    <!-- Fixed Floating WhatsApp & Call Buttons -->  
+    <div class="fixed bottom-5 right-4 z-50 flex flex-col space-y-2.5">  
+        <a href="tel:917665533892" class="w-12 h-12 sm:w-14 sm:h-14 bg-blue-600 hover:bg-blue-700 text-white rounded-full flex items-center justify-center shadow-2xl transition transform hover:scale-110" title="Call Us Now">  
+            <i class="fa-solid fa-phone text-xl sm:text-2xl"></i>  
+        </a>  
+        <a href="https://wa.me/917665533892?text=Hello%20Smart%20Home%20Tuition,%20I%20have%20an%20inquiry." target="_blank" class="w-12 h-12 sm:w-14 sm:h-14 bg-green-500 hover:bg-green-600 text-white rounded-full flex items-center justify-center shadow-2xl transition transform hover:scale-110" title="Chat on WhatsApp">  
+            <i class="fa-brands fa-whatsapp text-2xl sm:text-3xl"></i>  
+        </a>  
+    </div>  
+  
+    <!-- Registration Pop-up Modal for Free Study Material -->  
+    <div id="material-modal" class="fixed inset-0 bg-slate-900/80 backdrop-blur-sm z-[100] flex items-center justify-center p-3 hidden">  
+        <div class="bg-white dark:bg-slate-800 rounded-2xl max-w-md w-full p-5 sm:p-7 shadow-2xl relative border border-slate-100 dark:border-slate-700 max-h-[90vh] overflow-y-auto">  
+            <button onclick="closeResourceAccess()" class="absolute top-3 right-3 text-slate-400 hover:text-slate-600 dark:hover:text-white text-lg p-1 cursor-pointer">  
+                <i class="fa-solid fa-xmark"></i>  
+            </button>  
+            <div class="text-center mb-4">  
+                <div class="w-10 h-10 bg-indigo-100 text-indigo-600 rounded-full flex items-center justify-center mx-auto mb-2 text-lg">  
+                    <i class="fa-solid fa-lock-open"></i>  
+                </div>  
+                <h3 class="text-lg font-bold text-indigo-950 dark:text-indigo-300">Unlock Free Material & Test</h3>  
+                <p class="text-xs text-slate-500 dark:text-slate-400 mt-0.5">कृपया पूरा एक्सेस पाने के लिए विवरण भरें <span id="modal-resource-name" class="font-bold text-indigo-600 dark:text-indigo-400"></span></p>  
+            </div>  
+            <form onsubmit="handleResourceRegistration(event)" class="space-y-3">  
+                <div>  
+                    <label class="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">Student / Parent Name *</label>  
+                    <input type="text" id="m-name" required placeholder="Enter full name" class="w-full px-3 py-2 text-xs border dark:border-slate-600 rounded-xl focus:ring-2 focus:ring-indigo-500 outline-none bg-white dark:bg-slate-700 text-slate-800 dark:text-slate-100">  
+                </div>  
+                <div>  
+                    <label class="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">Mobile / WhatsApp Number *</label>  
+                    <input type="tel" id="m-mobile" required placeholder="Enter 10 digit mobile number" class="w-full px-3 py-2 text-xs border dark:border-slate-600 rounded-xl focus:ring-2 focus:ring-indigo-500 outline-none bg-white dark:bg-slate-700 text-slate-800 dark:text-slate-100">  
+                </div>  
+                <div>  
+                    <label class="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">Select Class *</label>  
+                    <select id="m-class" required class="w-full px-3 py-2 text-xs border dark:border-slate-600 rounded-xl focus:ring-2 focus:ring-indigo-500 outline-none bg-white dark:bg-slate-700 text-slate-800 dark:text-slate-100">  
+                        <option value="Class 1 to 5">Class 1 to 5</option>  
+                        <option value="Class 6">Class 6</option>  
+                        <option value="Class 7">Class 7</option>  
+                        <option value="Class 8">Class 8</option>  
+                        <option value="Class 9">Class 9</option>  
+                        <option value="Class 10">Class 10</option>  
+                        <option value="Class 11">Class 11</option>  
+                        <option value="Class 12">Class 12</option>  
+                    </select>  
+                </div>  
+                <div>  
+                    <label class="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">City *</label>  
+                    <select id="m-city" class="w-full px-3 py-2 text-xs border dark:border-slate-600 rounded-xl focus:ring-2 focus:ring-indigo-500 outline-none bg-white dark:bg-slate-700 text-slate-800 dark:text-slate-100">  
+                        <option value="Jaipur">Jaipur</option>  
+                        <option value="Ajmer">Ajmer</option>  
+                        <option value="Udaipur">Udaipur</option>  
+                        <option value="Other">Other City</option>  
+                    </select>  
+                </div>  
+                <div>  
+                    <label class="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">Full Address *</label>  
+                    <input type="text" id="m-manual-address" required placeholder="Colony / House No / Area Name" class="w-full px-3 py-2 text-xs border dark:border-slate-600 rounded-xl focus:ring-2 focus:ring-indigo-500 outline-none bg-white dark:bg-slate-700 text-slate-800 dark:text-slate-100">  
+                </div>  
+                <button type="submit" class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-2.5 rounded-xl transition text-xs shadow-lg mt-1 cursor-pointer">Unlock & Access Material</button>  
+            </form>  
+        </div>  
+    </div>  
+
+    <!-- Modal 1: 10 Master Study Tips -->  
+    <div id="study-tips-modal" class="fixed inset-0 bg-slate-900/80 backdrop-blur-sm z-[110] flex items-center justify-center p-3 hidden">  
+        <div class="bg-white dark:bg-slate-800 rounded-3xl max-w-2xl w-full p-6 shadow-2xl relative border border-slate-100 dark:border-slate-700 max-h-[90vh] overflow-y-auto text-left">  
+            <button onclick="closeStudyTipsModal()" class="absolute top-4 right-4 text-slate-400 hover:text-slate-600 dark:hover:text-white text-xl p-1 cursor-pointer">  
+                <i class="fa-solid fa-xmark"></i>  
+            </button>  
+            <div class="text-center mb-6">  
+                <div class="w-12 h-12 bg-teal-100 text-teal-600 rounded-2xl flex items-center justify-center mx-auto mb-2 text-xl shadow-inner">  
+                    <i class="fa-solid fa-graduation-cap"></i>  
+                </div>  
+                <h3 class="text-xl sm:text-2xl font-extrabold text-teal-900 dark:text-teal-300">10 Master Study Tips for 90%+ Marks</h3>  
+                <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">Smart Home Tuition Effective Study Guidelines</p>  
+            </div>  
+            <div class="space-y-4 text-xs sm:text-sm text-slate-700 dark:text-slate-300">  
+                <div class="p-3 bg-teal-50 dark:bg-slate-700/50 rounded-xl border border-teal-100 dark:border-slate-600">  
+                    <h4 class="font-bold text-teal-800 dark:text-teal-300 mb-1">1. Pomodoro Technique (25 मिनट पढ़ाई, 5 मिनट ब्रेक)</h4>  
+                    <p>लगातार घंटों पढ़ने के बजाय दिमाग को फ्रेश रखने के लिए 25 मिनट पढ़ें और 5 मिनट का छोटा ब्रेक लें। इससे एकाग्रता बढ़ती है।</p>  
+                </div>  
+                <div class="p-3 bg-teal-50 dark:bg-slate-700/50 rounded-xl border border-teal-100 dark:border-slate-600">  
+                    <h4 class="font-bold text-teal-800 dark:text-teal-300 mb-1">2. Active Recall & Self Testing (खुद से सवाल पूछना)</h4>  
+                    <p>किताब बंद करके याद करें कि आपने अभी क्या पढ़ा। बिना देखे लिखकर देखने से चीजें लंबे समय तक याद रहती हैं।</p>  
+                </div>  
+                <div class="p-3 bg-teal-50 dark:bg-slate-700/50 rounded-xl border border-teal-100 dark:border-slate-600">  
+                    <h4 class="font-bold text-teal-800 dark:text-teal-300 mb-1">3. Feynman Technique (दूसरों को समझाना)</h4>  
+                    <p>किसी भी कठिन टॉपिक को ऐसे समझें जैसे आप किसी छोटे बच्चे को पढ़ा रहे हैं। सरल भाषा में समझाने से हर कांसेप्ट क्लियर हो जाता है।</p>  
+                </div>  
+                <div class="p-3 bg-teal-50 dark:bg-slate-700/50 rounded-xl border border-teal-100 dark:border-slate-600">  
+                    <h4 class="font-bold text-teal-800 dark:text-teal-300 mb-1">4. NCERT Books Mastery</h4>  
+                    <p>बोर्ड परीक्षा (RBSE/CBSE) में 90%+ स्कोर के लिए NCERT की किताबें सबसे महत्वपूर्ण हैं। हर एक उदाहरण और अभ्यास प्रश्न को हल करें।</p>  
+                </div>  
+                <div class="p-3 bg-teal-50 dark:bg-slate-700/50 rounded-xl border border-teal-100 dark:border-slate-600">  
+                    <h4 class="font-bold text-teal-800 dark:text-teal-300 mb-1">5. Short Notes & Formula Sheets</h4>  
+                    <p>हर चैप्टर के अंत में अपने खुद के छोटे नोट्स और फॉर्मूला शीट बनाएं। परीक्षा के समय रिवीज़न करने के लिए यह बहुत मददगार होते हैं।</p>  
+                </div>  
+                <div class="p-3 bg-teal-50 dark:bg-slate-700/50 rounded-xl border border-teal-100 dark:border-slate-600">  
+                    <h4 class="font-bold text-teal-800 dark:text-teal-300 mb-1">6. Previous Years Question Papers (PYQs)</h4>  
+                    <p>पिछले 5 साल के बोर्ड पेपर जरूर हल करें। इससे परीक्षा के पैटर्न, मार्किंग स्कीम और बार-बार पूछे जाने वाले प्रश्नों का पता चलता है।</p>  
+                </div>  
+                <div class="p-3 bg-teal-50 dark:bg-slate-700/50 rounded-xl border border-teal-100 dark:border-slate-600">  
+                    <h4 class="font-bold text-teal-800 dark:text-teal-300 mb-1">7. Consistent Revision (नियमित पुनरावृत्ति)</h4>  
+                    <p>जो पढ़ा है उसे हफ्ते में एक बार रिवाइज जरूर करें। 'Spaced Repetition' मेथड से भूलने की आदत पूरी तरह खत्म हो जाती है।</p>  
+                </div>  
+                <div class="p-3 bg-teal-50 dark:bg-slate-700/50 rounded-xl border border-teal-100 dark:border-slate-600">  
+                    <h4 class="font-bold text-teal-800 dark:text-teal-300 mb-1">8. Proper Sleep & Healthy Diet</h4>  
+                    <p>रात में कम से कम 7-8 घंटे की गहरी नींद लें। स्वस्थ मस्तिष्क और शरीर के लिए पौष्टिक भोजन और पर्याप्त पानी पीना आवश्यक है।</p>  
+                </div>  
+                <div class="p-3 bg-teal-50 dark:bg-slate-700/50 rounded-xl border border-teal-100 dark:border-slate-600">  
+                    <h4 class="font-bold text-teal-800 dark:text-teal-300 mb-1">9. Eliminate Digital Distractions</h4>  
+                    <p>पढ़ाई के दौरान मोबाइल फोन को दूर रखें या 'Do Not Disturb' मोड पर डालें। सोशल मीडिया की नोटिफिकेशन पढ़ाई का सबसे बड़ा दुश्मन है।</p>  
+                </div>  
+                <div class="p-3 bg-teal-50 dark:bg-slate-700/50 rounded-xl border border-teal-100 dark:border-slate-600">  
+                    <h4 class="font-bold text-teal-800 dark:text-teal-300 mb-1">10. Hire Personal Home Tutors</h4>  
+                    <p>यदि किसी विषय में कठिनाई आ रही है, तो 'Smart Home Tuition' से अनुभवी व्यक्तिगत शिक्षक बुक करें जो आपके घर आकर व्यक्तिगत ध्यान दें।</p>  
+                </div>  
+            </div>  
+            <button onclick="closeStudyTipsModal()" class="w-full mt-6 bg-teal-700 hover:bg-teal-800 text-white font-bold py-2.5 rounded-xl transition text-xs shadow-lg cursor-pointer">Close Tips</button>  
+        </div>  
+    </div>  
+
+    <!-- Modal 2: Custom Time Table Creator with Manual Time Input per Subject -->  
+    <div id="timetable-modal" class="fixed inset-0 bg-slate-900/80 backdrop-blur-sm z-[110] flex items-center justify-center p-3 hidden">  
+        <div class="bg-white dark:bg-slate-800 rounded-3xl max-w-xl w-full p-6 shadow-2xl relative border border-slate-100 dark:border-slate-700 max-h-[90vh] overflow-y-auto text-left">  
+            <button onclick="closeTimeTableModal()" class="absolute top-4 right-4 text-slate-400 hover:text-slate-600 dark:hover:text-white text-xl p-1 cursor-pointer">  
+                <i class="fa-solid fa-xmark"></i>  
+            </button>  
+            <div class="text-center mb-5">  
+                <div class="w-12 h-12 bg-sky-100 text-sky-600 rounded-2xl flex items-center justify-center mx-auto mb-2 text-xl shadow-inner">  
+                    <i class="fa-solid fa-calendar-days"></i>  
+                </div>  
+                <h3 class="text-xl sm:text-2xl font-extrabold text-sky-900 dark:text-sky-300">Custom Time Table Creator</h3>  
+                <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">Apni class chunein aur har subject ke samne apna samay set karein</p>  
+            </div>  
+            <div class="space-y-4">  
+                <div>  
+                    <label class="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">Select Class</label>  
+                    <select id="custom-tt-class" onchange="renderSubjectTimeInputs()" class="w-full px-3 py-2.5 text-xs border dark:border-slate-600 rounded-xl focus:ring-2 focus:ring-sky-500 outline-none bg-white dark:bg-slate-700 text-slate-800 dark:text-slate-100 cursor-pointer">  
+                        <option value="Class 1 to 5">Class 1 to 5</option>  
+                        <option value="Class 6 to 8">Class 6 to 8</option>  
+                        <option value="Class 9 & 10" selected>Class 9 & 10 (Board)</option>  
+                        <option value="Class 11 & 12 Science">Class 11 & 12 Science</option>  
+                        <option value="Class 11 & 12 Commerce">Class 11 & 12 Commerce</option>  
+                        <option value="Class 11 & 12 Arts">Class 11 & 12 Arts</option>  
+                    </select>  
+                </div>  
+
+                <div>  
+                    <label class="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">Set Time For Each Subject</label>  
+                    <p class="text-[11px] text-slate-400 mb-2">Har subject ke samne uska samay (jaise 4:00 - 5:00 PM) likhein:</p>  
+                    <div id="subject-time-container" class="space-y-2.5 max-h-52 overflow-y-auto pr-1">  
+                        <!-- Dynamically generated subject inputs -->  
+                    </div>  
+                </div>  
+
+                <button onclick="generateAndShowRoutine()" class="w-full bg-sky-600 hover:bg-sky-700 text-white font-bold py-3 rounded-xl transition text-xs shadow-lg cursor-pointer">  
+                    <i class="fa-solid fa-check-double mr-1.5"></i> Finalize & Generate Routine  
+                </button>  
+
+                <!-- Printable/Downloadable Final Routine Area -->  
+                <div id="final-routine-box" class="hidden mt-4 p-4 bg-sky-50 dark:bg-slate-700/70 rounded-2xl border border-sky-200 dark:border-slate-600 text-xs sm:text-sm space-y-3">  
+                    <div class="text-center border-b border-sky-200 dark:border-slate-600 pb-2">  
+                        <h4 class="font-extrabold text-indigo-900 dark:text-indigo-300 text-sm">SMART HOME TUITION - MY STUDY ROUTINE</h4>  
+                        <p class="text-[11px] text-slate-500 dark:text-slate-400" id="routine-class-label"></p>  
+                    </div>  
+                    <div id="routine-items-list" class="space-y-1.5 font-medium text-slate-700 dark:text-slate-200"></div>  
+                    <button onclick="downloadRoutinePDF()" class="w-full bg-green-600 hover:bg-green-700 text-white font-bold py-2.5 rounded-xl transition text-xs shadow cursor-pointer flex items-center justify-center gap-1.5">  
+                        <i class="fa-solid fa-download"></i> Download & Save Time Table  
+                    </button>  
+                </div>  
+            </div>  
+        </div>  
+    </div>  
+  
+    <!-- JavaScript Core Logics -->  
+    <script>  
+        const classSubjects = {  
+            "Nursery / KG / Prep": [  
+                "English", "Hindi", "Mathematics / Counting", "Rhymes & Activity", "Computer Basics"  
+            ],  
+            "Class 1 to 5": [  
+                "Mathematics (गणित)", "Environmental Studies / EVS", "English", "Hindi", "General Knowledge", "Computer Science"  
+            ],  
+            "Class 6 to 8": [  
+                "Mathematics (गणित)", "Science (विज्ञान)", "English", "Hindi", "Social Science / SST", "Sanskrit", "Computer Science"  
+            ],  
+            "Class 9 & 10": [  
+                "Mathematics (गणित)", "Science (विज्ञान)", "English", "Hindi", "Social Science (सामाजिक विज्ञान)", "Computer / IT"  
+            ],  
+            "Class 11 & 12 Science": [  
+                "Physics (भौतिक विज्ञान)", "Chemistry (रसायन विज्ञान)", "Mathematics / Biology", "English Core", "Computer Science / IP"  
+            ],  
+            "Class 11 & 12 Commerce": [  
+                "Accountancy (लेखाशास्त्र)", "Business Studies (व्यवसाय अध्ययन)", "Economics (अर्थशास्त्र)", "Mathematics / IP", "English Core"  
+            ],  
+            "Class 11 & 12 Arts": [  
+                "Political Science (राजनीति विज्ञान)", "History (इतिहास)", "Geography (भूगोल)", "Economics (अर्थशास्त्र)", "Hindi / English Literature"  
+            ],  
+            "Basic Computer Training": [  
+                "Complete Basic Course", "MS Office (Word, Excel, PPT)", "Internet & Email Operations", "Hindi & English Typing", "Tally & Accounting Basics"  
+            ]  
+        };  
+  
+        let currentSelectedResource = '';  
+  
+        function updateDynamicSubjects(selectedClass) {  
+            const subjectSelect = document.getElementById('p-subject');  
+            if(!subjectSelect) return;  
+            subjectSelect.innerHTML = '';  
+              
+            const subjects = classSubjects[selectedClass] || classSubjects["Nursery / KG / Prep"];  
+            subjects.forEach(sub => {  
+                const opt = document.createElement('option');  
+                opt.value = sub;  
+                opt.textContent = sub;  
+                subjectSelect.appendChild(opt);  
+            });  
+        }  
+  
+        function selectComputerTraining() {  
+            switchTab('parent');  
+            const classSelect = document.getElementById('p-class');  
+            if(classSelect) {  
+                classSelect.value = "Basic Computer Training";  
+                updateDynamicSubjects("Basic Computer Training");  
+            }  
+        }  
+  
+        // Modal Open/Close Logic  
+        function openResourceAccess(resourceName) {  
+            currentSelectedResource = resourceName;  
+            const resNameElem = document.getElementById('modal-resource-name');  
+            const modalElem = document.getElementById('material-modal');  
+            if(resNameElem) resNameElem.textContent = resourceName;  
+            if(modalElem) modalElem.classList.remove('hidden');  
+        }  
+  
+        function closeResourceAccess() {  
+            const modalElem = document.getElementById('material-modal');  
+            if(modalElem) modalElem.classList.add('hidden');  
+        }  
+
+        // Study Tips Modal Logic
+        function openStudyTipsModal() {
+            document.getElementById('study-tips-modal').classList.remove('hidden');
+        }
+        function closeStudyTipsModal() {
+            document.getElementById('study-tips-modal').classList.add('hidden');
+        }
+
+        // Time Table Modal Logic
+        function openTimeTableModal() {
+            document.getElementById('timetable-modal').classList.remove('hidden');
+            renderSubjectTimeInputs();
+        }
+        function closeTimeTableModal() {
+            document.getElementById('timetable-modal').classList.add('hidden');
+        }
+
+        // Render Subject Inputs with Manual Time Textboxes
+        function renderSubjectTimeInputs() {
+            const selectedClass = document.getElementById('custom-tt-class').value;
+            const container = document.getElementById('subject-time-container');
+            container.innerHTML = '';
+
+            let subjects = classSubjects[selectedClass] || classSubjects["Class 9 & 10"];
+            
+            const defaultTimes = ["4:00 - 5:00 PM", "5:00 - 6:00 PM", "6:00 - 7:00 PM", "7:30 - 8:30 PM", "8:30 - 9:30 PM", "9:30 - 10:00 PM"];
+
+            subjects.forEach((sub, index) => {
+                const defaultVal = defaultTimes[index % defaultTimes.length];
+                const div = document.createElement('div');
+                div.className = "flex items-center justify-between gap-2 bg-slate-50 dark:bg-slate-700/50 p-2 rounded-xl border border-slate-200 dark:border-slate-600";
+                div.innerHTML = `
+                    <span class="text-xs font-semibold text-slate-700 dark:text-slate-200 w-2/5 truncate">${sub}</span>
+                    <input type="text" id="sub-time-input-${index}" data-subject="${sub}" value="${defaultVal}" placeholder="e.g. 4-5 PM" class="sub-time-manual w-3/5 px-2.5 py-1.5 text-xs border dark:border-slate-600 rounded-lg outline-none bg-white dark:bg-slate-700 text-slate-800 dark:text-slate-100 font-medium">
+                `;
+                container.appendChild(div);
+            });
+            document.getElementById('final-routine-box').classList.add('hidden');
+        }
+
+        // Generate Routine from manual inputs
+        function generateAndShowRoutine() {
+            const selectedClass = document.getElementById('custom-tt-class').value;
+            const inputs = document.querySelectorAll('.sub-time-manual');
+            const itemsList = document.getElementById('routine-items-list');
+            const classLabel = document.getElementById('routine-class-label');
+            const finalBox = document.getElementById('final-routine-box');
+
+            classLabel.textContent = `Selected Class: ${selectedClass}`;
+            itemsList.innerHTML = '';
+
+            inputs.forEach(inp => {
+                const subName = inp.getAttribute('data-subject');
+                const timeVal = inp.value.trim() || "Anytime";
+
+                const row = document.createElement('div');
+                row.className = "flex justify-between items-center bg-white dark:bg-slate-800 p-2 rounded-lg shadow-2xs border border-slate-100 dark:border-slate-700 text-xs";
+                row.innerHTML = `<span>📖 ${subName}</span> <span class="font-bold text-sky-600 dark:text-sky-400">${timeVal}</span>`;
+                itemsList.appendChild(row);
+            });
+
+            finalBox.classList.remove('hidden');
+        }
+
+        // Download Routine as text file for mobile
+        function downloadRoutinePDF() {
+            const classText = document.getElementById('routine-class-label').textContent;
+            const items = document.querySelectorAll('#routine-items-list > div');
+            
+            let content = `=== SMART HOME TUITION - STUDY TIME TABLE ===\n${classText}\n\n`;
+            items.forEach(item => {
+                content += `• ${item.textContent.trim()}\n`;
+            });
+            content += `\nCreated via Smart Home Tuition Platform (sainiprakashchand813@gmail.com)`;
+
+            const blob = new Blob([content], { type: 'text/plain;charset=utf-8' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'My_Study_TimeTable.txt';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+        }
+  
+        // Handle redirection for Weekly Test or Google Drive Material  
+        function handleResourceRegistration(event) {  
+            event.preventDefault();  
+            closeResourceAccess();  
+              
+            if (currentSelectedResource.includes('Test')) {  
+                window.open('https://forms.gle/sb9RC5zJxTcDSe5dA', '_blank');  
+            } else {  
+                window.open('https://drive.google.com/drive/folders/1oU-yvkOhBWWD-bC7yTDcqME93ZbGp7uF', '_blank');  
+            }  
+        }  
+  
+        // Switch Tabs Logic  
+        function switchTab(tab) {  
+            document.querySelectorAll('.form-container').forEach(el => el.classList.add('hidden'));  
+            const activeForm = document.getElementById('form-' + tab);  
+            if(activeForm) activeForm.classList.remove('hidden');  
+  
+            document.querySelectorAll('.tab-btn').forEach(btn => {  
+                btn.className = "tab-btn flex-1 py-2.5 px-1 font-bold text-slate-400 border-b-2 sm:border-b-4 border-transparent focus:outline-none transition cursor-pointer text-xs sm:text-sm lang-text";  
+            });  
+  
+            const activeBtn = document.getElementById('tab-' + tab);  
+            if(activeBtn) {  
+                activeBtn.className = "tab-btn flex-1 py-2.5 px-1 font-bold text-indigo-600 dark:text-indigo-400 border-b-2 sm:border-b-4 border-indigo-600 dark:border-indigo-400 focus:outline-none transition cursor-pointer text-xs sm:text-sm lang-text";  
+            }  
+        }  
+  
+        // Send Forms via WhatsApp  
+        function sendParentWhatsApp() {  
+            const name = document.getElementById('p-name').value;  
+            const mobile = document.getElementById('p-mobile').value;  
+            const pClass = document.getElementById('p-class').value;  
+            const time = document.getElementById('p-time').value;  
+            const city = document.getElementById('p-city').value;  
+            const fullAddress = document.getElementById('p-manual-address').value;  
+            const subject = document.getElementById('p-subject').value;  
+            const demo = document.getElementById('p-demo').checked ? "Yes" : "No";  
+  
+            if(!name || !mobile) {  
+                alert("Please enter Name and Mobile Number!");  
+                return;  
+            }  
+  
+            const message = `*Parent Inquiry - Smart Home Tuition*%0A%0A👤 *Name:* ${name}%0A📱 *Mobile:* ${mobile}%0A📚 *Class:* ${pClass}%0A⏰ *Timing:* ${time}%0A📍 *City:* ${city}%0A🏠 *Full Address:* ${fullAddress}%0A📖 *Subject:* ${subject}%0A🎁 *Free Demo Needed:* ${demo}`;  
+            window.open(`https://wa.me/917665533892?text=${message}`, '_blank');  
+        }  
+  
+        function sendTeacherWhatsApp() {  
+            const name = document.getElementById('t-name').value;  
+            const qual = document.getElementById('t-qualification').value;  
+            const exp = document.getElementById('t-experience').value;  
+            const classes = document.getElementById('t-classes').value;  
+            const loc = document.getElementById('t-location').value;  
+  
+            if(!name) {  
+                alert("Please enter Teacher Name!");  
+                return;  
+            }  
+  
+            const message = `*Tutor Registration - Smart Home Tuition*%0A%0A👤 *Teacher Name:* ${name}%0A🎓 *Qualification:* ${qual}%0A⏳ *Experience:* ${exp}%0A📚 *Subjects/Classes:* ${classes}%0A🏠 *Address/Location:* ${loc}`;  
+            window.open(`https://wa.me/917665533892?text=${message}`, '_blank');  
+        }  
+  
+        function sendInstituteWhatsApp() {  
+            const name = document.getElementById('i-name').value;  
+            const person = document.getElementById('i-person').value;  
+            const type = document.getElementById('i-type').value;  
+            const loc = document.getElementById('i-location').value;  
+            const msg = document.getElementById('i-msg').value;  
+  
+            if(!name || !person) {  
+                alert("Please enter Institute Name and Contact Person!");  
+                return;  
+            }  
+  
+            const message = `*Institute Inquiry - Smart Home Tuition*%0A%0A🏫 *Institute Name:* ${name}%0A👤 *Contact Person:* ${person}%0A📌 *Requirement:* ${type}%0A🏠 *Address/Location:* ${loc}%0A📝 *Details:* ${msg}`;  
+            window.open(`https://wa.me/917665533892?text=${message}`, '_blank');  
+        }  
+  
+        function updateHourlyFee() {  
+            const fee = document.getElementById('calc-class').value;  
+            document.getElementById('display-hourly-fee').textContent = fee;  
+        }  
+  
+        // Dark Mode Logic  
+        function toggleDarkMode() {  
+            const html = document.documentElement;  
+            const icon = document.getElementById('theme-toggle-icon');  
+            if (html.classList.contains('dark')) {  
+                html.classList.remove('dark');  
+                icon.className = 'fa-solid fa-moon text-xs sm:text-base';  
+            } else {  
+                html.classList.add('dark');  
+                icon.className = 'fa-solid fa-sun text-xs sm:text-base';  
+            }  
+        }  
+  
+        // Language Translation Switcher  
+        function changeLanguage(lang) {  
+            document.querySelectorAll('.lang-text').forEach(el => {  
+                const targetText = el.getAttribute('data-' + lang);  
+                if (targetText) {  
+                    el.textContent = targetText;  
+                }  
+            });  
+        }  
+  
+        // Initial setup on window load  
+        window.onload = function() {  
+            updateDynamicSubjects("Nursery / KG / Prep");  
+        };  
+    </script>  
+</body>  
+</html>

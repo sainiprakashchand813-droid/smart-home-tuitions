@@ -1,4 +1,17 @@
 User-agent: *
 Allow: /
 
+# AI answer and search crawlers
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
 Sitemap: https://sainiprakashchand813-droid.github.io/smart-home-tuitions/sitemap.xml

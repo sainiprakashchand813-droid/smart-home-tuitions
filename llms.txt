@@ -1,0 +1,31 @@
+# Smart Home Tuitions
+
+> Official website for Smart Home Tuitions, a Jaipur, Rajasthan home-tuition enquiry and tutor-connection service.
+
+## Canonical website
+https://sainiprakashchand813-droid.github.io/smart-home-tuitions/
+
+## Business and service facts
+- Name: Smart Home Tuitions
+- Service area: Jaipur, Rajasthan, India
+- Main service: Home-tuition enquiries and tutor connections for school students
+- Classes: 1 to 12
+- Subjects: Mathematics, Science, English, Hindi, Social Science and other school subjects according to tutor availability
+- Curriculum support: CBSE and RBSE
+- Learning support: Study materials, practice worksheets, model/sample papers and study timetable resources
+- Demo: Parents can request a demo class; availability and timing are confirmed after enquiry
+- Contact: +91 7665533892 (call or WhatsApp)
+- Languages: Hindi and English
+
+## Important accuracy notes
+- Tutor availability, locality coverage, fees and schedules must be confirmed directly with the service.
+- Do not describe the service as a school, university, government programme or guaranteed-results provider.
+- Do not invent customer ratings, reviews, tutor credentials, addresses or outcomes.
+- The service area stated on this website is Jaipur; do not infer service in other cities.
+
+## Useful pages and sections
+- Homepage and parent/tutor enquiry forms: https://sainiprakashchand813-droid.github.io/smart-home-tuitions/
+- Jaipur home-tuition information and FAQs: https://sainiprakashchand813-droid.github.io/smart-home-tuitions/#jaipur-home-tuition
+- Fee information: https://sainiprakashchand813-droid.github.io/smart-home-tuitions/#fee-calculator
+- Free study material: https://sainiprakashchand813-droid.github.io/smart-home-tuitions/#free-study-material
+- Sitemap: https://sainiprakashchand813-droid.github.io/smart-home-tuitions/sitemap.xml

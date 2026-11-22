@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://sainiprakashchand813-droid.github.io/smart-home-tuitions/sitemap.xml

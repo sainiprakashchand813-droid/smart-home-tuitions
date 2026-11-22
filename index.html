@@ -48,6 +48,16 @@
         * {  
             box-sizing: border-box;  
         }  
+
+        /* 3D study showcase */
+        .study-3d-scene { perspective: 1000px; }
+        .study-3d-card { transform-style: preserve-3d; transition: transform .35s ease, box-shadow .35s ease; }
+        .study-3d-card:hover { transform: translateY(-9px) rotateX(5deg) rotateY(-5deg); box-shadow: 0 24px 35px rgba(30,41,59,.18); }
+        .study-3d-icon { text-shadow: 0 7px 0 rgba(15,23,42,.12), 0 14px 22px rgba(15,23,42,.18); transform: translateZ(28px); }
+        .study-float { animation: studyFloat 4s ease-in-out infinite; }
+        .study-float-delay { animation: studyFloat 4.8s ease-in-out  .5s infinite; }
+        @keyframes studyFloat { 0%,100% { transform: translateY(0) rotate(-3deg); } 50% { transform: translateY(-11px) rotate(3deg); } }
+        @media (prefers-reduced-motion: reduce) { .study-float,.study-float-delay { animation: none; } .study-3d-card { transition: none; } }
     </style>  
 </head>  
 <body class="bg-slate-50 text-slate-800 dark:bg-slate-900 dark:text-slate-100 transition-colors duration-200 overflow-x-hidden w-full max-w-full">  
@@ -124,6 +134,54 @@
     </section>  
   
 
+
+    <!-- 3D Study Showcase -->
+    <section aria-label="3D study and education highlights" class="relative overflow-hidden bg-gradient-to-b from-indigo-50 via-white to-sky-50 dark:from-slate-900 dark:via-slate-800 dark:to-slate-900 py-12 sm:py-16 px-4">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-8 sm:mb-10">
+                <span class="inline-flex items-center gap-2 rounded-full bg-indigo-100 dark:bg-indigo-900/60 px-4 py-1.5 text-xs font-bold text-indigo-700 dark:text-indigo-300"><i class="fa-solid fa-cube"></i> SMART LEARNING EXPERIENCE</span>
+                <h2 class="mt-4 text-2xl sm:text-3xl md:text-4xl font-extrabold text-slate-900 dark:text-white">पढ़ाई को बनाएं <span class="text-indigo-600 dark:text-sky-400">और भी मज़ेदार!</span></h2>
+                <p class="mt-3 text-sm sm:text-base text-slate-600 dark:text-slate-300 max-w-2xl mx-auto">Nursery से Class 12 तक — हर बच्चे के बेहतर सीखने के सफर के लिए।</p>
+            </div>
+            <div class="study-3d-scene grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+                <article class="study-3d-card rounded-3xl border border-indigo-100 dark:border-slate-700 bg-white dark:bg-slate-800 p-5 sm:p-6 text-center shadow-lg">
+                    <div class="relative mx-auto mb-4 flex h-24 sm:h-28 items-center justify-center rounded-2xl bg-gradient-to-br from-indigo-100 to-sky-100 dark:from-indigo-950 dark:to-slate-700">
+                        <span class="study-3d-icon study-float text-6xl sm:text-7xl" aria-hidden="true">🧑‍🎓</span>
+                        <span class="absolute right-3 top-2 text-2xl study-float-delay" aria-hidden="true">✨</span>
+                    </div>
+                    <h3 class="font-extrabold text-slate-800 dark:text-white text-sm sm:text-base">Smart Students</h3>
+                    <p class="mt-1 text-xs sm:text-sm text-slate-500 dark:text-slate-300">सीखें, समझें और आगे बढ़ें</p>
+                </article>
+                <article class="study-3d-card rounded-3xl border border-sky-100 dark:border-slate-700 bg-white dark:bg-slate-800 p-5 sm:p-6 text-center shadow-lg">
+                    <div class="relative mx-auto mb-4 flex h-24 sm:h-28 items-center justify-center rounded-2xl bg-gradient-to-br from-sky-100 to-cyan-100 dark:from-sky-950 dark:to-slate-700">
+                        <span class="study-3d-icon study-float-delay text-6xl sm:text-7xl" aria-hidden="true">📚</span>
+                        <span class="absolute right-3 top-2 text-2xl study-float" aria-hidden="true">⭐</span>
+                    </div>
+                    <h3 class="font-extrabold text-slate-800 dark:text-white text-sm sm:text-base">Study Materials</h3>
+                    <p class="mt-1 text-xs sm:text-sm text-slate-500 dark:text-slate-300">नोट्स और अभ्यास सामग्री</p>
+                </article>
+                <article class="study-3d-card rounded-3xl border border-amber-100 dark:border-slate-700 bg-white dark:bg-slate-800 p-5 sm:p-6 text-center shadow-lg">
+                    <div class="relative mx-auto mb-4 flex h-24 sm:h-28 items-center justify-center rounded-2xl bg-gradient-to-br from-amber-100 to-orange-100 dark:from-amber-950 dark:to-slate-700">
+                        <span class="study-3d-icon study-float text-6xl sm:text-7xl" aria-hidden="true">👩‍🏫</span>
+                        <span class="absolute right-3 top-2 text-2xl study-float-delay" aria-hidden="true">💡</span>
+                    </div>
+                    <h3 class="font-extrabold text-slate-800 dark:text-white text-sm sm:text-base">Personal Tutors</h3>
+                    <p class="mt-1 text-xs sm:text-sm text-slate-500 dark:text-slate-300">घर पर व्यक्तिगत मार्गदर्शन</p>
+                </article>
+                <article class="study-3d-card rounded-3xl border border-emerald-100 dark:border-slate-700 bg-white dark:bg-slate-800 p-5 sm:p-6 text-center shadow-lg">
+                    <div class="relative mx-auto mb-4 flex h-24 sm:h-28 items-center justify-center rounded-2xl bg-gradient-to-br from-emerald-100 to-teal-100 dark:from-emerald-950 dark:to-slate-700">
+                        <span class="study-3d-icon study-float-delay text-6xl sm:text-7xl" aria-hidden="true">🧮</span>
+                        <span class="absolute right-3 top-2 text-2xl study-float" aria-hidden="true">➕</span>
+                    </div>
+                    <h3 class="font-extrabold text-slate-800 dark:text-white text-sm sm:text-base">Learn Every Subject</h3>
+                    <p class="mt-1 text-xs sm:text-sm text-slate-500 dark:text-slate-300">Maths, Science, English और अधिक</p>
+                </article>
+            </div>
+            <div class="mt-8 text-center">
+                <a href="#forms-section" onclick="switchTab('parent')" class="inline-flex items-center justify-center gap-2 rounded-xl bg-indigo-600 hover:bg-indigo-700 px-6 py-3 text-sm font-bold text-white shadow-lg transition hover:-translate-y-0.5">अपने बच्चे के लिए Tutor खोजें <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+        </div>
+    </section>
 
     <!-- Main Content & Forms Section -->  
     <main id="forms-section" class="max-w-4xl mx-auto px-3 sm:px-4 py-8 sm:py-10 w-full">  

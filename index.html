@@ -643,7 +643,7 @@
                 </div>  
                 <label class="flex items-start gap-2 text-[11px] leading-5 text-slate-600 dark:text-slate-300">
                     <input id="m-consent" type="checkbox" required class="mt-1">
-                    <span>मैं 18 वर्ष या अधिक आयु का विद्यार्थी हूँ, या विद्यार्थी का अभिभावक/guardian हूँ। मैं इस जानकारी को Free Study Material और शैक्षणिक अपडेट के लिए सुरक्षित रूप से दर्ज करने की सहमति देता/देती हूँ।</span>
+                    <span>मैं इस जानकारी को Free Study Material और शैक्षणिक अपडेट के लिए सुरक्षित रूप से दर्ज करने की सहमति देता/देती हूँ।</span>
                 </label>
                 <p id="m-status" class="text-xs text-center text-slate-500" role="status"></p>
                 <button type="submit" class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-2.5 rounded-xl transition text-xs shadow-lg mt-1 cursor-pointer">Unlock & Access Material</button>  
@@ -934,7 +934,7 @@
             const { error } = await leadDb.from('student_leads').insert({
                 student_name:name, mobile_number:mobile, board:board, class_level:studentClass,
                 city:city, address:address, resource:currentSelectedResource,
-                consent:true, consent_by:'student_18_or_parent_guardian'
+                consent:true, consent_by:'student_or_guardian'
             });
             if (error) {
                 console.error('Student registration:', error);

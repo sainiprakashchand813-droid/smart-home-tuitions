@@ -21,8 +21,8 @@
 <label class="text-sm font-semibold">विषय (Chapter-wise के लिए)<select id="subject" class="mt-1 w-full border rounded-xl p-3 bg-white"></select></label>
 <label class="text-sm font-semibold">समय<select id="duration" class="mt-1 w-full border rounded-xl p-3 bg-white"><option value="15">15 मिनट</option><option value="20" selected>20 मिनट</option><option value="30">30 मिनट</option></select></label>
 </div>
-<p id="streamNote" class="text-xs text-slate-500 mt-3">Daily, Weekly और Full Syllabus में सभी उपलब्ध विषयों से 20 प्रश्न मिलेंगे। Chapter-wise में उपलब्ध विषयवार प्रश्न दिखेंगे।</p>
-<button id="start" class="mt-5 w-full bg-indigo-700 hover:bg-indigo-800 text-white font-bold rounded-xl py-3">20 प्रश्नों का टेस्ट शुरू करें →</button>
+<p id="streamNote" class="text-xs text-slate-500 mt-3">Daily, Weekly और Full Syllabus में 20 प्रश्न मिलेंगे। Chapter-wise टेस्ट में चुने विषय के उपलब्ध प्रश्न मिलेंगे (फिलहाल 5)।</p>
+<button id="start" class="mt-5 w-full bg-indigo-700 hover:bg-indigo-800 text-white font-bold rounded-xl py-3">टेस्ट शुरू करें →</button>
 </section>
 <section class="bg-white rounded-2xl shadow p-5 mt-5"><h2 class="text-lg font-bold">आपकी टेस्ट हिस्ट्री</h2><p class="text-xs text-slate-500 mb-3">यह रिकॉर्ड केवल इसी मोबाइल/ब्राउज़र में सेव होगा।</p><div id="localHistory" class="text-sm text-slate-600">अभी कोई टेस्ट रिकॉर्ड नहीं है।</div></section>
 <section id="quiz" class="hidden mt-6 bg-white rounded-2xl shadow p-5 md:p-7">
@@ -56,5 +56,4 @@ function saveLocalResult(score,pct){const key='sht_test_results_v1';let rows=[];
 function showLocalResults(){let rows=[];try{rows=JSON.parse(localStorage.getItem('sht_test_results_v1')||'[]');}catch(e){}const box=$('localHistory');if(!box)return;box.innerHTML=rows.length?'<h3 class="font-bold mb-2">इस डिवाइस पर आपके हाल के रिजल्ट</h3>'+rows.slice().reverse().map((r,i)=>'<div class="flex justify-between gap-2 border-b py-2 text-sm"><span>'+r.date+' • कक्षा '+r.class+' • '+(r.mode==='weekly'?'Weekly':r.mode==='full'?'Full syllabus':r.mode==='chapter'?'Chapter-wise':'Daily')+'</span><b>'+r.score+'/'+r.total+' ('+r.pct+'%)</b></div>').join(''):'अभी कोई टेस्ट रिकॉर्ड नहीं है।';}
 $('start').addEventListener('click',start);$('prev').addEventListener('click',()=>{if(index>0){index--;render();}});$('next').addEventListener('click',()=>{if(index<questions.length-1){index++;render();}});$('submit').addEventListener('click',()=>{if(confirm('क्या आप टेस्ट सबमिट करना चाहते हैं?'))finish();});$('again').addEventListener('click',()=>{$('result').classList.add('hidden');$('setup').classList.remove('hidden');showLocalResults();});showLocalResults();
 </script>
-</body></html></script>
 </body></html>

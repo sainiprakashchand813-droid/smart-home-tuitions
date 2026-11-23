@@ -34,9 +34,11 @@ create table if not exists public.student_leads (
  address text not null check (char_length(trim(address)) between 2 and 180),
  resource text not null check (char_length(resource) between 1 and 100),
  consent boolean not null default false check (consent = true),
- consent_by text not null check (consent_by = 'student_18_or_parent_guardian'),
+ consent_by text not null check (consent_by = 'student_or_guardian'),
  created_at timestamptz not null default now()
 );
+alter table public.student_leads drop constraint if exists student_leads_consent_by_check;
+alter table public.student_leads add constraint student_leads_consent_by_check check (consent_by = 'student_or_guardian');
 alter table public.student_leads enable row level security;
 drop policy if exists "Visitors can register students" on public.student_leads;
 create policy "Visitors can register students" on public.student_leads

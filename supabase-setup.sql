@@ -10,6 +10,8 @@ create table if not exists public.test_results (
 );
 create index if not exists test_results_weekly_idx on public.test_results (created_at desc, score desc);
 alter table public.test_results enable row level security;
+drop policy if exists "Public can submit test results" on public.test_results;
+drop policy if exists "Public can view leaderboard" on public.test_results;
 create policy "Public can submit test results" on public.test_results for insert to anon with check (
  char_length(trim(student_name)) between 1 and 40 and class_level between 9 and 12
  and char_length(subject) between 1 and 60 and score >= 0

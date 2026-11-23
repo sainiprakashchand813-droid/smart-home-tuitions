@@ -611,6 +611,12 @@
                     <input type="tel" id="m-mobile" required placeholder="Enter 10 digit mobile number" class="w-full px-3 py-2 text-xs border dark:border-slate-600 rounded-xl focus:ring-2 focus:ring-indigo-500 outline-none bg-white dark:bg-slate-700 text-slate-800 dark:text-slate-100">  
                 </div>  
                 <div>  
+                    <label class="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">Board *</label>
+                    <select id="m-board" required class="w-full px-3 py-2 text-xs border dark:border-slate-600 rounded-xl bg-white dark:bg-slate-700 text-slate-800 dark:text-slate-100">
+                        <option value="RBSE">RBSE</option><option value="CBSE">CBSE</option><option value="Other">Other</option>
+                    </select>
+                </div>
+                <div>  
                     <label class="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">Select Class *</label>  
                     <select id="m-class" required class="w-full px-3 py-2 text-xs border dark:border-slate-600 rounded-xl focus:ring-2 focus:ring-indigo-500 outline-none bg-white dark:bg-slate-700 text-slate-800 dark:text-slate-100">  
                         <option value="Class 1 to 5">Class 1 to 5</option>  
@@ -634,6 +640,11 @@
                     <label class="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">Full Address *</label>  
                     <input type="text" id="m-manual-address" required placeholder="Colony / House No / Area Name" class="w-full px-3 py-2 text-xs border dark:border-slate-600 rounded-xl focus:ring-2 focus:ring-indigo-500 outline-none bg-white dark:bg-slate-700 text-slate-800 dark:text-slate-100">  
                 </div>  
+                <label class="flex items-start gap-2 text-[11px] leading-5 text-slate-600 dark:text-slate-300">
+                    <input id="m-consent" type="checkbox" required class="mt-1">
+                    <span>मैं 18 वर्ष या अधिक आयु का विद्यार्थी हूँ, या विद्यार्थी का अभिभावक/guardian हूँ। मैं इस जानकारी को Free Study Material और शैक्षणिक अपडेट के लिए सुरक्षित रूप से दर्ज करने की सहमति देता/देती हूँ।</span>
+                </label>
+                <p id="m-status" class="text-xs text-center text-slate-500" role="status"></p>
                 <button type="submit" class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-2.5 rounded-xl transition text-xs shadow-lg mt-1 cursor-pointer">Unlock & Access Material</button>  
             </form>  
         </div>  
@@ -752,6 +763,7 @@
     </div>  
   
     <!-- JavaScript Core Logics -->  
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <script>  
         const classSubjects = {  
             "Nursery / KG / Prep": [  
@@ -906,15 +918,35 @@
         }
   
         // Handle redirection for Weekly Test or Google Drive Material  
-        function handleResourceRegistration(event) {  
-            event.preventDefault();  
-            closeResourceAccess();  
-              
-            if (currentSelectedResource.includes('Test')) {  
-                window.open('https://forms.gle/sb9RC5zJxTcDSe5dA', '_blank');  
-            } else {  
-                window.open('https://drive.google.com/drive/folders/1oU-yvkOhBWWD-bC7yTDcqME93ZbGp7uF', '_blank');  
-            }  
+        const leadDb = window.supabase.createClient("https://xjrafailggycxyxakqbm.supabase.co", "sb_publishable_tCFBcs_pRssMD0or0VFa4g_oN9695QN");
+        async function handleResourceRegistration(event) {
+            event.preventDefault();
+            const status = document.getElementById('m-status');
+            const name = document.getElementById('m-name').value.trim();
+            const mobile = document.getElementById('m-mobile').value.replace(/\D/g,'');
+            const studentClass = document.getElementById('m-class').value;
+            const board = document.getElementById('m-board').value;
+            const city = document.getElementById('m-city').value;
+            const address = document.getElementById('m-manual-address').value.trim();
+            if (!/^[6-9]\d{9}$/.test(mobile)) { alert('कृपया सही 10 अंकों का मोबाइल नंबर लिखें।'); return; }
+            if (!document.getElementById('m-consent').checked) { alert('कृपया विद्यार्थी/अभिभावक की सहमति दें।'); return; }
+            status.textContent = 'आपकी जानकारी सुरक्षित रूप से सेव हो रही है…';
+            const { error } = await leadDb.from('student_leads').insert({
+                student_name:name, mobile_number:mobile, board:board, class_level:studentClass,
+                city:city, address:address, resource:currentSelectedResource,
+                consent:true, consent_by:'student_18_or_parent_guardian'
+            });
+            if (error) {
+                console.error('Student registration:', error);
+                status.textContent = 'जानकारी सेव नहीं हुई: ' + error.message + '। कृपया बाद में पुनः प्रयास करें।';
+                return;
+            }
+            closeResourceAccess();
+            if (currentSelectedResource.includes('Test')) {
+                window.location.href = 'test.html';
+            } else {
+                window.open('https://drive.google.com/drive/folders/1oU-yvkOhBWWD-bC7yTDcqME93ZbGp7uF', '_blank');
+            }
         }  
   
         // Switch Tabs Logic  

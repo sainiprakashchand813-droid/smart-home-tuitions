@@ -833,7 +833,7 @@
 
         // Study Tips Modal Logic
         function openStudyTipsModal() {
-            document.getElementById('study-tips-modal').classList.remove('hidden');
+            openResourceAccess('10 Master Study Tips');
         }
         function closeStudyTipsModal() {
             document.getElementById('study-tips-modal').classList.add('hidden');
@@ -841,8 +841,7 @@
 
         // Time Table Modal Logic
         function openTimeTableModal() {
-            document.getElementById('timetable-modal').classList.remove('hidden');
-            renderSubjectTimeInputs();
+            openResourceAccess('Study Time Table');
         }
         function closeTimeTableModal() {
             document.getElementById('timetable-modal').classList.add('hidden');
@@ -944,6 +943,11 @@
             closeResourceAccess();
             if (currentSelectedResource.includes('Test')) {
                 window.location.href = 'test.html';
+            } else if (currentSelectedResource.includes('Study Tips')) {
+                document.getElementById('study-tips-modal').classList.remove('hidden');
+            } else if (currentSelectedResource.includes('Time Table')) {
+                document.getElementById('timetable-modal').classList.remove('hidden');
+                renderSubjectTimeInputs();
             } else {
                 window.open('https://drive.google.com/drive/folders/1oU-yvkOhBWWD-bC7yTDcqME93ZbGp7uF', '_blank');
             }

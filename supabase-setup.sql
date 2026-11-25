@@ -92,3 +92,53 @@ create policy "Visitors can submit home tuition enquiries"
  );
 grant usage on schema public to anon;
 grant insert on public.home_tuition_leads to anon;
+
+
+-- Admin lead dashboard fields and access.
+-- Create the admin user manually in Supabase Authentication > Users.
+-- Keep public sign-ups disabled. Only authenticated users can read/update lead records.
+alter table public.home_tuition_leads
+ add column if not exists status text not null default 'New',
+ add column if not exists follow_up_date date,
+ add column if not exists notes text not null default '',
+ add column if not exists updated_at timestamptz not null default now();
+
+alter table public.student_leads
+ add column if not exists status text not null default 'New',
+ add column if not exists follow_up_date date,
+ add column if not exists notes text not null default '',
+ add column if not exists updated_at timestamptz not null default now();
+
+alter table public.home_tuition_leads
+ drop constraint if exists home_tuition_leads_status_check;
+alter table public.home_tuition_leads
+ add constraint home_tuition_leads_status_check
+ check (status in ('New','Contacted','Demo Scheduled','Converted','Not Interested'));
+
+alter table public.student_leads
+ drop constraint if exists student_leads_status_check;
+alter table public.student_leads
+ add constraint student_leads_status_check
+ check (status in ('New','Contacted','Demo Scheduled','Converted','Not Interested'));
+
+drop policy if exists "Admins can read home tuition enquiries" on public.home_tuition_leads;
+create policy "Admins can read home tuition enquiries"
+ on public.home_tuition_leads for select to authenticated using (true);
+drop policy if exists "Admins can update home tuition enquiries" on public.home_tuition_leads;
+create policy "Admins can update home tuition enquiries"
+ on public.home_tuition_leads for update to authenticated using (true) with check (true);
+
+drop policy if exists "Admins can read student leads" on public.student_leads;
+create policy "Admins can read student leads"
+ on public.student_leads for select to authenticated using (true);
+drop policy if exists "Admins can update student leads" on public.student_leads;
+create policy "Admins can update student leads"
+ on public.student_leads for update to authenticated using (true) with check (true);
+
+drop policy if exists "Admins can read test results" on public.test_results;
+create policy "Admins can read test results"
+ on public.test_results for select to authenticated using (true);
+
+grant select, update on public.home_tuition_leads to authenticated;
+grant select, update on public.student_leads to authenticated;
+grant select on public.test_results to authenticated;

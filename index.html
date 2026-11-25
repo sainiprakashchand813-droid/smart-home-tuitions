@@ -3,7 +3,7 @@
 <head> 
     <meta name="google-site-verification" content="Lj9kgR-auiWe5v1ar6GuPbBhtG3d4G6y49OiOTdS41o" />
     <meta charset="UTF-8">  
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
     <title>Smart Home Tuitions Jaipur | Home Tutors for Classes 1–12</title>  
     <meta name="description" content="Looking for home tuition in Jaipur? Smart Home Tuitions connects families with tutors for Classes 1–12, CBSE and RBSE, all subjects and flexible timings. Call or WhatsApp 7665533892.">
     <meta name="theme-color" content="#312e81">
@@ -1004,22 +1004,28 @@
                 return;
             }
 
-            const { error } = await leadDb.from('home_tuition_leads').insert({
-                parent_name: name,
-                mobile_number: mobile,
-                class_level: pClass,
-                preferred_time: time,
-                city: city,
-                address: fullAddress,
-                subject: subject,
-                demo_requested: demo,
-                source_page: sourcePage,
-                source_url: window.location.href
-            });
+            try {
+                const { error } = await leadDb.from('home_tuition_leads').insert({
+                    parent_name: name,
+                    mobile_number: mobile,
+                    class_level: pClass,
+                    preferred_time: time,
+                    city: city,
+                    address: fullAddress,
+                    subject: subject,
+                    demo_requested: demo,
+                    source_page: sourcePage,
+                    source_url: window.location.href
+                });
 
-            if (error) {
-                console.error('Tuition enquiry save failed:', error);
-                alert('Enquiry database में save नहीं हुई। कृपया Supabase SQL setup पूरा करें, फिर दोबारा कोशिश करें।');
+                if (error) {
+                    console.error('Tuition enquiry save failed:', error);
+                    alert('Enquiry database में save नहीं हुई। कृपया कुछ देर बाद पुनः प्रयास करें।');
+                    return;
+                }
+            } catch (err) {
+                console.error('Tuition enquiry unexpected error:', err);
+                alert('अभी enquiry submit नहीं हो सकी। अपना internet connection जाँचकर दोबारा प्रयास करें।');
                 return;
             }
 

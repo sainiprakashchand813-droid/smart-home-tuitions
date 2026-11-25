@@ -984,26 +984,56 @@
             }  
         }  
   
-        // Send Forms via WhatsApp  
-        function sendParentWhatsApp() {  
-            const name = document.getElementById('p-name').value;  
-            const mobile = document.getElementById('p-mobile').value;  
-            const pClass = document.getElementById('p-class').value;  
-            const time = document.getElementById('p-time').value;  
-            const city = document.getElementById('p-city').value;  
-            const fullAddress = document.getElementById('p-manual-address').value;  
-            const subject = document.getElementById('p-subject').value;  
-            const demo = document.getElementById('p-demo').checked ? "Yes" : "No";  
-  
-            if(!name || !mobile) {  
-                alert("Please enter Name and Mobile Number!");  
-                return;  
-            }  
-  
-            const message = `*Parent Inquiry - Smart Home Tuition*%0A%0A👤 *Name:* ${name}%0A📱 *Mobile:* ${mobile}%0A📚 *Class:* ${pClass}%0A⏰ *Timing:* ${time}%0A📍 *City:* ${city}%0A🏠 *Full Address:* ${fullAddress}%0A📖 *Subject:* ${subject}%0A🎁 *Free Demo Needed:* ${demo}`;  
-            window.open(`https://wa.me/917665533892?text=${message}`, '_blank');  
-        }  
-  
+        // Capture the locality page that brought the visitor to the form.
+        const localitySource = new URLSearchParams(window.location.search).get('src') || 'homepage';
+        const sourcePage = /^[a-z0-9-]{1,80}$/.test(localitySource) ? localitySource : 'homepage';
+
+        // Save parent enquiry in Supabase before opening WhatsApp.
+        async function sendParentWhatsApp() {
+            const name = document.getElementById('p-name').value.trim();
+            const mobile = document.getElementById('p-mobile').value.replace(/\D/g, '');
+            const pClass = document.getElementById('p-class').value;
+            const time = document.getElementById('p-time').value;
+            const city = document.getElementById('p-city').value;
+            const fullAddress = document.getElementById('p-manual-address').value.trim();
+            const subject = document.getElementById('p-subject').value;
+            const demo = document.getElementById('p-demo').checked;
+
+            if (!name || !/^[6-9]\d{9}$/.test(mobile)) {
+                alert('कृपया नाम और सही 10 अंकों का मोबाइल नंबर दर्ज करें।');
+                return;
+            }
+
+            const { error } = await leadDb.from('home_tuition_leads').insert({
+                parent_name: name,
+                mobile_number: mobile,
+                class_level: pClass,
+                preferred_time: time,
+                city: city,
+                address: fullAddress,
+                subject: subject,
+                demo_requested: demo,
+                source_page: sourcePage,
+                source_url: window.location.href
+            });
+
+            if (error) {
+                console.error('Tuition enquiry save failed:', error);
+                alert('Enquiry database में save नहीं हुई। कृपया Supabase SQL setup पूरा करें, फिर दोबारा कोशिश करें।');
+                return;
+            }
+
+            const message = encodeURIComponent(
+                '*Parent Inquiry - Smart Home Tuitions*\n\n' +
+                'Name: ' + name + '\nMobile: ' + mobile +
+                '\nClass: ' + pClass + '\nTiming: ' + time +
+                '\nCity: ' + city + '\nAddress: ' + fullAddress +
+                '\nSubject: ' + subject + '\nFree Demo Needed: ' + (demo ? 'Yes' : 'No') +
+                '\nSource Page: ' + sourcePage
+            );
+            window.open('https://wa.me/917665533892?text=' + message, '_blank');
+        }
+
         function sendTeacherWhatsApp() {  
             const name = document.getElementById('t-name').value;  
             const qual = document.getElementById('t-qualification').value;  

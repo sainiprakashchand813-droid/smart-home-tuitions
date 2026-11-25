@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="hi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Lead Dashboard | Smart Home Tuitions</title>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<style>
+:root{font-family:Inter,system-ui,-apple-system,Segoe UI,sans-serif;color:#172033;background:#f4f6fb}
+*{box-sizing:border-box}body{margin:0}.top{background:#172554;color:#fff;padding:20px 5%;display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}.top h1{font-size:21px;margin:0}.top p{margin:5px 0 0;color:#c7d2fe;font-size:13px}.wrap{max-width:1200px;margin:24px auto;padding:0 16px}.panel,.stat,.lead{background:#fff;border:1px solid #e5eaf3;border-radius:14px;box-shadow:0 4px 16px #1e293b0a}.panel{padding:22px;max-width:440px;margin:50px auto}.panel h2{margin-top:0}.field{display:block;width:100%;padding:12px;border:1px solid #cbd5e1;border-radius:9px;margin:7px 0 14px;font:inherit}.btn{border:0;border-radius:9px;padding:11px 16px;background:#4338ca;color:white;font-weight:650;cursor:pointer}.btn.secondary{background:#e0e7ff;color:#312e81}.btn.danger{background:#fee2e2;color:#991b1b}.muted{color:#64748b;font-size:13px}.hidden{display:none!important}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:18px 0}.stat{padding:16px}.stat strong{display:block;font-size:26px;color:#312e81}.tabs{display:flex;gap:8px;flex-wrap:wrap;margin:18px 0}.tab{border:1px solid #c7d2fe;background:#fff;color:#312e81;padding:10px 14px;border-radius:9px;cursor:pointer;font-weight:600}.tab.active{background:#312e81;color:#fff}.toolbar{display:flex;gap:10px;flex-wrap:wrap;margin:12px 0}.toolbar input,.toolbar select{max-width:260px;margin:0}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.lead{padding:16px;min-width:0}.lead h3{margin:0 0 7px;font-size:17px}.meta{font-size:13px;color:#475569;line-height:1.7;overflow-wrap:anywhere}.actions{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:12px}.actions label{font-size:12px;color:#64748b}.actions input,.actions select{width:100%;padding:9px;border:1px solid #cbd5e1;border-radius:8px;margin-top:4px;background:#fff}.actions .wide{grid-column:1/-1}.phone{font-weight:700;color:#3730a3;text-decoration:none}.notice{padding:10px 12px;background:#eff6ff;border-radius:9px;color:#1e40af;font-size:13px;margin:12px 0}.error{color:#b91c1c}.empty{padding:30px;text-align:center;color:#64748b;background:#fff;border-radius:12px}.top button{white-space:nowrap}
+@media(max-width:720px){.grid{grid-template-columns:1fr}.stats{grid-template-columns:repeat(3,1fr)}.stat{padding:12px}.stat strong{font-size:21px}.panel{margin:28px auto}.wrap{margin:14px auto}}
+</style>
+</head>
+<body>
+<header class="top"><div><h1>Smart Home Tuitions</h1><p>Private Lead Management Dashboard</p></div><button id="logoutBtn" class="btn secondary hidden">Logout</button></header>
+<main class="wrap">
+<section id="loginPanel" class="panel">
+<h2>Admin Login</h2><p class="muted">केवल अधिकृत Admin ईमेल और पासवर्ड से लॉगिन करें।</p>
+<form id="loginForm"><label>Admin Email<input class="field" id="email" type="email" autocomplete="username" required></label><label>Password<input class="field" id="password" type="password" autocomplete="current-password" required></label><button class="btn" type="submit">Login</button></form>
+<p id="loginMsg" class="muted" aria-live="polite"></p>
+</section>
+<section id="app" class="hidden">
+<div class="notice">यह निजी डैशबोर्ड है। Leads की जानकारी केवल लॉगिन किए हुए account को दिखाई जाती है।</div>
+<div class="stats">
+<div class="stat"><span class="muted">Parent Enquiries</span><strong id="parentCount">0</strong></div>
+<div class="stat"><span class="muted">Student Leads</span><strong id="studentCount">0</strong></div>
+<div class="stat"><span class="muted">Test Results</span><strong id="resultCount">0</strong></div>
+</div>
+<div class="tabs">
+<button class="tab active" data-tab="parents">Parent Enquiries</button>
+<button class="tab" data-tab="students">Student Leads</button>
+<button class="tab" data-tab="results">Test Results</button>
+</div>
+<div class="toolbar"><input class="field" id="search" placeholder="नाम, मोबाइल, क्लास या शहर खोजें"><select class="field" id="statusFilter"><option value="">सभी Status</option><option>New</option><option>Contacted</option><option>Demo Scheduled</option><option>Converted</option><option>Not Interested</option></select><button class="btn secondary" id="refreshBtn">Refresh</button></div>
+<p id="dataMsg" class="muted" aria-live="polite"></p>
+<div id="cards" class="grid"></div>
+</section>
+</main>
+<script>
+const SUPABASE_URL = "https://xjrafailggycxyxakqbm.supabase.co";
+const SUPABASE_PUBLISHABLE_KEY = "sb_publishable_tCFBcs_pRssMD0or0VFa4g_oN9695QN";
+const db = window.supabase.createClient(SUPABASE_URL, SUPABASE_PUBLISHABLE_KEY);
+const $ = id => document.getElementById(id);
+let activeTab = "parents", parents = [], students = [], results = [];
+const statusOptions = ["New","Contacted","Demo Scheduled","Converted","Not Interested"];
+function esc(v){return String(v ?? "").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));}
+function showApp(user){$("loginPanel").classList.toggle("hidden",!!user);$("app").classList.toggle("hidden",!user);$("logoutBtn").classList.toggle("hidden",!user);}
+function message(t,isError=false){$("dataMsg").textContent=t;$("dataMsg").className=isError?"muted error":"muted";}
+async function loadAll(){
+ message("Leads लोड हो रही हैं…");
+ const [p,s,r]=await Promise.all([
+  db.from("home_tuition_leads").select("*").order("created_at",{ascending:false}).limit(500),
+  db.from("student_leads").select("*").order("created_at",{ascending:false}).limit(500),
+  db.from("test_results").select("*").order("created_at",{ascending:false}).limit(500)
+ ]);
+ if(p.error||s.error||r.error){const e=p.error||s.error||r.error;message("Data load नहीं हुआ: "+e.message,true);return;}
+ parents=p.data||[];students=s.data||[];results=r.data||[];
+ $("parentCount").textContent=parents.length;$("studentCount").textContent=students.length;$("resultCount").textContent=results.length;
+ message("Last refreshed: "+new Date().toLocaleString("en-IN"));render();
+}
+function leadCard(row,type){
+ const parent=type==="parents",name=parent?row.parent_name:row.student_name;
+ const extra=parent
+  ? [["Class",row.class_level],["Subject",row.subject],["Preferred time",row.preferred_time],["City",row.city],["Address",row.address],["Free demo",row.demo_requested?"Yes":"No"],["Source",row.source_page]]
+  : [["Board",row.board],["Class",row.class_level],["City",row.city],["Address",row.address],["Resource",row.resource]];
+ const fields=extra.map(([k,v])=>v?'<div><b>'+esc(k)+':</b> '+esc(v)+'</div>':"").join("");
+ const date=row.created_at?new Date(row.created_at).toLocaleString("en-IN"):"";
+ return '<article class="lead"><h3>'+esc(name||"Unnamed")+'</h3><div class="meta"><div><a class="phone" href="tel:'+esc(row.mobile_number)+'">'+esc(row.mobile_number)+'</a></div>'+fields+'<div><b>Received:</b> '+esc(date)+'</div></div><div class="actions"><label>Status<select data-id="'+row.id+'" data-type="'+type+'" data-field="status">'+statusOptions.map(x=>'<option '+((row.status||"New")===x?"selected":"")+'>'+x+'</option>').join("")+'</select></label><label>Follow-up date<input type="date" data-id="'+row.id+'" data-type="'+type+'" data-field="follow_up_date" value="'+esc(row.follow_up_date||"")+'"></label><label class="wide">Notes<input data-id="'+row.id+'" data-type="'+type+'" data-field="notes" value="'+esc(row.notes||"")+'" placeholder="Call details / next action"></label><button class="btn secondary wide" data-save="'+row.id+'" data-type="'+type+'">Save Updates</button></div></article>';
+}
+function render(){
+ const q=$("search").value.toLowerCase().trim(),filter=$("statusFilter").value;
+ let html="";
+ if(activeTab==="parents"||activeTab==="students"){
+  const rows=activeTab==="parents"?parents:students;
+  const filtered=rows.filter(x=>{
+   const text=JSON.stringify(x).toLowerCase();
+   return (!q||text.includes(q))&&(!filter||(x.status||"New")===filter);
+  });
+  html=filtered.map(x=>leadCard(x,activeTab)).join("");
+  if(!html)html='<div class="empty">इस filter में कोई lead नहीं मिली।</div>';
+ }else{
+  const filtered=results.filter(x=>!q||JSON.stringify(x).toLowerCase().includes(q));
+  html=filtered.map(x=>'<article class="lead"><h3>'+esc(x.student_name)+'</h3><div class="meta"><div><b>Class:</b> '+esc(x.class_level)+' | <b>Subject:</b> '+esc(x.subject)+'</div><div><b>Score:</b> '+esc(x.score)+' / '+esc(x.total_questions)+' ('+esc(x.accuracy)+'%)</div><div><b>Date:</b> '+esc(x.created_at?new Date(x.created_at).toLocaleString("en-IN"):"")+'</div></div></article>').join("");
+  if(!html)html='<div class="empty">अभी कोई test result नहीं है।</div>';
+ }
+ $("cards").innerHTML=html;
+}
+async function saveLead(btn){
+ const id=btn.dataset.save,type=btn.dataset.type;
+ const fields=[...document.querySelectorAll('[data-id="'+id+'"][data-type="'+type+'"]')];
+ const update={updated_at:new Date().toISOString()};
+ fields.forEach(el=>update[el.dataset.field]=el.value);
+ const table=type==="parents"?"home_tuition_leads":"student_leads";
+ btn.disabled=true;btn.textContent="Saving…";
+ const {error}=await db.from(table).update(update).eq("id",id);
+ btn.disabled=false;btn.textContent="Save Updates";
+ if(error){message("Save नहीं हुआ: "+error.message,true);return;}
+ const arr=type==="parents"?parents:students, row=arr.find(x=>String(x.id)===String(id));
+ if(row)Object.assign(row,update);
+ message("Lead updates save हो गए।");render();
+}
+$("loginForm").addEventListener("submit",async e=>{e.preventDefault();$("loginMsg").textContent="Logging in…";const {error}=await db.auth.signInWithPassword({email:$("email").value.trim(),password:$("password").value});$("loginMsg").textContent=error?error.message:"";if(!error){showApp(true);loadAll();}});
+$("logoutBtn").addEventListener("click",async()=>{await db.auth.signOut();showApp(false);});
+document.querySelectorAll(".tab").forEach(b=>b.addEventListener("click",()=>{activeTab=b.dataset.tab;document.querySelectorAll(".tab").forEach(x=>x.classList.toggle("active",x===b));$("statusFilter").classList.toggle("hidden",activeTab==="results");render();}));
+$("cards").addEventListener("click",e=>{const b=e.target.closest("[data-save]");if(b)saveLead(b);});
+$("search").addEventListener("input",render);$("statusFilter").addEventListener("change",render);$("refreshBtn").addEventListener("click",loadAll);
+db.auth.getSession().then(({data})=>{if(data.session){showApp(true);loadAll();}else showApp(false);});
+db.auth.onAuthStateChange((event,session)=>{if(event==="SIGNED_OUT")showApp(false);});
+</script>
+</body>
+</html>

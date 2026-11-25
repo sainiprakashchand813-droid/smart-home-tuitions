@@ -50,3 +50,45 @@ with check (
 );
 grant usage on schema public to anon;
 grant insert on public.student_leads to anon;
+
+-- Parent home-tuition enquiries from the website.
+-- Safe to run more than once. Public visitors can INSERT only; no public SELECT.
+create table if not exists public.home_tuition_leads (
+ id bigint generated always as identity primary key,
+ parent_name text not null,
+ mobile_number text not null,
+ class_level text not null,
+ preferred_time text not null default '',
+ city text not null default 'Jaipur',
+ address text not null default '',
+ subject text not null default '',
+ demo_requested boolean not null default false,
+ source_page text not null default 'homepage',
+ source_url text not null default '',
+ created_at timestamptz not null default now()
+);
+
+-- Add any newer columns when this table already exists from an earlier setup.
+alter table public.home_tuition_leads
+ add column if not exists preferred_time text not null default '',
+ add column if not exists city text not null default 'Jaipur',
+ add column if not exists address text not null default '',
+ add column if not exists subject text not null default '',
+ add column if not exists demo_requested boolean not null default false,
+ add column if not exists source_page text not null default 'homepage',
+ add column if not exists source_url text not null default '',
+ add column if not exists created_at timestamptz not null default now();
+
+alter table public.home_tuition_leads enable row level security;
+drop policy if exists "Visitors can submit home tuition enquiries" on public.home_tuition_leads;
+create policy "Visitors can submit home tuition enquiries"
+ on public.home_tuition_leads
+ for insert to anon
+ with check (
+  char_length(trim(parent_name)) between 1 and 100
+  and mobile_number ~ '^[6-9][0-9]{9}$'
+  and char_length(class_level) between 1 and 80
+  and char_length(city) between 1 and 80
+ );
+grant usage on schema public to anon;
+grant insert on public.home_tuition_leads to anon;

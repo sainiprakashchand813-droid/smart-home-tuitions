@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="hi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow,noarchive">
+<meta name="referrer" content="no-referrer">
+<title>Lead Dashboard | Smart Home Tuitions</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/qrcode-generator@1.4.4/qrcode.js"></script>
+</head>
+<body class="min-h-screen bg-slate-50 text-slate-800">
+<div id="login" class="mx-auto mt-16 max-w-sm rounded-2xl border bg-white p-6 shadow-sm">
+<h1 class="text-xl font-extrabold text-indigo-950">Lead Dashboard</h1>
+<p class="mt-1 text-xs text-slate-500">मालिक के लिए सुरक्षित लॉगिन। Supabase Auth ईमेल और पासवर्ड इस्तेमाल करें।</p>
+<form id="login-form" class="mt-4 space-y-3">
+<input id="email" type="email" required autocomplete="username" placeholder="Email" class="w-full rounded-xl border p-3 text-sm">
+<input id="password" type="password" required autocomplete="current-password" placeholder="Password" class="w-full rounded-xl border p-3 text-sm">
+<p id="login-error" class="text-xs text-red-600" role="alert"></p>
+<button class="w-full rounded-xl bg-indigo-600 p-3 text-sm font-bold text-white">Login</button>
+</form></div>
+<div id="app" class="hidden">
+<header class="bg-indigo-950 text-white"><div class="mx-auto flex max-w-6xl items-center justify-between gap-3 px-4 py-4">
+<div><h1 class="font-extrabold text-yellow-300">Smart Home Tuitions · Lead Dashboard</h1><p id="who" class="text-xs text-slate-300"></p></div>
+<div class="flex gap-2"><button id="refresh" class="rounded-lg bg-white/10 px-3 py-2 text-xs">Refresh</button><button id="logout" class="rounded-lg bg-white/10 px-3 py-2 text-xs">Logout</button></div>
+</div></header>
+<main class="mx-auto max-w-6xl px-4 py-5">
+<p id="notice" class="mb-4 hidden rounded-xl bg-amber-50 p-3 text-sm text-amber-900"></p>
+<nav class="mb-5 flex flex-wrap gap-2 border-b pb-3 text-sm font-bold">
+<button data-tab="overview" class="tab rounded-lg bg-indigo-100 px-3 py-2 text-indigo-800">डैशबोर्ड</button>
+<button data-tab="leads" class="tab rounded-lg px-3 py-2">सभी लीड्स</button>
+<button data-tab="links" class="tab rounded-lg px-3 py-2">ट्रैकिंग लिंक / QR</button>
+</nav>
+<section id="overview">
+<div class="mb-4 flex flex-wrap gap-3 text-sm"><label>अवधि <select id="days" class="rounded-lg border bg-white p-2"><option value="7">7 दिन</option><option value="30" selected>30 दिन</option><option value="90">90 दिन</option><option value="0">सभी</option></select></label><label>प्रकार <select id="kind" class="rounded-lg border bg-white p-2"><option value="all">सभी</option><option value="home">होम ट्यूशन</option><option value="material">फ्री मटीरियल</option></select></label><span id="summary" class="self-center text-xs text-slate-500"></span></div>
+<div class="grid grid-cols-2 gap-3 md:grid-cols-4">
+<div class="rounded-xl border bg-white p-4"><p class="text-xs text-slate-500">कुल लीड</p><p id="total" class="text-2xl font-extrabold text-indigo-800">0</p></div>
+<div class="rounded-xl border bg-white p-4"><p class="text-xs text-slate-500">अलग पिन कोड</p><p id="pins" class="text-2xl font-extrabold text-indigo-800">0</p></div>
+<div class="rounded-xl border bg-white p-4"><p class="text-xs text-slate-500">टॉप सोर्स</p><p id="source" class="truncate text-lg font-extrabold text-indigo-800">-</p></div>
+<div class="rounded-xl border bg-white p-4"><p class="text-xs text-slate-500">फ्री डेमो</p><p id="demo" class="text-2xl font-extrabold text-indigo-800">0</p></div></div>
+<div class="mt-4 grid gap-4 md:grid-cols-2">
+<div class="rounded-xl border bg-white p-4"><h2 class="mb-2 text-sm font-bold">पिन कोड के अनुसार लीड</h2><div class="h-72"><canvas id="pin-chart"></canvas></div></div>
+<div class="rounded-xl border bg-white p-4"><h2 class="mb-2 text-sm font-bold">सोर्स के अनुसार लीड</h2><div class="h-72"><canvas id="source-chart"></canvas></div></div>
+<div class="rounded-xl border bg-white p-4"><h2 class="mb-2 text-sm font-bold">क्लास / सर्विस के अनुसार लीड</h2><div class="h-72"><canvas id="class-chart"></canvas></div></div>
+<div class="rounded-xl border bg-white p-4"><h2 class="mb-2 text-sm font-bold">रोज़ की लीड</h2><div class="h-72"><canvas id="daily-chart"></canvas></div></div></div>
+</section>
+<section id="leads" class="hidden">
+<div class="mb-3 flex flex-wrap items-center gap-2"><input id="search" type="search" placeholder="नाम, मोबाइल, पिन, क्लास खोजें" class="min-w-0 flex-1 rounded-xl border bg-white p-3 text-sm"><button id="csv" class="rounded-xl bg-indigo-600 px-4 py-3 text-xs font-bold text-white">CSV डाउनलोड</button><span id="lead-count" class="text-xs text-slate-500"></span></div>
+<div class="overflow-x-auto rounded-xl border bg-white"><table class="w-full min-w-[760px] text-left text-xs"><thead class="bg-slate-100"><tr><th class="p-3">तारीख</th><th class="p-3">नाम</th><th class="p-3">मोबाइल</th><th class="p-3">पिन</th><th class="p-3">क्लास / सर्विस</th><th class="p-3">सोर्स</th><th class="p-3">प्रकार</th></tr></thead><tbody id="rows"></tbody></table></div>
+<p class="mt-2 text-xs text-slate-500">टेबल में अधिकतम 200 लीड दिखेंगी। CSV में चुनी हुई अवधि और प्रकार की सभी उपलब्ध लीड होंगी।</p></section>
+<section id="links" class="hidden space-y-4">
+<div class="rounded-xl border bg-white p-4"><h2 class="font-bold">ट्यूशन क्लास के लिए लिंक / QR</h2><p class="mt-1 text-xs text-slate-500">हर क्लास के लिए अलग URL बनाएँ। लिंक से आने वाली लीड में स्रोत तभी दिखेगा जब वेबसाइट का रजिस्ट्रेशन फॉर्म उस URL पैरामीटर को सेव करे।</p>
+<div class="mt-3 flex flex-wrap gap-2"><input id="class-name" maxlength="60" placeholder="जैसे Sharma Classes" class="min-w-0 flex-1 rounded-xl border p-3 text-sm"><button id="make-link" class="rounded-xl bg-indigo-600 px-4 py-3 text-xs font-bold text-white">लिंक बनाएँ</button></div>
+<div id="link-output" class="mt-4 hidden"><input id="url" readonly class="w-full rounded-lg border bg-slate-50 p-2 text-xs"><div class="mt-3 flex flex-wrap items-end gap-3"><div id="qr" class="h-40 w-40 border bg-white p-2"></div><button id="copy-link" class="rounded-lg bg-slate-800 px-3 py-2 text-xs text-white">कॉपी</button><button id="download-qr" class="rounded-lg bg-indigo-600 px-3 py-2 text-xs text-white">QR SVG डाउनलोड</button></div></div></div>
+<div class="rounded-xl border bg-white p-4"><h2 class="font-bold">सोशल मीडिया ट्रैकिंग लिंक</h2><div id="presets" class="mt-3 space-y-2"></div></div>
+</section>
+</main></div>
+<script>
+const SUPABASE_URL='https://xjrafailggycxyxakqbm.supabase.co';
+const SUPABASE_KEY='sb_publishable_tCFBcs_pRssMD0or0VFa4g_oN9695QN';
+const SITE='https://sainiprakashchand813-droid.github.io/smart-home-tuitions/';
+const db=window.supabase.createClient(SUPABASE_URL,SUPABASE_KEY);
+let all=[], charts={}, lastUrl='';
+const $=id=>document.getElementById(id);
+const slug=s=>String(s||'').toLowerCase().trim().replace(/[^a-z0-9\u0900-\u097f]+/g,'-').replace(/^-+|-+$/g,'').slice(0,60);
+const pretty=s=>String(s||'').replace(/[-_]+/g,' ').replace(/\b\w/g,c=>c.toUpperCase()).trim();
+function count(rows,fn,limit=15){const m=new Map();rows.forEach(r=>{const k=fn(r)||'(नहीं बताया)';m.set(k,(m.get(k)||0)+1)});return [...m].sort((a,b)=>b[1]-a[1]).slice(0,limit)}
+async function fetchTable(table,optional=false){let out=[];for(let from=0;;from+=1000){const {data,error}=await db.from(table).select('*').order('created_at',{ascending:false}).range(from,from+999);if(error){if(optional&&error.code==='42P01')return {data:[],error:null};return {data:out,error}}out.push(...(data||[]));if(!data||data.length<1000)break}return {data:out,error:null}}
+async function load(){ $('notice').classList.add('hidden');$('refresh').disabled=true;const [h,s]=await Promise.all([fetchTable('home_tuition_leads',true),fetchTable('student_leads')]);const errors=[h.error&&('home_tuition_leads: '+h.error.message),s.error&&('student_leads: '+s.error.message)].filter(Boolean);if(errors.length){$('notice').textContent=errors.join(' | ');$('notice').classList.remove('hidden')}
+all=[...h.data.map(r=>({kind:'home',created:r.created_at,name:r.parent_name||'',mobile:r.mobile_number||'',pin:r.pin_code||'',cls:r.class_level||'',subject:r.subject||'',source:r.source_channel||'',demo:!!r.demo_requested,ref:r.ref_code||''})),...s.data.map(r=>({kind:'material',created:r.created_at,name:r.student_name||'',mobile:r.mobile_number||'',pin:r.pin_code||'',cls:r.class_level||'',subject:r.resource||'',source:r.source_channel||'',demo:false,ref:r.ref_code||''}))].sort((a,b)=>new Date(b.created)-new Date(a.created));render();$('refresh').disabled=false}
+function filtered(){const n=+$('days').value,cut=n?Date.now()-n*86400000:0,k=$('kind').value;return all.filter(r=>(k==='all'||r.kind===k)&&new Date(r.created).getTime()>=cut)}
+function chart(id,type,labels,data,horizontal=false){if(charts[id])charts[id].destroy();charts[id]=new Chart($(id),{type,data:{labels,datasets:[{data,backgroundColor:'#4f46e5',borderColor:'#4f46e5',borderRadius:4,tension:.25}]},options:{responsive:true,maintainAspectRatio:false,indexAxis:horizontal?'y':'x',plugins:{legend:{display:false}},scales:{x:{beginAtZero:true,ticks:{precision:0}},y:{beginAtZero:true,ticks:{precision:0}}}}})}
+function render(){const a=filtered();$('summary').textContent=a.length+' लीड (कुल '+all.length+')';$('total').textContent=a.length;$('pins').textContent=new Set(a.map(r=>r.pin).filter(Boolean)).size;const top=count(a,r=>r.source,1)[0];$('source').textContent=top?top[0]+' ('+top[1]+')':'-';$('demo').textContent=a.filter(r=>r.demo).length;
+for(const [id,key] of [['pin-chart','pin'],['source-chart','source'],['class-chart','cls']]){const x=count(a,r=>r[key],12);chart(id,'bar',x.map(v=>v[0]),x.map(v=>v[1]),true)}
+const n=+$('days').value||30,labels=[],values=[],map={};a.forEach(r=>{const k=new Date(r.created).toLocaleDateString('en-CA',{timeZone:'Asia/Kolkata'});map[k]=(map[k]||0)+1});for(let i=n-1;i>=0;i--){const d=new Date(Date.now()-i*86400000).toLocaleDateString('en-CA',{timeZone:'Asia/Kolkata'});labels.push(d.slice(5));values.push(map[d]||0)}chart('daily-chart','line',labels,values);renderRows()}
+function renderRows(){const q=$('search').value.trim().toLowerCase(),a=filtered().filter(r=>[r.name,r.mobile,r.pin,r.cls,r.subject,r.source].join(' ').toLowerCase().includes(q));$('lead-count').textContent=a.length+' लीड';$('rows').textContent='';a.slice(0,200).forEach(r=>{const tr=document.createElement('tr');tr.className='border-t';const vals=[new Date(r.created).toLocaleString('en-IN',{timeZone:'Asia/Kolkata'}),r.name,r.mobile,r.pin||'-',[r.cls,r.subject].filter(Boolean).join(' · '),r.source||'-',r.kind==='home'?'होम ट्यूशन':'फ्री मटीरियल'];vals.forEach((v,i)=>{const td=tr.insertCell();td.className='p-3';if(i===2&&v){const a=document.createElement('a');a.href='tel:'+String(v).replace(/[^0-9+]/g,'');a.textContent=v;a.className='text-indigo-700 underline';td.append(a)}else td.textContent=v});$('rows').append(tr)})}
+function csv(){const a=filtered(),head=['Date IST','Type','Name','Mobile','Pin','Class','Subject/Resource','Source','Ref code','Demo'];const esc=v=>{let s=String(v??'');if(/^[=+\-@\t\r]/.test(s))s="'"+s;return '"'+s.replace(/"/g,'""')+'"'};const lines=[head,...a.map(r=>[new Date(r.created).toLocaleString('en-IN',{timeZone:'Asia/Kolkata'}),r.kind,r.name,r.mobile,r.pin,r.cls,r.subject,r.source,r.ref,r.demo?'Yes':''])].map(row=>row.map(esc).join(','));const blob=new Blob(['\ufeff'+lines.join('\r\n')],{type:'text/csv;charset=utf-8'}),u=URL.createObjectURL(blob),aTag=document.createElement('a');aTag.href=u;aTag.download='smart-home-tuition-leads.csv';aTag.click();URL.revokeObjectURL(u)}
+async function copy(text,btn){try{await navigator.clipboard.writeText(text);btn.textContent='कॉपी हो गया'}catch(e){const t=document.createElement('textarea');t.value=text;document.body.append(t);t.select();document.execCommand('copy');t.remove();btn.textContent='कॉपी हो गया'}setTimeout(()=>btn.textContent='कॉपी',1300)}
+function makeLink(){const name=$('class-name').value.trim(),s=slug(name);if(!s){alert('क्लास का नाम लिखें');return}lastUrl=SITE+'?src=class-'+encodeURIComponent(s);$('url').value=lastUrl;$('link-output').classList.remove('hidden');const q=qrcode(0,'M');q.addData(lastUrl);q.make();$('qr').innerHTML=q.createSvgTag({cellSize:4,margin:0,scalable:true});const svg=$('qr').querySelector('svg');svg.setAttribute('width','100%');svg.setAttribute('height','100%')}
+function downloadQr(){const svg=$('qr').querySelector('svg');if(!svg)return;const blob=new Blob([new XMLSerializer().serializeToString(svg)],{type:'image/svg+xml'}),u=URL.createObjectURL(blob),a=document.createElement('a');a.href=u;a.download='smart-home-tuitions-qr.svg';a.click();URL.revokeObjectURL(u)}
+const presets=[['Instagram','instagram'],['Facebook','facebook'],['YouTube','youtube'],['WhatsApp','whatsapp'],['Poster / QR','poster'],['Google Business Profile','google']];
+presets.forEach(([name,code])=>{const row=document.createElement('div');row.className='flex flex-wrap items-center gap-2';const label=document.createElement('span');label.className='w-40 font-semibold';label.textContent=name;const input=document.createElement('input');input.readOnly=true;input.value=SITE+'?src='+code;input.className='min-w-0 flex-1 rounded-lg border bg-slate-50 p-2';const b=document.createElement('button');b.textContent='कॉपी';b.className='rounded-lg bg-slate-800 px-3 py-2 text-white';b.onclick=()=>copy(input.value,b);row.append(label,input,b);$('presets').append(row)});
+function showTab(t){['overview','leads','links'].forEach(x=>$(x).classList.toggle('hidden',x!==t));document.querySelectorAll('.tab').forEach(b=>b.className='tab rounded-lg px-3 py-2 '+(b.dataset.tab===t?'bg-indigo-100 text-indigo-800':''));if(t==='overview')Object.values(charts).forEach(c=>c.resize())}
+document.querySelectorAll('.tab').forEach(b=>b.addEventListener('click',()=>showTab(b.dataset.tab)));
+$('login-form').addEventListener('submit',async e=>{e.preventDefault();$('login-error').textContent='';const {error}=await db.auth.signInWithPassword({email:$('email').value.trim(),password:$('password').value});if(error)$('login-error').textContent='लॉगिन विफल: '+error.message});
+function auth(session){$('login').classList.toggle('hidden',!!session);$('app').classList.toggle('hidden',!session);if(session){$('who').textContent=session.user.email;load()}else{all=[]}}
+db.auth.onAuthStateChange((_event,session)=>auth(session));db.auth.getSession().then(({data})=>auth(data.session));
+$('logout').onclick=()=>db.auth.signOut();$('refresh').onclick=load;$('days').onchange=render;$('kind').onchange=render;$('search').oninput=renderRows;$('csv').onclick=csv;$('make-link').onclick=makeLink;$('copy-link').onclick=()=>copy(lastUrl,$('copy-link'));$('download-qr').onclick=downloadQr;
+</script></body></html>

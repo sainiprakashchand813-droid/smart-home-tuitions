@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="hi"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>RBSE Class 10 Science Model Paper 1 | Smart Home Tuitions</title>
+<meta name="description" content="RBSE कक्षा 10 विज्ञान मॉडल पेपर 1, 80 अंक, 3 घंटे 15 मिनट, उत्तर और समाधान।">
+<meta name="robots" content="noindex,follow"><script src="https://cdn.tailwindcss.com"></script>
+<style>body{font-family:Arial,sans-serif}textarea{min-height:76px}</style></head>
+<body class="bg-slate-50 text-slate-800"><header class="bg-indigo-950 text-white p-4"><div class="max-w-4xl mx-auto flex justify-between"><a href="./" class="font-bold">🎓 Smart Home Tuitions</a><a href="weekly-test.html" class="underline text-sm">Weekly Tests</a></div></header>
+<main class="max-w-4xl mx-auto p-4 py-7"><section class="text-center mb-6"><span class="bg-emerald-100 text-emerald-800 rounded-full px-3 py-1 text-xs font-bold">RBSE • CLASS 10 • SCIENCE</span><h1 class="text-2xl md:text-4xl font-extrabold text-indigo-950 mt-3">विज्ञान — मॉडल पेपर 1</h1><p class="text-slate-600 mt-2">80 अंक • समय 3 घंटे 15 मिनट • 53 प्रश्न</p><p class="text-xs text-slate-500 mt-2">अभ्यास हेतु मॉडल पेपर; RBSE का आधिकारिक प्रश्नपत्र नहीं।</p></section>
+<section id="intro" class="bg-white rounded-2xl shadow p-5"><p id="welcome" class="text-sm text-slate-700">विद्यार्थी रजिस्ट्रेशन की जाँच की जा रही है…</p><div class="bg-indigo-50 rounded-xl p-4 mt-4 text-sm"><b>सामान्य निर्देश</b><ol class="list-decimal pl-5 mt-2 space-y-1"><li>सभी प्रश्न अनिवार्य हैं। जहाँ ‘अथवा’ हो, किसी एक का उत्तर दें।</li><li>जहाँ आवश्यक हो, नामांकित चित्र बनाइए।</li><li>पूरा प्रश्नपत्र एक ही पेज पर स्क्रॉल करके हल करें।</li></ol></div><p id="status" class="text-sm text-red-600 mt-3"></p><button id="begin" class="w-full bg-indigo-700 text-white font-bold rounded-xl py-3 mt-3">पूरा पेपर शुरू करें →</button></section>
+<section id="exam" class="hidden bg-white rounded-2xl shadow p-4 md:p-6 mt-5"><div class="sticky top-0 z-20 bg-white py-3 border-b flex justify-between"><div><b>RBSE Class 10 Science • Paper 1</b><p id="progress" class="text-xs text-slate-500">उत्तर दिए: 0</p></div><div id="timer" class="font-bold text-red-700 bg-red-50 rounded-lg px-3 py-2">03:15:00</div></div><div id="paper" class="space-y-5 py-4"></div><button id="submit" class="w-full bg-emerald-600 text-white font-bold rounded-xl py-4">पेपर जमा करें</button></section>
+<section id="result" class="hidden bg-white rounded-2xl shadow p-5 mt-5"><div class="text-center"><div class="text-4xl">🏆</div><h2 class="text-2xl font-extrabold mt-2">आपका परिणाम</h2><p id="score" class="text-3xl font-extrabold text-indigo-700 my-3"></p><p id="feedback" class="text-slate-600 text-sm"></p></div><h3 class="font-bold text-xl mt-7 mb-3">हर प्रश्न का आदर्श उत्तर और समाधान</h3><div id="solutions" class="space-y-4"></div><button onclick="location.reload()" class="w-full bg-indigo-700 text-white rounded-xl py-3 mt-6 font-bold">पेपर दोबारा दें</button></section></main>
+<footer class="text-center text-xs text-slate-500 py-6">© Smart Home Tuitions Jaipur</footer>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script><script>
+const profile=(()=>{try{return JSON.parse(sessionStorage.getItem('sht_weekly_student')||localStorage.getItem('sht_weekly_student')||'null')}catch(e){return null}})();
+const $=id=>document.getElementById(id), esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const SUPABASE_URL="https://xjrafailggycxyxakqbm.supabase.co",SUPABASE_KEY="sb_publishable_tCFBcs_pRssMD0or0VFa4g_oN9695QN";
+const db=window.supabase?.createClient?window.supabase.createClient(SUPABASE_URL,SUPABASE_KEY):null;
+const mcq=[
+["Fe₂O₃ + 2Al → Al₂O₃ + 2Fe किस प्रकार की अभिक्रिया है?",["संयोजन","वियोजन","विस्थापन","द्विविस्थापन"],2,"एल्युमिनियम, आयरन को उसके ऑक्साइड से विस्थापित करता है; यह विस्थापन तथा रेडॉक्स अभिक्रिया है।"],
+["लाल लिटमस को नीला करने वाले विलयन का pH लगभग हो सकता है:",["2","5","7","10"],3,"क्षारीय विलयन लाल लिटमस को नीला करता है; pH 7 से अधिक होता है।"],
+["दाँतों के इनेमल का क्षरण सामान्यतः किस pH से कम पर शुरू होता है?",["7.5","6.5","5.5","3.5"],2,"pH 5.5 से कम अम्लीय दशा इनेमल को प्रभावित कर सकती है।"],
+["कमरे के ताप पर द्रव धातु कौन-सी है?",["लोहा","पारा","ताँबा","एल्युमिनियम"],1,"पारा सामान्य कमरे के ताप पर द्रव धातु है।"],
+["एथेन (C₂H₆) में कुल सहसंयोजक बंधों की संख्या है:",["6","7","8","9"],1,"छह C–H तथा एक C–C बंध, कुल सात।"],
+["ब्यूटेनोन में कौन-सा क्रियात्मक समूह होता है?",["ऐल्कोहॉल","ऐल्डिहाइड","कीटोन","कार्बोक्सिलिक अम्ल"],2,"ब्यूटेनोन में >C=O कीटोन समूह होता है।"],
+["ऑक्सीजन की उपस्थिति में पाइरुवेट का पूर्ण विघटन मुख्यतः कहाँ होता है?",["कोशिका द्रव्य","माइटोकॉन्ड्रिया","राइबोसोम","केंद्रक"],1,"वायवीय श्वसन में माइटोकॉन्ड्रिया में CO₂, जल और ऊर्जा बनती है।"],
+["दो तंत्रिका कोशिकाओं के बीच सूक्ष्म अंतराल कहलाता है:",["ऐक्सॉन","डेंड्राइट","सिनेप्स","ग्राही"],2,"सिनेप्स पर रासायनिक/विद्युत संकेत अगली कोशिका तक पहुँचता है।"],
+["शरीर का संतुलन और मुद्रा नियंत्रित करने वाला मस्तिष्क भाग है:",["प्रमस्तिष्क","अनुमस्तिष्क","मेडुला","हाइपोथैलेमस"],1,"अनुमस्तिष्क संतुलन और ऐच्छिक पेशियों के समन्वय में सहायक है।"],
+["यीस्ट में अलैंगिक जनन सामान्यतः किस विधि से होता है?",["खंडन","मुकुलन","बीजाणु","द्विखंडन"],1,"यीस्ट में छोटी मुकुलिका बनती है और अलग होकर नया जीव बनाती है।"],
+["फूल का मादा जनन अंग है:",["पुंकेसर","बाह्यदल","स्त्रीकेसर","पंखुड़ी"],2,"स्त्रीकेसर में वर्तिकाग्र, वर्तिका और अंडाशय होते हैं।"],
+["एकल संकर क्रॉस की F₂ पीढ़ी में सामान्य लक्षणप्ररूपी अनुपात है:",["1:1","1:2:1","3:1","9:3:3:1"],2,"पूर्ण प्रभाविता में F₂ का लक्षणप्ररूपी अनुपात 3:1 होता है।"],
+["अवतल दर्पण के वक्रता केंद्र C पर वस्तु रखने पर प्रतिबिंब बनता है:",["F पर","C पर","अनंत पर","दर्पण के पीछे"],1,"प्रतिबिंब C पर, वास्तविक, उल्टा और समान आकार का बनता है।"],
+["मानव आँख में प्रतिबिंब कहाँ बनता है?",["कॉर्निया","परितारिका","रेटिना","पुतली"],2,"नेत्र लेंस रेटिना पर वास्तविक और उल्टा प्रतिबिंब बनाता है।"],
+["इनमें से कौन-सा व्यंजक विद्युत शक्ति का सूत्र नहीं है?",["I²R","IR²","VI","V²/R"],1,"शक्ति P=I²R=VI=V²/R; IR² शक्ति का सूत्र नहीं है।"],
+["विद्युत प्रतिरोधकता की SI इकाई है:",["Ω","Ω m","Ω/m","A m"],1,"प्रतिरोधकता की SI इकाई ओम-मीटर है।"],
+["लंबी परिनालिका के भीतर चुंबकीय क्षेत्र लगभग होता है:",["शून्य","असमान","एकसमान","केवल सिरों पर"],2,"लंबी परिनालिका के भीतर क्षेत्र लगभग एकसमान और अक्ष के समानांतर होता है।"],
+["पारितंत्र में ऊर्जा का प्रवाह होता है:",["चक्रीय","द्विदिश","एकदिश","अनियमित"],2,"ऊर्जा उत्पादकों से उपभोक्ताओं की ओर एक दिशा में प्रवाहित होती है।"]
+];
+const short=[
+["प्लास्टर ऑफ पेरिस का रासायनिक सूत्र लिखिए।","CaSO₄·½H₂O।","कैल्शियम सल्फेट हेमीहाइड्रेट को प्लास्टर ऑफ पेरिस कहते हैं।"],
+["लोहे पर जस्ता चढ़ाने की प्रक्रिया क्या कहलाती है?","यशदलेपन (गैल्वनीकरण)।","जस्ते की परत लोहे को वायु और नमी से बचाती है।"],
+["कार्बन की अपने ही परमाणुओं से श्रृंखला बनाने की क्षमता क्या कहलाती है?","श्रृंखलन (कैटेनेशन)।","कार्बन मजबूत C–C बंध बनाकर लंबी/शाखित शृंखलाएँ बनाता है।"],
+["पौधों में कोशिका विभाजन को प्रोत्साहित करने वाला हार्मोन लिखिए।","साइटोकाइनिन।","साइटोकाइनिन कोशिका विभाजन को बढ़ावा देता है।"],
+["विद्युत मोटर किस ऊर्जा को किसमें बदलती है?","विद्युत ऊर्जा को यांत्रिक ऊर्जा में।","धारावाही कुंडली पर चुंबकीय बल लगने से मोटर घूमती है।"],
+["ओजोन परत किस हानिकारक विकिरण से रक्षा करती है?","पराबैंगनी (UV) विकिरण।","ओजोन सूर्य की अधिकांश हानिकारक UV किरणों को अवशोषित करती है।"]
+];
+const very=[
+["बेकिंग सोडा का रासायनिक नाम लिखिए।","सोडियम हाइड्रोजन कार्बोनेट (NaHCO₃)।"],
+["एक उभयधर्मी ऑक्साइड का उदाहरण दीजिए।","Al₂O₃ या ZnO।"],
+["समजातीय श्रेणी के दो क्रमागत सदस्यों में कितना अंतर होता है?","–CH₂– समूह; आणविक द्रव्यमान में 14 u।"],
+["वृक्क की संरचनात्मक एवं क्रियात्मक इकाई क्या है?","नेफ्रॉन।"],
+["आयोडीन की कमी से कौन-सा रोग होता है?","घेंघा (गॉयटर)।"],
+["परागण की परिभाषा लिखिए।","परागकणों का परागकोश से वर्तिकाग्र तक पहुँचना परागण है।"],
+["मानव नर में लिंग गुणसूत्र कौन-से होते हैं?","XY।"],
+["वाहनों में पीछे देखने के लिए कौन-सा दर्पण उपयोग होता है?","उत्तल दर्पण।"],
+["आकाश नीला दिखाई देने का कारण क्या है?","प्रकाश का प्रकीर्णन; छोटी तरंगदैर्घ्य वाला नीला प्रकाश अधिक प्रकीर्णित होता है।"],
+["2 A धारा 600 सेकंड तक बहे तो आवेश कितना होगा?","Q=It=2×600=1200 C।"],
+["घरेलू विद्युत परिपथ में अर्थ तार का सामान्य रंग क्या होता है?","हरा या हरा-पीला।"],
+["एक जैव-निम्नीकरणीय पदार्थ का उदाहरण दीजिए।","सब्जियों के छिलके या कागज।"]
+];
+const written=[
+["लौह कील को कॉपर सल्फेट विलयन में डालने पर होने वाली अभिक्रिया का समीकरण लिखिए तथा रंग परिवर्तन बताइए।","Fe + CuSO₄ → FeSO₄ + Cu। नीला विलयन हल्का हरा हो जाता है और ताँबा कील पर जमता है।","लोहा ताँबे से अधिक क्रियाशील है, इसलिए उसे विस्थापित करता है।",2],
+["आयनिक यौगिकों के गलनांक अधिक क्यों होते हैं? वे विद्युत का चालन कब करते हैं?","आयनों के बीच प्रबल वैद्युत आकर्षण के कारण गलनांक/क्वथनांक अधिक होते हैं। ठोस अवस्था में नहीं, परंतु गलित या जलीय विलयन में आयन गतिशील होने से विद्युत चालन करते हैं।","ठोस में आयन स्थिर रहते हैं; गलित/जलीय अवस्था में मुक्त आयन धारा वहन करते हैं।",2],
+["प्रकाश-संश्लेषण की आवश्यक परिस्थितियाँ लिखिए तथा संतुलित समीकरण दीजिए।","सूर्य का प्रकाश, क्लोरोफिल, CO₂ और जल आवश्यक हैं। 6CO₂ + 12H₂O → C₆H₁₂O₆ + 6O₂ + 6H₂O (प्रकाश/क्लोरोफिल)।","हरे पौधे प्रकाश ऊर्जा को रासायनिक ऊर्जा में बदलकर कार्बोहाइड्रेट बनाते हैं।",2],
+["प्रतिवर्ती क्रिया क्या है? प्रतिवर्ती चाप का क्रम लिखिए।","उत्तेजना के प्रति तीव्र, स्वतः और अनैच्छिक प्रतिक्रिया प्रतिवर्ती क्रिया है। क्रम: ग्राही → संवेदी न्यूरॉन → मेरुरज्जु/मध्यवर्ती न्यूरॉन → प्रेरक न्यूरॉन → प्रभावक।","मेरुरज्जु त्वरित प्रतिक्रिया का समन्वय करती है; मस्तिष्क को सूचना बाद में पहुँचती है।",2],
+["कायिक प्रवर्धन क्या है? इसके दो लाभ लिखिए।","जड़, तना या पत्ती जैसे कायिक भागों से नया पौधा बनना कायिक प्रवर्धन है। लाभ: कम समय में अनेक पौधे; जनक के समान गुण सुरक्षित; बीजरहित पौधों में उपयोगी।","आलू, अदरक, गन्ना और गुलाब इसके उदाहरण हैं।",2],
+["गर्भनिरोध के कोई दो उपाय समझाइए।","अवरोधक विधि: कंडोम शुक्राणु को अंडाणु तक पहुँचने से रोकता है। IUCD/कॉपर-T गर्भाशय में निषेचन/आरोपण की संभावना घटाता है। हार्मोनल गोलियाँ भी उपयोगी हैं।","सुरक्षित और उपयुक्त विधि का चयन चिकित्सकीय सलाह से करना चाहिए।",2],
+["प्रभावी और अप्रभावी लक्षण में अंतर उदाहरण सहित लिखिए।","प्रभावी लक्षण विषमयुग्मजी अवस्था में भी व्यक्त होता है; अप्रभावी केवल समयुग्मजी अवस्था में व्यक्त होता है। मटर में लंबा पौधा (T) प्रभावी और बौना (t) अप्रभावी है।","Tt में लंबापन दिखता है; tt में बौनापन।",2],
+["अवतल दर्पण में u=−25 cm तथा f=−15 cm है। प्रतिबिंब दूरी और 4 cm वस्तु का प्रतिबिंब आकार ज्ञात कीजिए।","दर्पण सूत्र से 1/v=1/f−1/u=−1/15+1/25=−2/75; v=−37.5 cm। m=−v/u=−1.5; h′=−6 cm।","प्रतिबिंब वास्तविक, उल्टा और 1.5 गुना बड़ा है। ऋण चिह्न उल्टी दिशा दर्शाता है।",2],
+["दूर-दृष्टि नहीं, निकट-दृष्टि दोष (मायोपिया) क्या है? दूर बिंदु 80 cm हो तो सुधारक लेंस की शक्ति ज्ञात कीजिए।","मायोपिया में दूर की वस्तु स्पष्ट नहीं दिखती। दूर बिंदु 80 cm के लिए f=−0.80 m; P=1/f=−1.25 D का अवतल लेंस।","अवतल लेंस दूर की वस्तु का आभासी प्रतिबिंब आँख के दूर बिंदु पर बनाता है।",2],
+["जैव आवर्धन क्या है? खाद्य शृंखला के शीर्ष उपभोक्ता पर इसका प्रभाव बताइए।","अविघटनीय विषैले रसायनों की सांद्रता का पोषण स्तरों पर बढ़ते जाना जैव आवर्धन है। शीर्ष उपभोक्ता/मनुष्य में इनकी मात्रा सर्वाधिक हो सकती है।","DDT जैसे रसायन शरीर में जमा होकर खाद्य शृंखला में ऊपर जाते हुए अधिक सांद्र होते हैं।",2],
+["ऊष्मीय, विद्युत तथा प्रकाशीय अपघटन के एक-एक संतुलित समीकरण लिखिए।","ऊष्मीय: CaCO₃ → CaO + CO₂। विद्युत: 2H₂O → 2H₂ + O₂। प्रकाशीय: 2AgCl → 2Ag + Cl₂ (सूर्यप्रकाश)।","ऊर्जा के अलग-अलग स्रोत से एक यौगिक टूटकर सरल पदार्थ बनाता है।",2],
+["क्लोर-क्षार प्रक्रिया का समीकरण लिखिए तथा उत्पादों के एक-एक उपयोग बताइए।","2NaCl + 2H₂O → 2NaOH + Cl₂ + H₂। NaOH: साबुन/कागज; Cl₂: जल कीटाणुशोधन; H₂: ईंधन/अमोनिया निर्माण।","नमकीन जल के विद्युत अपघटन से तीन उपयोगी उत्पाद मिलते हैं।",2],
+["एथेनॉल की सोडियम, सान्द्र H₂SO₄ तथा एथेनोइक अम्ल के साथ अभिक्रियाएँ लिखिए।","2C₂H₅OH+2Na→2C₂H₅ONa+H₂। C₂H₅OH→C₂H₄+H₂O (443 K)। CH₃COOH+C₂H₅OH⇌CH₃COOC₂H₅+H₂O (सान्द्र H₂SO₄)।","क्रमशः सोडियम एथॉक्साइड, एथीन और एथिल एथेनोएट बनते हैं।",2],
+["प्रकाश का वर्ण-विक्षेपण समझाइए। प्रिज्म से श्वेत प्रकाश गुजरने पर क्या होता है?","श्वेत प्रकाश का सात रंगों में विभाजन वर्ण-विक्षेपण है। प्रिज्म में अलग-अलग रंग अलग कोणों से अपवर्तित होते हैं; VIBGYOR वर्णक्रम बनता है।","बैंगनी का विचलन अधिक और लाल का कम होता है। इंद्रधनुष में अपवर्तन, वर्ण-विक्षेपण और आंतरिक परावर्तन होते हैं।",3],
+["मानव हृदय का नामांकित चित्र बनाइए तथा दोहरा परिसंचरण समझाइए।","चित्र में दायाँ/बायाँ आलिंद, दायाँ/बायाँ निलय, महाधमनी, फुफ्फुसीय धमनी/शिरा और वेना कावा दर्शाएँ। फुफ्फुसीय परिसंचरण: हृदय→फेफड़े→हृदय; शारीरिक परिसंचरण: हृदय→शरीर→हृदय।","एक चक्र में रक्त हृदय से दो बार गुजरता है; ऑक्सीजनयुक्त और ऑक्सीजनरहित रक्त अलग रहते हैं।",3],
+["उत्तल लेंस के लिए वस्तु (i) 2F₁ पर, (ii) F₁ और 2F₁ के बीच तथा (iii) F₁ और O के बीच हो तो प्रतिबिंब की स्थिति/प्रकृति लिखिए।","(i) 2F₂ पर, वास्तविक, उल्टा, समान आकार। (ii) 2F₂ से आगे, वास्तविक, उल्टा, बड़ा। (iii) वस्तु की ओर, आभासी, सीधा, बड़ा।","किरण आरेख में एक किरण मुख्य अक्ष के समानांतर लेकर अपवर्तन के बाद F₂ से तथा दूसरी प्रकाशिक केंद्र O से सीधी दिखाएँ।",3],
+["तीन 100Ω, 50Ω और 25Ω प्रतिरोधों को समानांतर में 220V से जोड़ा गया है। तुल्य प्रतिरोध और कुल धारा ज्ञात कीजिए।","1/R=1/100+1/50+1/25=7/100; R=100/7≈14.29Ω; I=220/(100/7)=15.4A।","समानांतर संयोजन में व्युत्क्रम प्रतिरोध जुड़ते हैं और प्रत्येक शाखा पर समान विभवांतर होता है।",3]
+];
+// प्रश्न संख्या/अंक-विभाजन: 18 MCQ + 6 रिक्त + 12 अति लघु + 10 लघु + 4 दीर्घ + 3 निबंधात्मक = 53 प्रश्न, 80 अंक।
+const questions=[...mcq.map((x,i)=>({q:x[0],opts:x[1],correct:x[2],answer:x[1][x[2]],sol:x[3],marks:1,section:'खण्ड अ'})),...short.map(x=>({q:x[0],answer:x[1],sol:x[2],marks:1,section:'खण्ड ब'})),...very.map(x=>({q:x[0],answer:x[1],sol:x[1],marks:1,section:'खण्ड स'})),...written.slice(0,10).map(x=>({q:x[0],answer:x[1],sol:x[2],marks:x[3],section:'खण्ड द'})),...written.slice(10,13).map(x=>({q:x[0],answer:x[1],sol:x[2],marks:x[3],section:'खण्ड ई'})),...written.slice(13).map(x=>({q:x[0],answer:x[1],sol:x[2],marks:x[3],section:'खण्ड फ'}))];
+let responses=Array(questions.length).fill(''),remaining=195*60,tick=null,finished=false;
+function updateProgress(){const n=responses.filter(x=>String(x).trim()).length;$('progress').textContent='53 में से '+n+' प्रश्नों के उत्तर दिए';}
+function draw(){ $('paper').innerHTML=questions.map((q,i)=>'<article class="border rounded-xl p-4"><div class="flex justify-between gap-2 text-xs text-indigo-700 font-bold"><span>'+q.section+' • प्रश्न '+(i+1)+'</span><span>'+q.marks+' अंक</span></div><h3 class="font-bold mt-2">'+(i+1)+'. '+esc(q.q)+'</h3>'+(q.opts?'<div class="grid gap-2 mt-3">'+q.opts.map((v,j)=>'<label class="flex gap-2 border rounded-lg p-3"><input type="radio" name="q'+i+'" value="'+j+'" '+(responses[i]===String(j)?'checked':'')+'><span>'+String.fromCharCode(65+j)+'. '+esc(v)+'</span></label>').join('')+'</div>':'<textarea data-i="'+i+'" class="w-full border rounded-lg p-3 mt-3" placeholder="अपना उत्तर लिखें...">'+esc(responses[i])+'</textarea>')+'</article>').join('');$('paper').querySelectorAll('textarea').forEach(el=>el.addEventListener('input',e=>{responses[+e.target.dataset.i]=e.target.value;updateProgress();}));$('paper').querySelectorAll('input[type=radio]').forEach(el=>el.addEventListener('change',e=>{const i=+e.target.name.slice(1);responses[i]=e.target.value;updateProgress();}));updateProgress();}
+function fmt(n){return String(Math.floor(n/3600)).padStart(2,'0')+':'+String(Math.floor(n%3600/60)).padStart(2,'0')+':'+String(n%60).padStart(2,'0');}
+function submitPaper(){if(finished)return;finished=true;clearInterval(tick);const auto=mcq.reduce((sum,q,i)=>sum+(responses[i]===String(q[2])?1:0),0);$('exam').classList.add('hidden');$('result').classList.remove('hidden');$('score').textContent='MCQ अंक: '+auto+' / 18';$('feedback').textContent='कुल '+responses.filter(x=>String(x).trim()).length+' / 53 प्रश्नों के उत्तर दिए। लिखित उत्तरों का मूल्यांकन आदर्श उत्तर से मिलाकर करें।';$('solutions').innerHTML=questions.map((q,i)=>'<article class="border rounded-xl p-4"><b>प्रश्न '+(i+1)+'. '+esc(q.q)+'</b><p class="text-sm mt-2"><b>आपका उत्तर:</b> '+(q.opts?(responses[i]===''?'उत्तर नहीं दिया':esc(q.opts[+responses[i]])):(String(responses[i]).trim()?esc(responses[i]):'उत्तर नहीं दिया'))+'</p><p class="text-sm text-green-700 font-semibold mt-2"><b>आदर्श उत्तर:</b> '+esc(q.answer)+'</p><p class="text-sm text-slate-600 mt-2"><b>समाधान:</b> '+esc(q.sol)+'</p></article>').join('');try{const rows=JSON.parse(localStorage.getItem('sht_test_results_v1')||'[]');rows.push({date:new Date().toLocaleDateString('en-IN'),class:'10',mode:'weekly',subject:'विज्ञान RBSE',score:auto,total:18,pct:Math.round(auto/18*100)});localStorage.setItem('sht_test_results_v1',JSON.stringify(rows.slice(-30)));}catch(e){}if(db&&profile){db.from('test_results').insert({student_name:profile.name,class_level:10,subject:'विज्ञान',score:auto,total_questions:18,accuracy:Math.round(auto/18*100)}).then(({error})=>{if(error)$('feedback').textContent+=' ऑनलाइन परिणाम सेव नहीं हुआ: '+error.message;}).catch(e=>$('feedback').textContent+=' ऑनलाइन परिणाम सेव नहीं हुआ: '+e.message);}window.scrollTo({top:0,behavior:'smooth'});}
+$('begin').addEventListener('click',()=>{if(!profile||profile.classLevel!=='Class 10'||profile.board!=='RBSE'){$('status').textContent='रजिस्ट्रेशन नहीं मिला। कृपया Weekly Live Test & Rank पर वापस जाकर Class 10, RBSE के साथ रजिस्ट्रेशन करें।';return;}$('intro').classList.add('hidden');$('exam').classList.remove('hidden');draw();tick=setInterval(()=>{remaining--;$('timer').textContent=fmt(remaining);if(remaining<=0)submitPaper();},1000);});
+$('submit').addEventListener('click',()=>{if(confirm('क्या आप विज्ञान का पेपर जमा करना चाहते हैं?'))submitPaper();});
+if(profile&&profile.classLevel==='Class 10'&&profile.board==='RBSE')$('welcome').textContent='स्वागत है, '+profile.name+'! आपका रजिस्ट्रेशन मिल गया है।';else $('welcome').textContent='पहले Weekly Live Test & Rank पोर्टल पर RBSE कक्षा 10 का रजिस्ट्रेशन पूरा करें।';
+</script></body></html>

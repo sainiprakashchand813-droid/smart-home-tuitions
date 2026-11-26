@@ -277,7 +277,8 @@ if($('studentBoard').value==='RBSE'&&c==='10'&&sub==='गणित'){
  $('paperChoices').innerHTML=[
   {n:'Paper 1',tag:'FULL LENGTH',desc:'RBSE गणित • सम्पूर्ण पाठ्यक्रम',href:'rbse-class10-maths-full-paper.html?v=20261126c',cls:'emerald'},
   {n:'Paper 2',tag:'HARD LEVEL',desc:'RBSE गणित • कठिन स्तर',href:'rbse-class10-maths-hard-paper-2.html?v=20261126c',cls:'rose'},
-  {n:'Paper 3',tag:'HARD LEVEL',desc:'MCQ, एक-पंक्ति, लघु व दीर्घ प्रश्न',href:'rbse-class10-maths-hard-paper-3.html?v=20261126c',cls:'violet'}
+  {n:'Paper 3',tag:'HARD LEVEL',desc:'MCQ, एक-पंक्ति, लघु व दीर्घ प्रश्न',href:'rbse-class10-maths-hard-paper-3.html?v=20261126c',cls:'violet'},
+  {n:'Paper 4',tag:'HARD LEVEL',desc:'80 अंक • 3 घंटे 15 मिनट • कठिन स्तर मॉडल पेपर',href:'rbse-class10-maths-hard-paper-4.html?v=20261126d',cls:'amber'}
  ].map(p=>'<article class="border rounded-xl p-4"><p class="text-xs font-extrabold text-'+p.cls+'-700">'+p.tag+'</p><h3 class="text-xl font-extrabold mt-2">'+p.n+'</h3><p class="text-sm text-slate-600 mt-2">'+p.desc+'</p><a class="inline-block mt-4 rounded-lg bg-indigo-700 text-white px-4 py-2 font-bold" href="'+p.href+'">यह पेपर शुरू करें →</a></article>').join('');
  picker.classList.remove('hidden');
  picker.scrollIntoView({behavior:'smooth',block:'start'});

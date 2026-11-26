@@ -112,12 +112,20 @@ const target=Math.min(20,pool.length);
 $('start').disabled=true;$('start').textContent='टेस्ट शुरू हो रहा है…';
 $('registrationStatus').textContent='';
 try{
- if(db){
-  const {error:leadError}=await db.from('student_leads').insert({student_name:activeStudent,mobile_number:mobile,board:$('studentBoard').value,class_level:'Class '+c,city:'Jaipur',address:address,resource:'Online Test',consent:true,consent_by:'student_or_guardian'});
-  if(leadError){console.warn('Student registration save failed; allowing test:',leadError.message);$('registrationStatus').textContent='नोट: आपकी जानकारी अभी सेव नहीं हो सकी, लेकिन टेस्ट शुरू किया जा रहा है।';}
- }else{$('registrationStatus').textContent='नोट: डेटाबेस उपलब्ध नहीं है, लेकिन टेस्ट शुरू किया जा रहा है।';}
-}catch(e){console.warn('Student registration exception; allowing test:',e);$('registrationStatus').textContent='नोट: जानकारी सेव नहीं हो सकी, लेकिन टेस्ट शुरू किया जा रहा है।';}
-$('start').disabled=false;$('start').textContent='टेस्ट शुरू करें →';
+ if(!db) throw new Error('Supabase से कनेक्शन नहीं हो पाया। इंटरनेट कनेक्शन जाँचकर दोबारा कोशिश करें।');
+ const {error:leadError}=await db.from('student_leads').insert({student_name:activeStudent,mobile_number:mobile,board:$('studentBoard').value,class_level:'Class '+c,city:'Jaipur',address:address,resource:'Online Test',consent:true,consent_by:'student_or_guardian'});
+ if(leadError) throw leadError;
+ $('registrationStatus').textContent='रजिस्ट्रेशन सफलतापूर्वक सेव हो गया। अब टेस्ट शुरू हो रहा है…';
+}catch(e){
+ console.error('Student registration failed:',e);
+ const msg='रजिस्ट्रेशन सेव नहीं हुआ, इसलिए टेस्ट शुरू नहीं किया गया। कारण: '+(e&&e.message?e.message:'Supabase त्रुटि');
+ $('registrationStatus').textContent=msg;
+ alert(msg);
+ return;
+}finally{
+ $('start').disabled=false;
+ $('start').textContent='टेस्ट शुरू करें →';
+}
 if(specialPaper){isWrittenMathPaper=true;writtenResponses=Array(rbse10WeeklyPaper.length).fill('');questions=rbse10WeeklyPaper;answers=[];index=0;seconds=195*60;}
 else{isWrittenMathPaper=false;questions=shuffle(pool).slice(0,target).map(q=>q.slice());answers=Array(questions.length).fill(null);index=0;seconds=Number($('duration').value)*60;}
 ended=false;$('setup').classList.add('hidden');$('result').classList.add('hidden');$('quiz').classList.remove('hidden');

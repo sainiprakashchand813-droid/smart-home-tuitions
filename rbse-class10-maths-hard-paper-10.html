@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="hi"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>RBSE Class 10 Maths Model Paper 10 (Hard) | Smart Home Tuitions</title>
-<meta name="description" content="RBSE कक्षा 10 गणित कठिन स्तर मॉडल पेपर 7, सेट 7, 80 अंक, 3 घंटे 15 मिनट, विस्तृत उत्तर और समाधान।">
+<meta name="description" content="RBSE कक्षा 10 गणित कठिन स्तर मॉडल पेपर 10, सेट 7, 80 अंक, 3 घंटे 15 मिनट, विस्तृत उत्तर और समाधान।">
 <meta name="robots" content="index,follow"><link rel="canonical" href="https://sainiprakashchand813-droid.github.io/smart-home-tuitions/rbse-class10-maths-hard-paper-10.html">
 <script src="https://cdn.tailwindcss.com"></script><style>body{font-family:Arial,sans-serif}textarea{min-height:72px}</style></head>
 <body class="bg-slate-50 text-slate-800 min-h-screen">
@@ -11,7 +11,7 @@
 <section id="intro" class="bg-white rounded-2xl shadow p-5 md:p-7"><h2 class="text-xl font-bold">पेपर शुरू करने से पहले</h2><p id="welcome" class="text-sm text-slate-600 mt-2">रजिस्ट्रेशन जाँचा जा रहा है…</p><div class="bg-indigo-50 rounded-xl p-4 mt-4 text-sm"><b>सामान्य निर्देश</b><ol class="list-decimal pl-5 mt-2 space-y-1"><li>सभी प्रश्न अनिवार्य हैं। खण्ड स और द में आंतरिक विकल्प हैं।</li><li>जहाँ आवश्यक हो, π = 22/7 लें।</li><li>कैलकुलेटर का प्रयोग वर्जित है।</li><li>समय 195 मिनट है। पूरा पेपर एक ही पेज पर स्क्रॉल करके हल करें।</li></ol></div><p id="status" class="text-sm text-red-600 mt-3"></p><button id="begin" class="w-full bg-indigo-700 text-white font-bold rounded-xl py-3 mt-3">पूरा पेपर शुरू करें →</button></section>
 <section id="exam" class="hidden bg-white rounded-2xl shadow p-4 md:p-6 mt-5"><div class="sticky top-0 z-20 bg-white py-3 border-b flex justify-between gap-3"><div><b>RBSE Class 10 Maths • Paper 10</b><p id="progress" class="text-xs text-slate-500">उत्तर दिए: 0</p></div><div id="timer" class="font-extrabold text-red-700 bg-red-50 rounded-lg px-3 py-2">03:15:00</div></div>
 <div class="text-sm text-slate-600 py-3">प्रश्नपत्र एक ही पेज पर है। सभी प्रश्न ऊपर से नीचे स्क्रॉल करके हल करें।</div>
-<div id="paper" class="space-y-5"></div><button id="submit" class="w-full bg-emerald-600 text-white font-bold rounded-xl py-4 mt-7">पेपर जमा करें</button></section>
+<div id="paper" class="space-y-5"></div><button type="button" id="submit" class="w-full bg-emerald-600 text-white font-bold rounded-xl py-4 mt-7">पेपर जमा करें</button></section>
 <section id="result" class="hidden bg-white rounded-2xl shadow p-5 mt-5"><div class="text-center"><div class="text-4xl">🏆</div><h2 class="text-2xl font-extrabold mt-2">आपका परिणाम — Paper 10</h2><p id="score" class="text-3xl font-extrabold text-indigo-700 my-3"></p><p id="feedback" class="text-slate-600 text-sm"></p></div><h3 class="font-bold text-xl mt-7 mb-3">प्रत्येक प्रश्न का सही उत्तर और समाधान</h3><div id="solutions" class="space-y-4"></div><button onclick="location.reload()" class="w-full bg-indigo-700 text-white rounded-xl py-3 mt-6 font-bold">पेपर दोबारा दें</button></section>
 </main><footer class="text-center text-xs text-slate-500 py-6">© Smart Home Tuitions Jaipur</footer>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script><script>
@@ -28,6 +28,44 @@ function roman(n){return ["i","ii","iii","iv","v","vi","vii","viii","ix","x","xi
 function update(){let n=$("paper").querySelectorAll("input:checked").length+[...$("paper").querySelectorAll("textarea")].filter(e=>e.value.trim()).length;$("progress").textContent="उत्तर दिए: "+n+" / 53";}
 function fmt(s){return [Math.floor(s/3600),Math.floor(s%3600/60),s%60].map(n=>String(n).padStart(2,"0")).join(":")}
 function begin(){loadProfile();if(!profile||!(profile.name||profile.student_name||profile.studentName)){ $("status").textContent="रजिस्ट्रेशन नहीं मिला। Weekly Live Test & Rank पर वापस जाकर पहले रजिस्ट्रेशन करें।";return;}$("welcome").textContent=(profile.name||profile.student_name||"विद्यार्थी")+" जी, आपका रजिस्ट्रेशन मिल गया है।";$("intro").classList.add("hidden");$("exam").classList.remove("hidden");draw();timer=setInterval(()=>{$("timer").textContent=fmt(--remaining);if(remaining<=0)finish(true)},1000);}
-function finish(auto=false){if(done)return;if(!auto&&!confirm("क्या आप पेपर जमा करना चाहते हैं?"))return;done=true;clearInterval(timer);let mcq=0,total=0,sol="";Q.forEach((sec,si)=>{sol+='<section class="border rounded-xl p-4"><h3 class="font-extrabold text-indigo-900">'+sec.h+'</h3>';sec.parts.forEach((p,pi)=>{let key=si+"-"+pi;let radio=document.querySelector('input[name="a'+key+'"]:checked');let ta=document.querySelector('textarea[data-key="'+key+'"]');let user=radio?String.fromCharCode(65+Number(radio.value))+'. '+p[1][Number(radio.value)]:ta?ta.value.trim():"उत्तर नहीं दिया";let ans=Array.isArray(p[1])?String.fromCharCode(65+p[2])+'. '+p[1][p[2]]:p[1];if(Array.isArray(p[1])){total++;if(radio&&Number(radio.value)===p[2])mcq++;}sol+='<article class="border-t py-3"><b>'+esc(p[0])+'</b><p class="text-sm mt-2"><b>आपका उत्तर:</b> '+esc(user||"उत्तर नहीं दिया")+'</p><p class="text-sm text-green-700 mt-2"><b>सही उत्तर:</b> '+esc(ans)+'</p><p class="text-sm text-slate-700 mt-1"><b>समाधान:</b> '+esc(Array.isArray(p[1])?p[3]:p[2])+'</p></article>';});sol+='</section>';});$("exam").classList.add("hidden");$("result").classList.remove("hidden");$("score").textContent="MCQ अंक: "+mcq+" / "+total;$("feedback").textContent="लिखित उत्तरों का स्वतः मूल्यांकन नहीं किया गया है। सभी प्रश्नों के आदर्श उत्तर और समाधान नीचे दिए गए हैं।";$("solutions").innerHTML=sol;window.scrollTo({top:0,behavior:"smooth"});try{localStorage.setItem("sht_paper10_last_result",JSON.stringify({name:profile.name||profile.student_name,score:mcq,total,at:new Date().toISOString()}))}catch(e){}if(db){db.from("test_results").insert({student_name:profile.name||profile.student_name||profile.studentName,class_level:10,subject:"rbse_math_hard_10",score:mcq,total_questions:total,accuracy:Math.round(mcq/total*100)}).then(({error})=>{const box=document.getElementById("feedback");box.textContent+=error?" ऑनलाइन रैंकिंग में सेव नहीं हो पाया।":" Paper 10 का MCQ स्कोर ऑनलाइन रैंकिंग में सेव हो गया।";}).catch(()=>{});}}
+async function finish(auto=false){
+ if(done)return;
+ const submitBtn=$("submit");
+ if(submitBtn){submitBtn.disabled=true;submitBtn.textContent="पेपर जमा हो रहा है…";}
+ try{
+  done=true;clearInterval(timer);
+  let mcq=0,total=0,sol="";
+  Q.forEach((sec,si)=>{
+   sol+='<section class="border rounded-xl p-4"><h3 class="font-extrabold text-indigo-900">'+sec.h+'</h3>';
+   sec.parts.forEach((p,pi)=>{
+    const key=si+"-"+pi;
+    const radio=document.querySelector('input[name="a'+key+'"]:checked');
+    const ta=document.querySelector('textarea[data-key="'+key+'"]');
+    const user=radio?String.fromCharCode(65+Number(radio.value))+'. '+p[1][Number(radio.value)]:ta?ta.value.trim():"उत्तर नहीं दिया";
+    const ans=Array.isArray(p[1])?String.fromCharCode(65+p[2])+'. '+p[1][p[2]]:p[1];
+    if(Array.isArray(p[1])){total++;if(radio&&Number(radio.value)===p[2])mcq++;}
+    sol+='<article class="border-t py-3"><b>'+esc(p[0])+'</b><p class="text-sm mt-2"><b>आपका उत्तर:</b> '+esc(user||"उत्तर नहीं दिया")+'</p><p class="text-sm text-green-700 mt-2"><b>सही उत्तर:</b> '+esc(ans)+'</p><p class="text-sm text-slate-700 mt-1"><b>समाधान:</b> '+esc(Array.isArray(p[1])?p[3]:p[2])+'</p></article>';
+   });
+   sol+='</section>';
+  });
+  $("exam").classList.add("hidden");$("result").classList.remove("hidden");
+  $("score").textContent="MCQ अंक: "+mcq+" / "+total;
+  $("feedback").textContent="आपका पेपर जमा हो गया। लिखित उत्तरों का स्वतः मूल्यांकन नहीं किया गया है। सभी प्रश्नों के आदर्श उत्तर और समाधान नीचे दिए गए हैं।";
+  $("solutions").innerHTML=sol;
+  try{localStorage.setItem("sht_paper10_last_result",JSON.stringify({name:profile?.name||profile?.student_name||profile?.studentName||"",score:mcq,total,at:new Date().toISOString()}));}catch(storageError){}
+  window.scrollTo({top:0,behavior:"smooth"});
+  if(db){
+   const {error}=await db.from("test_results").insert({student_name:profile?.name||profile?.student_name||profile?.studentName||"विद्यार्थी",class_level:10,subject:"rbse_math_hard_10",score:mcq,total_questions:total,accuracy:Math.round(mcq/total*100)});
+   if(error) $("feedback").textContent+=" स्थानीय परिणाम दिख रहा है, लेकिन ऑनलाइन रैंकिंग में सेव नहीं हुआ: "+error.message;
+   else $("feedback").textContent+=" ऑनलाइन रैंकिंग में भी सेव हो गया।";
+  }else $("feedback").textContent+=" इंटरनेट/डेटाबेस उपलब्ध न होने से ऑनलाइन रैंकिंग में सेव नहीं हुआ; परिणाम इस डिवाइस पर सुरक्षित है।";
+ }catch(err){
+  done=false;
+  $("feedback").textContent="पेपर जमा करते समय त्रुटि: "+(err?.message||String(err))+". कृपया इसी स्क्रीन का स्क्रीनशॉट भेजें।";
+  $("exam").classList.remove("hidden");$("result").classList.add("hidden");
+  if(submitBtn){submitBtn.disabled=false;submitBtn.textContent="दोबारा पेपर जमा करें";}
+  console.error("Paper 10 submit error:",err);
+ }
+}
 $("begin").addEventListener("click",begin);$("submit").addEventListener("click",()=>finish(false));loadProfile();$("welcome").textContent=profile?"रजिस्ट्रेशन मिला है। आप सीधे पेपर शुरू कर सकते हैं।":"पहले Weekly Live Test & Rank पर रजिस्ट्रेशन करें।";$("timer").textContent=fmt(remaining);
 </script></body></html>

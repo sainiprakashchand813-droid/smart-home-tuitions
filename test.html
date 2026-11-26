@@ -12,19 +12,9 @@
 <body class="bg-slate-50 text-slate-800 min-h-screen">
 <header class="bg-indigo-950 text-white px-4 py-5 shadow-lg"><div class="max-w-4xl mx-auto flex items-center justify-between gap-3"><a href="./" class="font-bold text-lg">🎓 Smart Home Tuitions</a><a href="./" class="text-sm underline">मुख्य वेबसाइट</a></div></header>
 <main class="max-w-4xl mx-auto px-4 py-8">
-<section class="text-center mb-7"><span class="inline-block bg-emerald-100 text-emerald-800 rounded-full px-3 py-1 text-xs font-bold">100% FREE • NO LOGIN</span><h1 class="text-3xl md:text-4xl font-extrabold text-indigo-950 mt-3">RBSE Online Practice Test</h1><p class="text-slate-600 mt-2">कक्षा 1वीं से 12वीं • गणित • पाठ्यक्रम-आधारित अभ्यास</p></section>
-<section class="bg-white rounded-2xl shadow p-5 mb-5">
-<h2 class="text-xl font-extrabold text-indigo-950">📘 कक्षा 10 गणित — सभी Full-Length Papers</h2>
-<p class="text-sm text-slate-600 mt-1">अपनी पसंद का पेपर चुनें। तीनों पेपर अलग-अलग खुलेंगे और उनके अपने timer, submission तथा detailed solutions उपलब्ध हैं।</p>
-<div class="grid md:grid-cols-3 gap-3 mt-4">
-<article class="border rounded-xl p-4"><p class="text-xs font-bold text-emerald-700">PAPER 1</p><h3 class="font-bold mt-1">RBSE Maths Full Paper</h3><p class="text-sm text-slate-600 mt-2">80 अंक • सम्पूर्ण पाठ्यक्रम</p><a class="inline-block mt-3 bg-emerald-700 text-white rounded-lg px-4 py-2 font-bold text-sm" href="rbse-class10-maths-full-paper.html">पेपर 1 शुरू करें</a></article>
-<article class="border rounded-xl p-4"><p class="text-xs font-bold text-rose-700">PAPER 2 · HARD</p><h3 class="font-bold mt-1">RBSE Maths Hard Paper</h3><p class="text-sm text-slate-600 mt-2">80 अंक • कठिन स्तर</p><a class="inline-block mt-3 bg-rose-700 text-white rounded-lg px-4 py-2 font-bold text-sm" href="rbse-class10-maths-hard-paper-2.html">पेपर 2 शुरू करें</a></article>
-<article class="border rounded-xl p-4"><p class="text-xs font-bold text-purple-700">PAPER 3 · HARD</p><h3 class="font-bold mt-1">RBSE Maths Hard Paper 3</h3><p class="text-sm text-slate-600 mt-2">MCQ, एक-पंक्ति, लघु और दीर्घ उत्तर</p><a class="inline-block mt-3 bg-purple-700 text-white rounded-lg px-4 py-2 font-bold text-sm" href="rbse-class10-maths-hard-paper-3.html">पेपर 3 शुरू करें</a></article>
-</div>
-</section>
-<section class="bg-gradient-to-r from-indigo-700 to-violet-700 text-white rounded-2xl shadow p-5 mb-5"><span class="text-xs font-bold text-indigo-100">WEEKLY EXAM • RBSE 2026–27</span><h2 class="text-xl font-extrabold mt-1">कक्षा 10 गणित — अभ्यास प्रश्नपत्र</h2><p class="text-sm text-indigo-100 mt-1">कक्षा 10 का 80 अंकों का अभ्यास प्रश्नपत्र। यह आधिकारिक बोर्ड प्रश्नपत्र नहीं है। सबमिट करने पर उत्तर और हल दिखेंगे।</p></section>
+<section class="text-center mb-7"><span class="inline-block bg-emerald-100 text-emerald-800 rounded-full px-3 py-1 text-xs font-bold">STUDENT REGISTRATION REQUIRED</span><h1 class="text-3xl md:text-4xl font-extrabold text-indigo-950 mt-3">Weekly Live Test & Rank</h1><p class="text-slate-600 mt-2">पहले अपनी जानकारी भरें। सफल रजिस्ट्रेशन के बाद ही उपलब्ध पेपर चुन सकेंगे।</p></section>
 <section id="setup" class="bg-white rounded-2xl shadow p-5 md:p-7">
-<h2 class="text-xl font-bold mb-4">अपना Weekly Test चुनें</h2>
+<h2 class="text-xl font-bold mb-4">1. विद्यार्थी रजिस्ट्रेशन</h2>
 <div class="grid md:grid-cols-2 gap-4">
 <label class="text-sm font-semibold md:col-span-2">विद्यार्थी का नाम<input id="studentName" maxlength="40" required placeholder="अपना नाम लिखें" class="mt-1 w-full border rounded-xl p-3 bg-white"></label>
 <label class="text-sm font-semibold">मोबाइल नंबर<input id="studentMobile" type="tel" maxlength="10" required inputmode="numeric" placeholder="10 अंकों का नंबर" class="mt-1 w-full border rounded-xl p-3 bg-white"></label>
@@ -38,8 +28,9 @@
 <label class="text-sm font-semibold">समय<select id="duration" class="mt-1 w-full border rounded-xl p-3 bg-white"><option value="15">15 मिनट</option><option value="20" selected>20 मिनट</option><option value="30">30 मिनट</option></select></label>
 </div>
 <p id="streamNote" class="text-xs text-slate-500 mt-3">फिलहाल RBSE कक्षा 10 गणित का Weekly Practice Paper उपलब्ध है। टेस्ट शुरू करने के लिए कक्षा 10 चुनें।</p>
-<button id="start" class="mt-5 w-full bg-indigo-700 hover:bg-indigo-800 text-white font-bold rounded-xl py-3">टेस्ट शुरू करें →</button>
+<button id="start" class="mt-5 w-full bg-indigo-700 hover:bg-indigo-800 text-white font-bold rounded-xl py-3">रजिस्ट्रेशन करें और पेपर देखें →</button>
 </section>
+<section id="paperPicker" class="hidden bg-white rounded-2xl shadow p-5 md:p-7 mt-5"><p class="text-xs font-bold text-emerald-700">REGISTRATION COMPLETE</p><h2 class="text-2xl font-extrabold text-indigo-950 mt-1">2. अपना प्रश्नपत्र चुनें</h2><p id="paperPickerInfo" class="text-sm text-slate-600 mt-2">आपकी कक्षा और विषय के अनुसार उपलब्ध पेपर नीचे दिखेंगे।</p><div id="paperChoices" class="grid md:grid-cols-3 gap-3 mt-5"></div></section>
 <section class="bg-white rounded-2xl shadow p-5 mt-5"><h2 class="text-lg font-bold">🏆 इस सप्ताह के टॉप 10 विद्यार्थी</h2><div id="leaderboardStatus" class="text-xs text-slate-500">लोड हो रहा है…</div><div id="leaderboard" class="text-sm text-slate-600">रैंकिंग लोड हो रही है…</div></section>
 <section class="bg-white rounded-2xl shadow p-5 mt-5"><h2 class="text-lg font-bold">आपकी टेस्ट हिस्ट्री</h2><p class="text-xs text-slate-500 mb-3">यह रिकॉर्ड केवल इसी मोबाइल/ब्राउज़र में सेव होगा।</p><div id="localHistory" class="text-sm text-slate-600">अभी कोई टेस्ट रिकॉर्ड नहीं है।</div></section>
 <section id="quiz" class="hidden mt-6 bg-white rounded-2xl shadow p-5 md:p-7">
@@ -257,7 +248,7 @@ if(!$('studentConsent').checked){alert('कृपया जानकारी �
 activeClass=c;activeSubject=sub;activeMode=mode;
 const specialPaper=$('studentBoard').value==='RBSE'&&mode==='weekly'&&sub==='गणित'&&!!rbseWeeklyPapers[c];
 let pool=specialPaper?rbseWeeklyPapers[c].map(q=>[q.q,[],0,q.sol]):(mode==='chapter'?(banks[c+'|'+sub]||extraBanks[c]||[]).slice():getPool(c));
-if(pool.length<1){alert('अभी केवल RBSE कक्षा 10 गणित का Weekly Test उपलब्ध है। कृपया Board में RBSE, कक्षा 10 और विषय गणित चुनें। अन्य कक्षाओं के पेपर सत्यापन के बाद जोड़े जाएंगे।');return;}
+if(pool.length<1){alert('इस कक्षा/विषय का पेपर अभी उपलब्ध नहीं है। उपलब्ध पेपर सूची में दिखेंगे।');return;}
 const target=Math.min(20,pool.length);
 $('start').disabled=true;$('start').textContent='टेस्ट शुरू हो रहा है…';
 $('registrationStatus').textContent='';
@@ -265,7 +256,7 @@ try{
  if(!db) throw new Error('Supabase से कनेक्शन नहीं हो पाया। इंटरनेट कनेक्शन जाँचकर दोबारा कोशिश करें।');
  const {error:leadError}=await db.from('student_leads').insert({student_name:activeStudent,mobile_number:mobile,board:$('studentBoard').value,class_level:'Class '+c,city:'Jaipur',address:address,resource:'Online Test',consent:true,consent_by:'student_or_guardian'});
  if(leadError) throw leadError;
- $('registrationStatus').textContent='रजिस्ट्रेशन सफलतापूर्वक सेव हो गया। अब टेस्ट शुरू हो रहा है…';
+ $('registrationStatus').textContent='रजिस्ट्रेशन सफलतापूर्वक सेव हो गया। अब उपलब्ध पेपर चुनें।';
 }catch(e){
  console.error('Student registration failed:',e);
  const msg='रजिस्ट्रेशन सेव नहीं हुआ, इसलिए टेस्ट शुरू नहीं किया गया। कारण: '+(e&&e.message?e.message:'Supabase त्रुटि');
@@ -275,6 +266,19 @@ try{
 }finally{
  $('start').disabled=false;
  $('start').textContent='टेस्ट शुरू करें →';
+}
+if($('studentBoard').value==='RBSE'&&c==='10'&&sub==='गणित'){
+ $('setup').classList.add('hidden');
+ const picker=$('paperPicker');
+ $('paperPickerInfo').textContent=activeStudent+' जी, कक्षा 10 RBSE गणित के लिए अपना पेपर चुनें।';
+ $('paperChoices').innerHTML=[
+  {n:'Paper 1',tag:'FULL LENGTH',desc:'RBSE गणित • सम्पूर्ण पाठ्यक्रम',href:'rbse-class10-maths-full-paper.html',cls:'emerald'},
+  {n:'Paper 2',tag:'HARD LEVEL',desc:'RBSE गणित • कठिन स्तर',href:'rbse-class10-maths-hard-paper-2.html',cls:'rose'},
+  {n:'Paper 3',tag:'HARD LEVEL',desc:'MCQ, एक-पंक्ति, लघु व दीर्घ प्रश्न',href:'rbse-class10-maths-hard-paper-3.html',cls:'violet'}
+ ].map(p=>'<article class="border rounded-xl p-4"><p class="text-xs font-extrabold text-'+p.cls+'-700">'+p.tag+'</p><h3 class="text-xl font-extrabold mt-2">'+p.n+'</h3><p class="text-sm text-slate-600 mt-2">'+p.desc+'</p><a class="inline-block mt-4 rounded-lg bg-indigo-700 text-white px-4 py-2 font-bold" href="'+p.href+'">यह पेपर शुरू करें →</a></article>').join('');
+ picker.classList.remove('hidden');
+ picker.scrollIntoView({behavior:'smooth',block:'start'});
+ return;
 }
 if(specialPaper){isWrittenMathPaper=true;activeWrittenPaper=rbseWeeklyPapers[c];writtenResponses=Array(activeWrittenPaper.length).fill('');questions=activeWrittenPaper;answers=[];index=0;seconds=c==='10'?195*60:20*60;}
 else{isWrittenMathPaper=false;questions=shuffle(pool).slice(0,target).map(q=>q.slice());answers=Array(questions.length).fill(null);index=0;seconds=Number($('duration').value)*60;}

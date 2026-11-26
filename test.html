@@ -256,7 +256,9 @@ try{
  if(!db) throw new Error('Supabase से कनेक्शन नहीं हो पाया। इंटरनेट कनेक्शन जाँचकर दोबारा कोशिश करें।');
  const {error:leadError}=await db.from('student_leads').insert({student_name:activeStudent,mobile_number:mobile,board:$('studentBoard').value,class_level:'Class '+c,city:'Jaipur',address:address,resource:'Online Test',consent:true,consent_by:'student_or_guardian'});
  if(leadError) throw leadError;
- sessionStorage.setItem('sht_weekly_student',JSON.stringify({name:activeStudent,mobile:mobile,address:address,board:$('studentBoard').value,classLevel:'Class '+c,registeredAt:new Date().toISOString()}));
+ const weeklyProfile={name:activeStudent,mobile:mobile,board:$('studentBoard').value,classLevel:'Class '+c,registeredAt:new Date().toISOString()};
+sessionStorage.setItem('sht_weekly_student',JSON.stringify(weeklyProfile));
+localStorage.setItem('sht_weekly_student',JSON.stringify(weeklyProfile));
  $('registrationStatus').textContent='रजिस्ट्रेशन सफलतापूर्वक सेव हो गया। अब उपलब्ध पेपर चुनें।';
 }catch(e){
  console.error('Student registration failed:',e);

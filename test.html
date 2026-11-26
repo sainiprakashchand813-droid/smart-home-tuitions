@@ -4,7 +4,7 @@
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <title>RBSE Maths Practice Tests Class 1–12 | Smart Home Tuitions Jaipur</title>
 <meta name="description" content="RBSE कक्षा 1–12 के लिए गणित अभ्यास टेस्ट। कक्षा-वार पाठ्यक्रम सत्यापन के बाद प्रश्नपत्र प्रकाशित किए जाएंगे।">
-<meta name="robots" content="index,follow"><link rel="canonical" href="https://sainiprakashchand813-droid.github.io/smart-home-tuitions/test.html">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"><meta http-equiv="Pragma" content="no-cache"><meta http-equiv="Expires" content="0"><meta name="robots" content="index,follow"><link rel="canonical" href="https://sainiprakashchand813-droid.github.io/smart-home-tuitions/test.html">
 <meta name="theme-color" content="#312e81">
 <script src="https://cdn.tailwindcss.com"></script>
 <style>body{font-family:Arial,sans-serif} .choice:focus{outline:3px solid #a5b4fc} .correct{background:#dcfce7!important;border-color:#16a34a!important}.wrong{background:#fee2e2!important;border-color:#dc2626!important}</style>
@@ -25,7 +25,7 @@
 <p id="registrationStatus" class="md:col-span-2 text-xs text-slate-500" role="status"></p>
 <label class="text-sm font-semibold">कक्षा<select id="class" class="mt-1 w-full border rounded-xl p-3 bg-white"><option value="1" selected>Class 1</option><option value="2">Class 2</option><option value="3">Class 3</option><option value="4">Class 4</option><option value="5">Class 5</option><option value="6">Class 6</option><option value="7">Class 7</option><option value="8">Class 8</option><option value="9">Class 9</option><option value="10">Class 10</option><option value="11">Class 11</option><option value="12">Class 12</option></select></label>
 <label class="text-sm font-semibold">टेस्ट का प्रकार<select id="testType" class="mt-1 w-full border rounded-xl p-3 bg-white"><option value="weekly" selected>Weekly Test</option></select></label>
-<label class="text-sm font-semibold">विषय (Chapter-wise के लिए)<select id="subject" class="mt-1 w-full border rounded-xl p-3 bg-white"><option value="गणित">गणित</option></select></label>
+<label class="text-sm font-semibold">विषय (Chapter-wise के लिए)<select id="subject" aria-label="विषय चुनें" class="mt-1 w-full border rounded-xl p-3 bg-white"><option value="गणित" selected>गणित</option></select></label>
 <label class="text-sm font-semibold">समय<select id="duration" class="mt-1 w-full border rounded-xl p-3 bg-white"><option value="15">15 मिनट</option><option value="20" selected>20 मिनट</option><option value="30">30 मिनट</option></select></label>
 </div>
 <p id="streamNote" class="text-xs text-slate-500 mt-3">कक्षा 1–12 के प्रश्नपत्र पाठ्यपुस्तक/सत्र 2026–27 से मिलान के बाद ही जारी होंगे। फिलहाल केवल कक्षा 10 का एक अभ्यास ड्राफ्ट उपलब्ध है।</p>
@@ -89,7 +89,7 @@ const rbse10WeeklyPaper=[
 ];
 let isWrittenMathPaper=false,writtenResponses=[];
 
-function fillSubjects(){const c=$('class').value;$('subject').innerHTML=subjectMap[c].map(x=>'<option>'+x+'</option>').join('');updateStreamNote();}
+function fillSubjects(){const c=$('class').value;const options=subjectMap[c]||['गणित'];$('subject').innerHTML=options.map(x=>'<option value="'+x+'">'+x+'</option>').join('');if(!$('subject').options.length){$('subject').innerHTML='<option value="गणित">गणित</option>';}updateStreamNote();}
 function updateStreamNote(){const special=$('studentBoard').value==='RBSE'&&$('class').value==='10'&&$('testType').value==='weekly'&&$('subject').value==='गणित';$('streamNote').textContent=special?'इस Weekly Test में उपलब्ध कक्षा 10 गणित का अभ्यास प्रश्नपत्र होगा। पेपर के प्रश्नों के उत्तर लिखकर सबमिट करें; इसके बाद उत्तर और हल दिखेंगे।':'कक्षा 1–12 के लिए केवल गणित। अन्य कक्षाओं के पेपर पाठ्यक्रम सत्यापन के बाद खुलेंगे।';}
 $('class').addEventListener('change',fillSubjects);$('testType').addEventListener('change',updateStreamNote);$('subject').addEventListener('change',updateStreamNote);$('studentBoard').addEventListener('change',updateStreamNote);fillSubjects();
 function shuffle(a){const x=a.slice();for(let i=x.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[x[i],x[j]]=[x[j],x[i]];}return x;}

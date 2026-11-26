@@ -98,10 +98,10 @@ function render(){if(isWrittenMathPaper){$('progress').textContent='पूरा
 async function start(){
 const c=$('class').value,sub=$('subject').value,mode=$('testType').value;
 activeStudent=$('studentName').value.trim();
-const mobile=$('studentMobile').value.replace(/\\D/g,'');
+const mobile=$('studentMobile').value.replace(/\D/g,'');
 const address=$('studentAddress').value.trim();
 if(!activeStudent){alert('कृपया अपना नाम लिखें।');$('studentName').focus();return;}
-if(!/^[6-9]\\d{9}$/.test(mobile)){alert('कृपया सही 10 अंकों का मोबाइल नंबर लिखें।');$('studentMobile').focus();return;}
+if(!/^[6-9]\d{9}$/.test(mobile)){alert('कृपया सही 10 अंकों का मोबाइल नंबर लिखें।');$('studentMobile').focus();return;}
 if(!address){alert('कृपया शहर और क्षेत्र का पता लिखें।');$('studentAddress').focus();return;}
 if(!$('studentConsent').checked){alert('कृपया जानकारी दर्ज करने की सहमति दें।');return;}
 activeClass=c;activeSubject=sub;activeMode=mode;
@@ -135,6 +135,6 @@ function showLocalResults(){let rows=[];try{rows=JSON.parse(localStorage.getItem
 function weekStartISO(){const d=new Date();d.setHours(0,0,0,0);d.setDate(d.getDate()-((d.getDay()+6)%7));return d.toISOString();}
 async function saveOnlineResult(score,pct){try{const {error}=await db.from("test_results").insert({student_name:activeStudent,class_level:Number(activeClass),subject:activeMode==="chapter"?activeSubject:activeMode,score:score,total_questions:questions.length,accuracy:pct});if(error)throw error;}catch(e){console.error("Supabase:",e.message);}loadLeaderboard();}
 async function loadLeaderboard(){try{const {data,error}=await db.from("test_results").select("student_name,class_level,score,total_questions,accuracy,created_at").gte("created_at",weekStartISO()).order("score",{ascending:false}).order("accuracy",{ascending:false}).limit(10);if(error)throw error;$("leaderboardStatus").textContent="अपडेटेड";$("leaderboard").innerHTML=data.length?data.map((r,i)=>'<div class="border-b py-2">#'+(i+1)+' '+String(r.student_name).replace(/[&<>"]/g,"")+' — कक्षा '+r.class_level+' — '+r.score+'/'+r.total_questions+'</div>').join(""):"इस सप्ताह अभी कोई रिजल्ट नहीं है।";}catch(e){$("leaderboardStatus").textContent="Database connection error";$("leaderboard").textContent="कारण: "+(e&&e.message?e.message:"Supabase से कनेक्शन नहीं हो पाया।")+" — SQL सेटअप और इंटरनेट कनेक्शन जाँचें।";}}
-$('start').addEventListener('click',start);$('prev').addEventListener('click',()=>{if(index>0){index--;render();}});$('next').addEventListener('click',()=>{if(index<questions.length-1){index++;render();}});$('submit').addEventListener('click',()=>{if(confirm('क्या आप टेस्ट सबमिट करना चाहते हैं?'))finish();});$('again').addEventListener('click',()=>{$('result').classList.add('hidden');$('setup').classList.remove('hidden');showLocalResults();});showLocalResults();loadLeaderboard();
+$('start').addEventListener('click',()=>{start().catch(err=>{console.error('Test start failed:',err);const msg='टेस्ट शुरू नहीं हो पाया: '+(err&&err.message?err.message:'अज्ञात समस्या');$('registrationStatus').textContent=msg;alert(msg);$('start').disabled=false;$('start').textContent='टेस्ट शुरू करें →';});});$('prev').addEventListener('click',()=>{if(index>0){index--;render();}});$('next').addEventListener('click',()=>{if(index<questions.length-1){index++;render();}});$('submit').addEventListener('click',()=>{if(confirm('क्या आप टेस्ट सबमिट करना चाहते हैं?'))finish();});$('again').addEventListener('click',()=>{$('result').classList.add('hidden');$('setup').classList.remove('hidden');showLocalResults();});showLocalResults();loadLeaderboard();
 </script>
 </body></html>

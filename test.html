@@ -22,7 +22,7 @@
 <label class="text-sm font-semibold md:col-span-2">शहर / क्षेत्र / पता<input id="studentAddress" maxlength="180" required placeholder="Jaipur, locality / area" class="mt-1 w-full border rounded-xl p-3 bg-white"></label>
 <label class="md:col-span-2 flex items-start gap-2 text-xs text-slate-600"><input id="studentConsent" type="checkbox" required class="mt-1"><span>मैं इस जानकारी को ऑनलाइन टेस्ट, परिणाम और शैक्षणिक अपडेट के लिए सुरक्षित रूप से दर्ज करने की सहमति देता/देती हूँ।</span></label>
 <p id="registrationStatus" class="md:col-span-2 text-xs text-slate-500" role="status"></p>
-<label class="text-sm font-semibold">कक्षा<select id="class" class="mt-1 w-full border rounded-xl p-3 bg-white"><option value="1" selected>Class 1</option><option value="2">Class 2</option><option value="3">Class 3</option><option value="4">Class 4</option><option value="5">Class 5</option><option value="6">Class 6</option><option value="7">Class 7</option><option value="8">Class 8</option><option value="9">Class 9</option><option value="10" selected>Class 10</option><option value="11">Class 11</option><option value="12">Class 12</option></select></label>
+<label class="text-sm font-semibold">कक्षा<select id="class" class="mt-1 w-full border rounded-xl p-3 bg-white"><option value="1">Class 1</option><option value="2">Class 2</option><option value="3">Class 3</option><option value="4">Class 4</option><option value="5">Class 5</option><option value="6">Class 6</option><option value="7">Class 7</option><option value="8">Class 8</option><option value="9">Class 9</option><option value="10" selected>Class 10</option><option value="11">Class 11</option><option value="12">Class 12</option></select></label>
 <label class="text-sm font-semibold">टेस्ट का प्रकार<select id="testType" class="mt-1 w-full border rounded-xl p-3 bg-white"><option value="weekly" selected>Weekly Test</option></select></label>
 <label class="text-sm font-semibold">विषय (Chapter-wise के लिए)<select id="subject" aria-label="विषय चुनें" class="mt-1 w-full border rounded-xl p-3 bg-white"><option value="गणित" selected>गणित</option></select></label>
 <label class="text-sm font-semibold">समय<select id="duration" class="mt-1 w-full border rounded-xl p-3 bg-white"><option value="15">15 मिनट</option><option value="20" selected>20 मिनट</option><option value="30">30 मिनट</option></select></label>
@@ -265,7 +265,7 @@ try{
  return;
 }finally{
  $('start').disabled=false;
- $('start').textContent='टेस्ट शुरू करें →';
+ $('start').textContent='रजिस्ट्रेशन करें और पेपर देखें →';
 }
 if($('studentBoard').value==='RBSE'&&c==='10'&&sub==='गणित'){
  $('setup').classList.add('hidden');

@@ -25,7 +25,7 @@
 <p id="registrationStatus" class="md:col-span-2 text-xs text-slate-500" role="status"></p>
 <label class="text-sm font-semibold">कक्षा<select id="class" class="mt-1 w-full border rounded-xl p-3 bg-white"><option value="1" selected>Class 1</option><option value="2">Class 2</option><option value="3">Class 3</option><option value="4">Class 4</option><option value="5">Class 5</option><option value="6">Class 6</option><option value="7">Class 7</option><option value="8">Class 8</option><option value="9">Class 9</option><option value="10">Class 10</option><option value="11">Class 11</option><option value="12">Class 12</option></select></label>
 <label class="text-sm font-semibold">टेस्ट का प्रकार<select id="testType" class="mt-1 w-full border rounded-xl p-3 bg-white"><option value="weekly" selected>Weekly Test</option></select></label>
-<label class="text-sm font-semibold">विषय (Chapter-wise के लिए)<select id="subject" class="mt-1 w-full border rounded-xl p-3 bg-white"></select></label>
+<label class="text-sm font-semibold">विषय (Chapter-wise के लिए)<select id="subject" class="mt-1 w-full border rounded-xl p-3 bg-white"><option value="गणित">गणित</option></select></label>
 <label class="text-sm font-semibold">समय<select id="duration" class="mt-1 w-full border rounded-xl p-3 bg-white"><option value="15">15 मिनट</option><option value="20" selected>20 मिनट</option><option value="30">30 मिनट</option></select></label>
 </div>
 <p id="streamNote" class="text-xs text-slate-500 mt-3">कक्षा 1–12 के प्रश्नपत्र पाठ्यपुस्तक/सत्र 2026–27 से मिलान के बाद ही जारी होंगे। फिलहाल केवल कक्षा 10 का एक अभ्यास ड्राफ्ट उपलब्ध है।</p>
@@ -47,7 +47,7 @@
 </main>
 <footer class="text-center text-xs text-slate-500 py-6">© Smart Home Tuitions Jaipur • <a class="underline" href="https://wa.me/917665533892">संपर्क करें</a></footer>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-<script>const SUPABASE_URL="https://xjrafailggycxyxakqbm.supabase.co";const SUPABASE_KEY="sb_publishable_tCFBcs_pRssMD0or0VFa4g_oN9695QN";const db=window.supabase.createClient(SUPABASE_URL,SUPABASE_KEY);
+<script>const SUPABASE_URL="https://xjrafailggycxyxakqbm.supabase.co";const SUPABASE_KEY="sb_publishable_tCFBcs_pRssMD0or0VFa4g_oN9695QN";const db=(window.supabase&&typeof window.supabase.createClient==="function")?window.supabase.createClient(SUPABASE_URL,SUPABASE_KEY):null;
 const subjectMap=Object.fromEntries(Array.from({length:12},(_,i)=>[String(i+1),["गणित"]]));
 const banks={};
 const extraBanks={};

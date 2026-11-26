@@ -15,7 +15,7 @@
 <section class="text-center mb-7"><span class="inline-block bg-emerald-100 text-emerald-800 rounded-full px-3 py-1 text-xs font-bold">100% FREE • NO LOGIN</span><h1 class="text-3xl md:text-4xl font-extrabold text-indigo-950 mt-3">RBSE Online Practice Test</h1><p class="text-slate-600 mt-2">कक्षा 1वीं से 12वीं • गणित • पाठ्यक्रम-आधारित अभ्यास</p></section>
 <section class="bg-gradient-to-r from-indigo-700 to-violet-700 text-white rounded-2xl shadow p-5 mb-5"><span class="text-xs font-bold text-indigo-100">WEEKLY EXAM • RBSE 2026–27</span><h2 class="text-xl font-extrabold mt-1">कक्षा 10 गणित — अभ्यास प्रश्नपत्र</h2><p class="text-sm text-indigo-100 mt-1">कक्षा 10 का उपलब्ध प्रश्नपत्र अभ्यास हेतु है; इसे आधिकारिक/सत्यापित बोर्ड पेपर न मानें। सबमिट करने पर उत्तर और हल दिखेंगे।</p></section>
 <section id="setup" class="bg-white rounded-2xl shadow p-5 md:p-7">
-<h2 class="text-xl font-bold mb-4">अपना टेस्ट चुनें</h2>
+<h2 class="text-xl font-bold mb-4">अपना Weekly Test चुनें</h2>
 <div class="grid md:grid-cols-2 gap-4">
 <label class="text-sm font-semibold md:col-span-2">विद्यार्थी का नाम<input id="studentName" maxlength="40" required placeholder="अपना नाम लिखें" class="mt-1 w-full border rounded-xl p-3 bg-white"></label>
 <label class="text-sm font-semibold">मोबाइल नंबर<input id="studentMobile" type="tel" maxlength="10" required inputmode="numeric" placeholder="10 अंकों का नंबर" class="mt-1 w-full border rounded-xl p-3 bg-white"></label>
@@ -24,7 +24,7 @@
 <label class="md:col-span-2 flex items-start gap-2 text-xs text-slate-600"><input id="studentConsent" type="checkbox" required class="mt-1"><span>मैं इस जानकारी को ऑनलाइन टेस्ट, परिणाम और शैक्षणिक अपडेट के लिए सुरक्षित रूप से दर्ज करने की सहमति देता/देती हूँ।</span></label>
 <p id="registrationStatus" class="md:col-span-2 text-xs text-slate-500" role="status"></p>
 <label class="text-sm font-semibold">कक्षा<select id="class" class="mt-1 w-full border rounded-xl p-3 bg-white"><option value="1" selected>Class 1</option><option value="2">Class 2</option><option value="3">Class 3</option><option value="4">Class 4</option><option value="5">Class 5</option><option value="6">Class 6</option><option value="7">Class 7</option><option value="8">Class 8</option><option value="9">Class 9</option><option value="10">Class 10</option><option value="11">Class 11</option><option value="12">Class 12</option></select></label>
-<label class="text-sm font-semibold">टेस्ट का प्रकार<select id="testType" class="mt-1 w-full border rounded-xl p-3 bg-white"><option value="daily">Daily Practice Test</option><option value="weekly">Weekly Test</option><option value="chapter">Chapter-wise / Subject Test</option><option value="full">Full Syllabus Test</option></select></label>
+<label class="text-sm font-semibold">टेस्ट का प्रकार<select id="testType" class="mt-1 w-full border rounded-xl p-3 bg-white"><option value="weekly" selected>Weekly Test</option></select></label>
 <label class="text-sm font-semibold">विषय (Chapter-wise के लिए)<select id="subject" class="mt-1 w-full border rounded-xl p-3 bg-white"></select></label>
 <label class="text-sm font-semibold">समय<select id="duration" class="mt-1 w-full border rounded-xl p-3 bg-white"><option value="15">15 मिनट</option><option value="20" selected>20 मिनट</option><option value="30">30 मिनट</option></select></label>
 </div>
@@ -90,7 +90,7 @@ const rbse10WeeklyPaper=[
 let isWrittenMathPaper=false,writtenResponses=[];
 
 function fillSubjects(){const c=$('class').value;$('subject').innerHTML=subjectMap[c].map(x=>'<option>'+x+'</option>').join('');updateStreamNote();}
-function updateStreamNote(){const special=$('studentBoard').value==='RBSE'&&$('class').value==='10'&&$('testType').value==='weekly'&&$('subject').value==='गणित';$('streamNote').textContent=special?'इस Weekly Test में RBSE कक्षा 10 गणित का पूरा 32 प्रश्नों वाला 80 अंकों का बोर्ड-पैटर्न पेपर होगा। समय 3 घंटे 15 मिनट है।':'कक्षा 1–12 के लिए केवल गणित। अन्य कक्षाओं के पेपर पाठ्यक्रम सत्यापन के बाद खुलेंगे।';}
+function updateStreamNote(){const special=$('studentBoard').value==='RBSE'&&$('class').value==='10'&&$('testType').value==='weekly'&&$('subject').value==='गणित';$('streamNote').textContent=special?'इस Weekly Test में उपलब्ध कक्षा 10 गणित का अभ्यास प्रश्नपत्र होगा। पेपर के प्रश्नों के उत्तर लिखकर सबमिट करें; इसके बाद उत्तर और हल दिखेंगे।':'कक्षा 1–12 के लिए केवल गणित। अन्य कक्षाओं के पेपर पाठ्यक्रम सत्यापन के बाद खुलेंगे।';}
 $('class').addEventListener('change',fillSubjects);$('testType').addEventListener('change',updateStreamNote);$('subject').addEventListener('change',updateStreamNote);$('studentBoard').addEventListener('change',updateStreamNote);fillSubjects();
 function shuffle(a){const x=a.slice();for(let i=x.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[x[i],x[j]]=[x[j],x[i]];}return x;}
 function getPool(c){let pool=[];Object.keys(banks).forEach(k=>{if(k.startsWith(c+"|"))pool=pool.concat(banks[k]);});pool=pool.concat(extraBanks[c]||[]);return pool;}

@@ -248,7 +248,8 @@ if(!$('studentConsent').checked){alert('कृपया जानकारी �
 activeClass=c;activeSubject=sub;activeMode=mode;
 const specialPaper=$('studentBoard').value==='RBSE'&&mode==='weekly'&&sub==='गणित'&&!!rbseWeeklyPapers[c];
 let pool=specialPaper?rbseWeeklyPapers[c].map(q=>[q.q,[],0,q.sol]):(mode==='chapter'?(banks[c+'|'+sub]||extraBanks[c]||[]).slice():getPool(c));
-if(pool.length<1){alert('इस कक्षा/विषय का पेपर अभी उपलब्ध नहीं है। उपलब्ध पेपर सूची में दिखेंगे।');return;}
+const sciencePaperPicker=$('studentBoard').value==='RBSE'&&c==='10'&&mode==='weekly'&&sub==='विज्ञान';
+if(pool.length<1&&!sciencePaperPicker){alert('इस कक्षा/विषय का पेपर अभी उपलब्ध नहीं है। उपलब्ध पेपर सूची में दिखेंगे।');return;}
 const target=Math.min(20,pool.length);
 $('start').disabled=true;$('start').textContent='टेस्ट शुरू हो रहा है…';
 $('registrationStatus').textContent='';

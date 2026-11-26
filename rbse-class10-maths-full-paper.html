@@ -72,9 +72,16 @@ const $=id=>document.getElementById(id);
 function draw(){ $('progress').textContent='प्रश्न '+Q.length+' • '+answers.filter(x=>x!==null).length+' उत्तर दिए';$('bar').style.width=(answers.filter(x=>x!==null).length/Q.length*100)+'%';$('questions').innerHTML=Q.map((q,i)=>'<article class="border rounded-xl p-4"><p class="font-bold mb-3">'+(i+1)+'. '+q[0]+' <span class="text-xs text-slate-500">(2 अंक)</span></p><div class="grid sm:grid-cols-2 gap-2">'+q[1].map((o,j)=>'<label class="flex gap-2 border rounded-lg p-3 cursor-pointer"><input type="radio" name="q'+i+'" value="'+j+'" '+(answers[i]===j?'checked':'')+'><span>'+String.fromCharCode(65+j)+'. '+o+'</span></label>').join('')+'</div></article>').join('');$('questions').querySelectorAll('input').forEach(el=>el.addEventListener('change',e=>{const i=Number(e.target.name.slice(1));answers[i]=Number(e.target.value);$('progress').textContent='प्रश्न 40 • '+answers.filter(x=>x!==null).length+' उत्तर दिए';$('bar').style.width=(answers.filter(x=>x!==null).length/Q.length*100)+'%';}));}
 function fmt(s){return [Math.floor(s/3600),Math.floor(s%3600/60),s%60].map(n=>String(n).padStart(2,'0')).join(':');}
 async function begin(){
- let profile=null;try{profile=JSON.parse(localStorage.getItem('sht_weekly_student')||sessionStorage.getItem('sht_weekly_student')||'null');}catch(e){}
- if(!profile||!profile.name||!profile.mobile){$('status').textContent='रजिस्ट्रेशन नहीं मिला। कृपया Weekly Live Test & Rank पर वापस जाकर पहले रजिस्ट्रेशन करें।';return;}
- student=profile.name;
+ let profile=null;
+ try{profile=JSON.parse(localStorage.getItem('sht_weekly_student')||'null');}catch(e){}
+ if(!profile){try{profile=JSON.parse(sessionStorage.getItem('sht_weekly_student')||'null');}catch(e){}}
+ // पुराने registration records में mobile/name की key अलग हो सकती है।
+ const registeredName=profile&&(profile.name||profile.student_name||profile.studentName||profile.fullName);
+ if(!registeredName){
+  $('status').textContent='इस ब्राउज़र में रजिस्ट्रेशन की जानकारी उपलब्ध नहीं है। कृपया इसी ब्राउज़र में Weekly Live Test & Rank से रजिस्ट्रेशन करके पेपर खोलें।';
+  return;
+ }
+ student=registeredName;
  $('begin').disabled=true;$('begin').textContent='पेपर खुल रहा है…';
  answers=Array(Q.length).fill(null);
  $('intro').classList.add('hidden');$('exam').classList.remove('hidden');draw();

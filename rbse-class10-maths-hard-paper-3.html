@@ -65,9 +65,16 @@ function draw(){const done=answers.filter(x=>String(x).trim()).length;$("progres
 function updateProgress(){const done=answers.filter(x=>String(x).trim()).length;$("progress").textContent="कुल "+Q.length+" प्रश्न • "+done+" उत्तर दिए";$("bar").style.width=(done/Q.length*100)+"%";}
 function fmt(s){return [Math.floor(s/3600),Math.floor(s%3600/60),s%60].map(n=>String(n).padStart(2,"0")).join(":");}
 async function begin(){
- let profile=null;try{profile=JSON.parse(localStorage.getItem('sht_weekly_student')||sessionStorage.getItem('sht_weekly_student')||'null');}catch(e){}
- if(!profile||!profile.name||!profile.mobile){$('status').textContent='रजिस्ट्रेशन नहीं मिला। कृपया Weekly Live Test & Rank पर वापस जाकर पहले रजिस्ट्रेशन करें।';return;}
- student=profile.name;
+ let profile=null;
+ try{profile=JSON.parse(localStorage.getItem('sht_weekly_student')||'null');}catch(e){}
+ if(!profile){try{profile=JSON.parse(sessionStorage.getItem('sht_weekly_student')||'null');}catch(e){}}
+ // पुराने registration records में mobile/name की key अलग हो सकती है।
+ const registeredName=profile&&(profile.name||profile.student_name||profile.studentName||profile.fullName);
+ if(!registeredName){
+  $('status').textContent='इस ब्राउज़र में रजिस्ट्रेशन की जानकारी उपलब्ध नहीं है। कृपया इसी ब्राउज़र में Weekly Live Test & Rank से रजिस्ट्रेशन करके पेपर खोलें।';
+  return;
+ }
+ student=registeredName;
  $('begin').disabled=true;$('begin').textContent='पेपर खुल रहा है…';
  answers=Array(Q.length).fill("");
  $('intro').classList.add('hidden');$('exam').classList.remove('hidden');draw();

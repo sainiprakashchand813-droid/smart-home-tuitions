@@ -230,8 +230,8 @@ const rbse10WeeklyPaper=[
 rbseWeeklyPapers[10]=rbse10WeeklyPaper;
 let isWrittenMathPaper=false,writtenResponses=[],activeWrittenPaper=[];
 
-function fillSubjects(){const c=String($('class').value);const board=$('studentBoard').value;const options=(board==='RBSE'&&(c==='9'||c==='10'))?['गणित','विज्ञान']:['गणित'];const subject=$('subject');const previous=subject.value;subject.innerHTML=options.map(x=>'<option value="'+x+'">'+x+'</option>').join('');subject.value=options.includes(previous)?previous:'गणित';updateStreamNote();}
-function updateStreamNote(){const cls=$('studentBoard').value==='RBSE'&&['9','10'].includes($('class').value)&&$('testType').value==='weekly';$('streamNote').textContent=cls&&$('subject').value==='गणित'?'कक्षा '+$('class').value+' RBSE गणित के उपलब्ध मॉडल पेपर चुनें।':cls&&$('subject').value==='विज्ञान'?'कक्षा '+$('class').value+' RBSE विज्ञान का अर्धवार्षिक/मॉडल पेपर उपलब्ध है।':'कक्षा 1–12 के लिए गणित उपलब्ध है; कक्षा 9 और 10 RBSE में विज्ञान भी उपलब्ध है।';}
+function fillSubjects(){const c=String($('class').value);const board=$('studentBoard').value;const options=(board==='RBSE'&&c==='10')?['गणित','विज्ञान','सामाजिक विज्ञान']:(board==='RBSE'&&c==='9')?['गणित','विज्ञान']:['गणित'];const subject=$('subject');const previous=subject.value;subject.innerHTML=options.map(x=>'<option value="'+x+'">'+x+'</option>').join('');subject.value=options.includes(previous)?previous:'गणित';updateStreamNote();}
+function updateStreamNote(){const cls=$('studentBoard').value==='RBSE'&&['9','10'].includes($('class').value)&&$('testType').value==='weekly';$('streamNote').textContent=cls&&$('subject').value==='गणित'?'कक्षा '+$('class').value+' RBSE गणित के उपलब्ध मॉडल पेपर चुनें।':cls&&$('subject').value==='विज्ञान'?'कक्षा '+$('class').value+' RBSE विज्ञान का अर्धवार्षिक/मॉडल पेपर उपलब्ध है।':$('studentBoard').value==='RBSE'&&$('class').value==='10'&&$('subject').value==='सामाजिक विज्ञान'?'कक्षा 10 RBSE सामाजिक विज्ञान का पूर्ण पाठ्यक्रम मॉडल पेपर उपलब्ध है।':'कक्षा 1–12 के लिए गणित उपलब्ध है; कक्षा 9 और 10 RBSE में विज्ञान भी उपलब्ध है।';}
 $('class').addEventListener('change',fillSubjects);$('testType').addEventListener('change',updateStreamNote);$('subject').addEventListener('change',updateStreamNote);$('studentBoard').addEventListener('change',fillSubjects);fillSubjects();
 function shuffle(a){const x=a.slice();for(let i=x.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[x[i],x[j]]=[x[j],x[i]];}return x;}
 function getPool(c){let pool=[];Object.keys(banks).forEach(k=>{if(k.startsWith(c+"|"))pool=pool.concat(banks[k]);});pool=pool.concat(extraBanks[c]||[]);return pool;}
@@ -251,8 +251,9 @@ let pool=specialPaper?rbseWeeklyPapers[c].map(q=>[q.q,[],0,q.sol]):(mode==='chap
 const selectedBoard=$('studentBoard').value.trim();
 const selectedSubject=String(sub||'').trim();
 const sciencePaperPicker=selectedBoard==='RBSE'&&(c==='9'||c==='10')&&mode==='weekly'&&(selectedSubject==='विज्ञान'||selectedSubject.toLowerCase()==='science');
+const socialSciencePaperPicker=selectedBoard==='RBSE'&&c==='10'&&mode==='weekly'&&selectedSubject==='सामाजिक विज्ञान';
 // विज्ञान का अलग full-length पेपर question-bank pool में नहीं है; उसे pool-empty जाँच से बाहर रखें।
-if(pool.length<1&&!sciencePaperPicker){alert('इस कक्षा/विषय का पेपर अभी उपलब्ध नहीं है। कक्षा 10, RBSE और Weekly Test चुनकर विज्ञान विषय चुनें।');return;}
+if(pool.length<1&&!sciencePaperPicker&&!socialSciencePaperPicker){alert('इस कक्षा/विषय का पेपर अभी उपलब्ध नहीं है। कक्षा 10, RBSE और Weekly Test चुनकर विज्ञान विषय चुनें।');return;}
 const target=Math.min(20,pool.length);
 $('start').disabled=true;$('start').textContent='टेस्ट शुरू हो रहा है…';
 $('registrationStatus').textContent='';
@@ -273,6 +274,12 @@ localStorage.setItem('sht_weekly_student',JSON.stringify(weeklyProfile));
 }finally{
  $('start').disabled=false;
  $('start').textContent='रजिस्ट्रेशन करें और पेपर देखें →';
+}
+if(socialSciencePaperPicker){
+ $('setup').classList.add('hidden');
+ $('paperPickerInfo').textContent=activeStudent+' जी, कक्षा 10 RBSE सामाजिक विज्ञान का पूर्ण पाठ्यक्रम मॉडल पेपर चुनें।';
+ $('paperChoices').innerHTML='<article class="border rounded-xl p-4"><p class="text-xs font-extrabold text-indigo-700">FULL SYLLABUS • 80 MARKS</p><h3 class="text-xl font-extrabold mt-2">Social Science Paper 1</h3><p class="text-sm text-slate-600 mt-2">29 मुख्य प्रश्न • 15 MCQ • एक-पंक्ति, मध्यम और दीर्घ उत्तरीय • 3 घंटे 15 मिनट</p><a class="inline-block mt-4 rounded-lg bg-indigo-700 text-white px-4 py-2 font-bold" href="rbse-class10-social-science-full-paper-1.html?v=20261127a">पेपर 1 शुरू करें →</a></article>';
+ $('paperPicker').classList.remove('hidden');$('paperPicker').scrollIntoView({behavior:'smooth',block:'start'});return;
 }
 if(sciencePaperPicker){
  $('setup').classList.add('hidden');
